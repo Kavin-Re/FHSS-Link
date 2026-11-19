@@ -1,0 +1,50 @@
+== enrollment (5000 packets/node) ==
+node 0: true skew   2.00 ppm jitter   6.0 us | enrolled   2.00 ppm  5.97 us
+node 1: true skew   3.50 ppm jitter   9.0 us | enrolled   3.50 ppm  8.96 us
+node 2: true skew  -1.00 ppm jitter  12.0 us | enrolled  -1.00 ppm 12.32 us
+node 3: true skew   8.00 ppm jitter   7.0 us | enrolled   8.00 ppm  7.01 us
+node 4: true skew  -6.50 ppm jitter  10.0 us | enrolled  -6.50 ppm 10.12 us
+node 5: true skew  11.00 ppm jitter  15.0 us | enrolled  11.00 ppm 14.98 us
+
+== node identification accuracy (nearest model, 6 nodes, 600 windows/node) ==
+n packets (time) | accuracy | worst-node accuracy | most common confusion
+   20 (     2 s) | 0.736 | 0.570 | node 2 read as 4: 0.205
+   50 (     5 s) | 0.991 | 0.980 | node 0 read as 1: 0.020
+  100 (    10 s) | 1.000 | 1.000 | node 0 read as 0: 0.000
+  200 (    20 s) | 1.000 | 1.000 | node 0 read as 0: 0.000
+  500 (    50 s) | 1.000 | 1.000 | node 0 read as 0: 0.000
+ 1000 (   100 s) | 1.000 | 1.000 | node 0 read as 0: 0.000
+ 2000 (   200 s) | 1.000 | 1.000 | node 0 read as 0: 0.000
+
+== impostor detection (claimed node must match enrolled clock); FA = genuine rejected ==
+    n | FA target | measured FA | detect random | detect near(+-1ppm,+-20%) | detect clone
+   20 |     0.001 |      0.0006 |         0.546 |                     0.006 | 0.001
+   20 |     0.010 |      0.0042 |         0.668 |                     0.022 | 0.005
+   20 |     0.050 |      0.0408 |         0.795 |                     0.084 | 0.046
+   50 |     0.001 |      0.0025 |         0.929 |                     0.034 | 0.003
+   50 |     0.010 |      0.0103 |         0.943 |                     0.079 | 0.009
+   50 |     0.050 |      0.0536 |         0.963 |                     0.196 | 0.056
+  100 |     0.001 |      0.0014 |         0.978 |                     0.110 | 0.003
+  100 |     0.010 |      0.0147 |         0.987 |                     0.244 | 0.011
+  100 |     0.050 |      0.0586 |         0.991 |                     0.424 | 0.054
+  200 |     0.001 |      0.0006 |         0.991 |                     0.298 | 0.001
+  200 |     0.010 |      0.0108 |         0.995 |                     0.446 | 0.006
+  200 |     0.050 |      0.0467 |         0.997 |                     0.631 | 0.050
+  500 |     0.001 |      0.0011 |         0.990 |                     0.539 | 0.002
+  500 |     0.010 |      0.0108 |         0.993 |                     0.660 | 0.017
+  500 |     0.050 |      0.0547 |         0.995 |                     0.765 | 0.060
+ 1000 |     0.001 |      0.0014 |         0.995 |                     0.655 | 0.002
+ 1000 |     0.010 |      0.0094 |         0.996 |                     0.741 | 0.010
+ 1000 |     0.050 |      0.0536 |         0.997 |                     0.835 | 0.058
+ 2000 |     0.001 |      0.0006 |         0.992 |                     0.705 | 0.000
+ 2000 |     0.010 |      0.0106 |         0.994 |                     0.786 | 0.007
+ 2000 |     0.050 |      0.0494 |         0.997 |                     0.852 | 0.046
+
+== ROC points at n=200 and n=1000 (random impostor): FA -> detection ==
+n=200: FA 0.0000 -> detection 0.982
+n=200: FA 0.0102 -> detection 0.991
+n=200: FA 0.1005 -> detection 0.995
+n=1000: FA 0.0000 -> detection 0.993
+n=1000: FA 0.0102 -> detection 0.996
+n=1000: FA 0.1005 -> detection 0.997
+saved figures/fingerprint.png

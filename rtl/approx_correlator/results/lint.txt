@@ -1,0 +1,9 @@
+== verilator --lint-only -Wall
+-- approx_correlator N=16 ATYPE=1 K=3
+-- approx_correlator N=32 ATYPE=1 K=3
+-- approx_correlator N=64 ATYPE=2 K=2
+-- approx_correlator N=32 ATYPE=3 K=3
+-- approx_correlator N=32 ATYPE=0 K=0
+(no output under a heading = clean)
+== iverilog -Wall
+(no output above = clean)

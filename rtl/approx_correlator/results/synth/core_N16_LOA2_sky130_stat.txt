@@ -1,0 +1,45 @@
+
+21. Printing statistics.
+
+=== corr_core ===
+
+   Number of wires:                446
+   Number of wire bits:            566
+   Number of public wires:           4
+   Number of public wire bits:     124
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                453
+     sky130_fd_sc_hd__a21o_1         1
+     sky130_fd_sc_hd__a21oi_1       30
+     sky130_fd_sc_hd__a22o_1         2
+     sky130_fd_sc_hd__a31oi_1        1
+     sky130_fd_sc_hd__a32oi_1        2
+     sky130_fd_sc_hd__and2_0         5
+     sky130_fd_sc_hd__and3_1         2
+     sky130_fd_sc_hd__clkinv_1      11
+     sky130_fd_sc_hd__maj3_1        43
+     sky130_fd_sc_hd__nand2_1       31
+     sky130_fd_sc_hd__nand2b_1       4
+     sky130_fd_sc_hd__nand3_1        4
+     sky130_fd_sc_hd__nand4_1        6
+     sky130_fd_sc_hd__nand4bb_1      1
+     sky130_fd_sc_hd__nor2_1        35
+     sky130_fd_sc_hd__nor2b_1        6
+     sky130_fd_sc_hd__nor3_1         2
+     sky130_fd_sc_hd__nor4_1         1
+     sky130_fd_sc_hd__o211ai_1       1
+     sky130_fd_sc_hd__o21a_1         2
+     sky130_fd_sc_hd__o21ai_0        7
+     sky130_fd_sc_hd__o21bai_1       1
+     sky130_fd_sc_hd__o22ai_1        2
+     sky130_fd_sc_hd__or2_0          2
+     sky130_fd_sc_hd__or4_1          1
+     sky130_fd_sc_hd__xnor2_1      117
+     sky130_fd_sc_hd__xnor3_1       17
+     sky130_fd_sc_hd__xor2_1       108
+     sky130_fd_sc_hd__xor3_1         8
+
+   Chip area for module '\corr_core': 3751.097600
+

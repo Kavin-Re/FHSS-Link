@@ -1,0 +1,8 @@
+ABC: WireLoad = "Small"  Gates =     76 (  5.3 %)   Cap =  4.7 ff (  1.8 %)   Area =      520.50 ( 96.1 %)   Delay =   788.43 ps  (  5.3 %)               
+ABC: WireLoad = "none"  Gates =     76 (  5.3 %)   Cap =  4.2 ff (  5.9 %)   Area =      480.46 ( 82.9 %)   Delay =   683.59 ps  ( 14.5 %)               
+ABC: Path  0 --      13 : 0    4 pi                        A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =   8.9 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     132 : 3    1 sky130_fd_sc_hd__xnor3_1  A =  22.52  Df = 366.1  -15.5 ps  S =  78.6 ps  Cin =  3.7 ff  Cout =   4.7 ff  Cmax = 154.7 ff  G =  122  
+ABC: Path  2 --     133 : 2    1 sky130_fd_sc_hd__xnor2_1  A =   8.76  Df = 497.7  -20.7 ps  S = 108.3 ps  Cin =  4.5 ff  Cout =   2.3 ff  Cmax =  69.6 ff  G =   48  
+ABC: Path  3 --     134 : 3    1 sky130_fd_sc_hd__mux2i_1  A =  10.01  Df = 589.0  -16.7 ps  S = 109.2 ps  Cin =  3.0 ff  Cout =   2.5 ff  Cmax =  68.7 ff  G =   76  
+ABC: Path  4 --     136 : 4    1 sky130_fd_sc_hd__o211ai_1 A =   7.51  Df = 683.6  -24.8 ps  S =  92.8 ps  Cin =  2.3 ff  Cout =   0.0 ff  Cmax =  74.2 ff  G =    0  
+ABC: Start-point = pi12 (\s [3]).  End-point = po20 ($auto$rtlil.cc:2609:MuxGate$351).

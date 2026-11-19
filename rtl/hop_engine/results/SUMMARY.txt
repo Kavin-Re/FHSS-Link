@@ -1,0 +1,10 @@
+engine                                                generic  gate |  sky130  flops   area um2  NAND2-eq |  abc delay ns (Small WL)
+                                                        cells depth |   cells                        (GE) |         no WL
+LFSR16, M=16 (mod = wiring; LFSR core only)                58     6 |      79     21        797       212 |          0.68       0.79
+LFSR16, M=13 (reference engine)                           218    67 |     245     21       1828       487 |          8.15      10.36
+Keyed SipHash-2-4 + Lemire, M=13 (default adders)        4272   181 |    3903    461      31394      8364 |          5.63       7.01
+Keyed, M=13, RIPPLE=1 adders                             4297   196 |    3854    461      31376      8359 |         31.13      37.24
+
+generic cells = yosys 'synth' + abc -g AND,NAND,OR,NOR,XOR,XNOR,ANDNOT,ORNOT,MUX, gate depth = yosys ltp (longest topological path in cells, flops cut)
+sky130 cells/area = yosys synth + dfflibmap + abc -liberty (-D 10000 ps target) on sky130_fd_sc_hd__tt_025C_1v80; GE = area / 3.7536 um2 (nand2_1)
+abc delay = abc 'stime -p' after map+buffer+upsize+dnsize; NO placement/routing, ideal clock, no setup/clk-to-q: an optimistic combinational estimate, NOT sign-off timing

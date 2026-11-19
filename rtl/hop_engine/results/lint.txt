@@ -1,0 +1,4 @@
+== verilator --lint-only -Wall
+(no output above = clean)
+== iverilog -Wall
+(no output above = clean)

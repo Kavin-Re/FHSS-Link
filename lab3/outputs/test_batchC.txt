@@ -1,0 +1,99 @@
+PASS Huffman dx: Kraft sum == 1 and prefix-free
+PASS Huffman dy: Kraft sum == 1 and prefix-free
+PASS Huffman dh: Kraft sum == 1 and prefix-free
+PASS Huffman dv: Kraft sum == 1 and prefix-free
+PASS Huffman db: Kraft sum == 1 and prefix-free
+PASS encoder/decoder states identical for 300 messages (no drift)
+PASS position error <= half step (0.50 m <= 0.5 m, + clipping at box edge)
+PASS delta messages much smaller than keyframes
+PASS keyframe is 9 bytes at 1 m / 5 deg
+PASS CRC-8: wrong-content acceptances 1 of 2608 single-bit corruptions (< 0.5 %; not zero because variable-length parsing can misplace the CRC)
+PASS gap detected: decoder reports stale after lost messages 5,6
+PASS stale until next keyframe (msg 20), then state exact again
+PASS lost keyframe 20: stale through 21..39, recovered at keyframe 40
+PASS delta+Huffman uses fewer bytes than all-keyframe (4.35 < 9.00)
+PASS rate-distortion monotone: coarser quantisation => fewer bytes and larger error
+PASS lat/lon <-> metres round trip
+PASS hash chain: clean log verifies (50 records, 4 blocks)
+PASS hash chain: edit of ANY single record flagged at exactly that index (50/50)
+PASS hash chain: delete of ANY single record flagged at exactly that index (50/50)
+PASS hash chain: insert of ANY single record flagged at exactly that index (50/50)
+PASS hash chain: reorder of ANY single record flagged at exactly that index (49/49)
+PASS truncating the tail is invisible alone but caught by an anchored head
+PASS plain mode: a full recompute is accepted (integrity != authenticity) unless the head is anchored
+PASS hmac mode verifies with the key, fails with a wrong key
+PASS hmac mode: attacker without the key cannot rebuild a valid log
+PASS Merkle inclusion proofs verify for all 16 leaves, not for a wrong leaf
+PASS sample_log.jsonl exists and verifies via CLI (exit 0)
+PASS sample log contains decisions from both ladder and guard
+PASS CLI verifier: edited line -> exit 1 and names record 30
+PASS CLI verifier: hmac log without key -> exit 2
+PASS CLI verifier: hmac log with demo key -> exit 0
+PASS input SINR is about -30 dB (-30.4)
+PASS LMS/NLMS/RLS each improve SINR by > 20 dB on a drifting tone + hum: {'lms': 32.9, 'nlms': 29.8, 'rls': 32.6}
+PASS wideband interferer cannot be cancelled (< 1 dB)
+PASS fast hopping defeats the canceller (3.6 dB vs 29.8 dB stationary)
+PASS step size sweep has an optimum (too small is slow, too large is noisy)
+PASS despreading gain matches 10log10(Gp): bit SINR -11.8 dB vs -12.4 dB
+PASS wifi_survey.sh: bash -n syntax
+PASS wifi_survey.sh: no sudo, no network-changing nmcli verbs, no SSID/BSSID fields requested
+PASS fake nmcli: 3 x 2.4 GHz APs per scan x 2 scans appended (5 GHz row dropped)
+PASS fake nmcli: dBm estimate = pct/2-100
+PASS script only asks nmcli for CHAN,SIGNAL,FREQ (never SSID/BSSID)
+PASS scan ids group scans (2 distinct ids, same salt)
+PASS iw fallback works and leaks no SSID/BSSID text
+PASS iw fallback values: ch 6 at -55 dBm -> 90 %, ch 1 at -80.5 -> 39 %
+PASS empty scan writes a channel-0 marker row
+PASS bad arguments rejected (exit 2)
+PASS synthetic file is labelled in its header
+PASS analyser carries the synthetic flag into the JSON
+PASS loss probabilities within [0.01, 0.95] for all 13 channels
+PASS effective channel numbers are sane: M_indep 3.7 < M_eff_sum < 13, M_orth 3
+PASS busiest channel in the synthetic data is 1, 6 or 11
+PASS time-of-day pattern shows the built-in daytime bump (30.7 vs 21.8 APs/scan)
+PASS overlap model: AP on ch 6 hurts ch 6 most, ch 1 not at all (11 not at all)
+PASS real-format CSV (fake nmcli) is not flagged synthetic and has 2 scans
+PASS CLI analyse exits 0 and writes JSON
+PASS shipped synthetic sample is named synthetic_*.csv and labelled
+PASS plain collision model: MC 0.201 vs theory 0.201 within 4 sigma
+PASS priority critical: MC 0.567 vs exact analytic 0.566
+PASS priority bulk (approximate analytic) within 0.02 of MC (0.189 vs 0.189)
+PASS priority raises critical delivery and lowers bulk delivery at N=30
+PASS knee (critical < 0.95): plain N=6, priority N=21; priority knee much later
+PASS delivery falls monotonically with N; more channels M moves the knee out
+PASS Jain index: identical links ~1, extreme inequality low
+PASS python -m fhss_lab --help lists the 4 subcommands
+PASS each subcommand has --help
+PASS run prints a BER table and PDR rows
+PASS emulate writes 300 CRC-valid serial lines
+PASS classify prints accuracies (softmax 1.00 > 0.5)
+PASS bench runs sim tests with exit status
+PASS pyproject.toml exists
+PASS Dockerfile exists
+PASS .github/workflows/tests.yml exists
+PASS workflow installs numpy matplotlib and runs ./run_tests.sh
+PASS fhss_lab re-exports sim modules lazily
+PASS dataset generation is deterministic (fixed seeds)
+PASS dataset has >= 6000 windows (6500)
+PASS split is 80/20 and stratified over 5 classes
+PASS windows vary in M, duty and jammer strength
+train 5200 windows, test 1300 windows, 7 features, 5 classes
+test accuracy majority          0.200
+test accuracy nearest centroid  0.739
+test accuracy softmax           0.816
+softmax confusion (rows true, cols predicted) ['none', 'static', 'sweep', 'random', 'reactive']
+[[257   2   0   1   0]
+ [ 28 187  12  32   1]
+ [ 36   7 189  28   0]
+ [ 50  12  20 175   3]
+ [  0   0   0   7 253]]
+softmax per-class recall: {'none': 0.988, 'static': 0.719, 'sweep': 0.727, 'random': 0.673, 'reactive': 0.973}
+softmax accuracy by M: {8: 0.924, 13: 0.839, 16: 0.823, 24: 0.788, 32: 0.711}
+PASS baseline test accuracy: softmax 0.816 > centroid 0.739 > majority 0.200
+PASS raw serial logs present and parse
+PASS dataset README states simulated + MIT
+ALL PASSED
+
+real	0m41.054s
+user	0m30.133s
+sys	0m2.260s

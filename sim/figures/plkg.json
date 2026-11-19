@@ -1,0 +1,47 @@
+{
+ "5": {
+  "kept": 1560.35,
+  "raw_bdr": 0.06884207436868567,
+  "segments": 13.45,
+  "good_segments": 3.75,
+  "key_bits_before_pa": 420.0,
+  "key_bits_after_leak": 181.2,
+  "eve_agreement": 0.4945992772108843
+ },
+ "10": {
+  "kept": 1707.9,
+  "raw_bdr": 0.007552737289956861,
+  "segments": 14.85,
+  "good_segments": 14.55,
+  "key_bits_before_pa": 1629.6,
+  "key_bits_after_leak": 703.4,
+  "eve_agreement": 0.5004282770800628
+ },
+ "15": {
+  "kept": 1854.0,
+  "raw_bdr": 0.00013435923642000886,
+  "segments": 16.0,
+  "good_segments": 16.0,
+  "key_bits_before_pa": 1792.0,
+  "key_bits_after_leak": 775.4,
+  "eve_agreement": 0.5002232142857144
+ },
+ "20": {
+  "kept": 1944.2,
+  "raw_bdr": 0.0,
+  "segments": 16.95,
+  "good_segments": 16.95,
+  "key_bits_before_pa": 1898.4,
+  "key_bits_after_leak": 818.8,
+  "eve_agreement": 0.5008583902310925
+ },
+ "25": {
+  "kept": 1997.25,
+  "raw_bdr": 0.0,
+  "segments": 17.25,
+  "good_segments": 17.25,
+  "key_bits_before_pa": 1932.0,
+  "key_bits_after_leak": 835.9,
+  "eve_agreement": 0.5012998949579831
+ }
+}

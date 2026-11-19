@@ -1,0 +1,58 @@
+A) static combinational correlator core (corr_core, DYN=0: unmodified ApproxKit adder cells, COMP=0), sky130 tt_025C_1v80 via yosys 0.33, no P&R
+  N         adders sky130 cells  area um2     GE  vs exact gate depth delay ns (no WL)
+ 16          exact          431      4258   1134     +0.0%         32             3.44
+ 16           LOA1          504      4119   1097     -3.3%         38             5.18
+ 16           LOA2          453      3751    999    -11.9%         34             4.81
+ 16           LOA3          399      3374    899    -20.7%         31             4.42
+ 16         TRUNC2          292      3192    850    -25.0%         26             3.61
+ 16           ETA3          366      3257    868    -23.5%         35             3.75
+ 32          exact          812      8884   2367     +0.0%         37             4.65
+ 32           LOA1         1017      8852   2358     -0.4%         47             7.37
+ 32           LOA2          934      7894   2103    -11.1%         46             6.20
+ 32           LOA3          811      7051   1878    -20.6%         40             5.63
+ 32         TRUNC2          605      6787   1808    -23.6%         32             4.61
+ 32           ETA3          778      6744   1797    -24.1%         43             5.02
+ 64          exact         1557     18176   4842     +0.0%         43             5.67
+ 64           LOA1         2132     17445   4648     -4.0%         62             8.06
+ 64           LOA2         1931     15790   4207    -13.1%         57             7.64
+ 64           LOA3         1732     14169   3775    -22.0%         52             7.12
+ 64         TRUNC2         1206     13920   3708    -23.4%         41             5.54
+ 64           ETA3         1564     13786   3673    -24.2%         51             5.68
+
+B) full ladder-driven block approx_correlator (dual_adder cells switchable at run time + corr_mode_ctrl + output registers), COMP = calibrated constant for LOA3
+  N                variant sky130 cells flops  area um2     GE  vs exact core vs ATYPE=0 blk delay ns (no WL)
+ 16   ATYPE=0 (exact only)          561    22      4927   1313         +15.7%          +0.0%             4.69
+ 16        LOA3 switchable          704    22      5698   1518         +33.8%         +15.6%             6.66
+ 32   ATYPE=0 (exact only)         1136    23      9335   2487          +5.1%          +0.0%             6.75
+ 32        LOA3 switchable         1321    23     10692   2848         +20.4%         +14.5%             8.80
+ 64   ATYPE=0 (exact only)         2120    24     18373   4895          +1.1%          +0.0%             7.83
+ 64        LOA3 switchable         2591    24     20770   5533         +14.3%         +13.0%             9.79
+
+note: the area saving of approximate adders is only realised when the approximate mode is the only mode (table A); the switchable block (table B) carries both the exact and the approximate low part.
+      power was NOT estimated; the saving shown is cell area only.  'vs exact core' in B is relative to the static exact core of table A (same N).
+      delay = abc stime after map/buffer/upsize/dnsize, no placement/routing, NOT sign-off timing.
+
+C) BER vs Eb/N0 (Python bit-exact model, 200000 bits/point, 6-bit ADC step 0.5, AWGN, random code per bit; '*' = fewer than 30 errors)
+  N       config         2dB        4dB        6dB        8dB
+ 16        exact   3.82e-02   1.31e-02   2.71e-03   2.55e-04 
+ 16         LOA1   5.19e-02   2.43e-02   8.94e-03   2.14e-03 
+ 16    LOA1+comp   3.91e-02   1.39e-02   3.05e-03   3.00e-04 
+ 16    LOA2+comp   4.28e-02   1.65e-02   4.55e-03   8.60e-04 
+ 16    LOA3+comp   5.75e-02   3.21e-02   1.91e-02   1.84e-02 
+ 16  TRUNC1+comp   3.94e-02   1.38e-02   3.08e-03   2.85e-04 
+ 16    ETA1+comp   3.94e-02   1.38e-02   3.08e-03   2.85e-04 
+ 32        exact   3.89e-02   1.31e-02   2.38e-03   1.65e-04 
+ 32         LOA1   5.27e-02   2.49e-02   8.90e-03   2.04e-03 
+ 32    LOA1+comp   3.93e-02   1.36e-02   2.51e-03   2.05e-04 
+ 32    LOA2+comp   4.13e-02   1.52e-02   3.29e-03   3.55e-04 
+ 32    LOA3+comp   4.79e-02   2.12e-02   7.73e-03   2.47e-03 
+ 32  TRUNC1+comp   3.94e-02   1.35e-02   2.60e-03   2.15e-04 
+ 32    ETA1+comp   3.94e-02   1.35e-02   2.60e-03   2.15e-04 
+ 64        exact   3.77e-02   1.28e-02   2.37e-03   1.60e-04 
+ 64         LOA1   5.18e-02   2.39e-02   8.58e-03   1.94e-03 
+ 64    LOA1+comp   3.80e-02   1.29e-02   2.48e-03   2.10e-04 
+ 64    LOA2+comp   3.86e-02   1.38e-02   2.94e-03   2.70e-04 
+ 64    LOA3+comp   4.26e-02   1.65e-02   4.43e-03   7.35e-04 
+ 64  TRUNC1+comp   3.77e-02   1.31e-02   2.49e-03   1.70e-04 
+ 64    ETA1+comp   3.77e-02   1.31e-02   2.49e-03   1.70e-04 
+(full table: ber_vs_snr.txt / .csv / .png)

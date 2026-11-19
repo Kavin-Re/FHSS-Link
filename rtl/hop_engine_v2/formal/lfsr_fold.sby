@@ -1,0 +1,21 @@
+[tasks]
+prove_fv0
+prove_fv1
+cover_fv1
+[options]
+prove_fv0: mode prove
+prove_fv1: mode prove
+cover_fv1: mode cover
+prove_fv0: depth 4
+prove_fv1: depth 4
+cover_fv1: depth 20
+[engines]
+smtbmc z3
+[script]
+read -formal -sv hop_lfsr_fold.v
+prove_fv0: chparam -set FV 0 hop_lfsr_fold
+prove_fv1: chparam -set FV 1 hop_lfsr_fold
+cover_fv1: chparam -set FV 1 hop_lfsr_fold
+prep -top hop_lfsr_fold
+[files]
+../rtl/hop_lfsr_fold.v

@@ -1,0 +1,18 @@
+{
+ "fixed": {
+  "first_below_0_8": 38.0,
+  "fraction_of_path_ok": 0.28448275862068967
+ },
+ "FH 13ch, k=2": {
+  "first_below_0_8": 44.0,
+  "fraction_of_path_ok": 0.5775862068965517
+ },
+ "DS Gp=32": {
+  "first_below_0_8": 55.0,
+  "fraction_of_path_ok": 0.4482758620689655
+ },
+ "no interferer": {
+  "first_below_0_8": 75.0,
+  "fraction_of_path_ok": 0.6379310344827587
+ }
+}

@@ -1,0 +1,12 @@
+[tasks]
+prove
+[options]
+prove: mode prove
+prove: depth 4
+[engines]
+smtbmc z3
+[script]
+read -formal -sv hop_lfsr.v
+prep -top hop_lfsr
+[files]
+../rtl/hop_lfsr.v

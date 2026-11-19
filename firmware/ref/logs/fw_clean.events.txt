@@ -1,0 +1,4 @@
+build: guard hard limits duty=100% power=3 burst=60000 ms (clamped=0)
+follower: acquired beacon
+slot 1580: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [6, 11]
+slot 1712: ADAPT -> NORMAL because loss fell to 2% and stayed low for 100 slots

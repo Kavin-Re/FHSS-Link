@@ -1,0 +1,19 @@
+== sby -f lfsr.sby
+SBY 14:38:25 [lfsr_prove] summary: engine_0 (smtbmc z3) returned pass for basecase
+SBY 14:38:25 [lfsr_prove] summary: engine_0 (smtbmc z3) returned pass for induction
+SBY 14:38:25 [lfsr_prove] summary: successful proof by k-induction.
+SBY 14:38:25 [lfsr_prove] DONE (PASS, rc=0)
+== sby -f keyed.sby prove_default
+SBY 14:38:26 [keyed_prove_default] summary: engine_0 (smtbmc z3) returned pass for basecase
+SBY 14:38:26 [keyed_prove_default] summary: engine_0 (smtbmc z3) returned pass for induction
+SBY 14:38:26 [keyed_prove_default] summary: successful proof by k-induction.
+SBY 14:38:26 [keyed_prove_default] DONE (PASS, rc=0)
+== sby -f keyed.sby prove_rw8
+SBY 14:38:27 [keyed_prove_rw8] summary: engine_0 (smtbmc z3) returned pass for basecase
+SBY 14:38:27 [keyed_prove_rw8] summary: engine_0 (smtbmc z3) returned pass for induction
+SBY 14:38:27 [keyed_prove_rw8] summary: successful proof by k-induction.
+SBY 14:38:27 [keyed_prove_rw8] DONE (PASS, rc=0)
+== sby -f keyed.sby cover_default
+SBY 14:38:38 [keyed_cover_default] engine_0: ##   0:00:10  Reached cover statement at hop_keyed.v:142.26-142.84 ($cover$hop_keyed.v:142$1690) in step 14.
+SBY 14:38:38 [keyed_cover_default] summary: engine_0 (smtbmc z3) returned pass
+SBY 14:38:38 [keyed_cover_default] DONE (PASS, rc=0)

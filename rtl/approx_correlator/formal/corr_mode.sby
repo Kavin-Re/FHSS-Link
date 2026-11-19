@@ -1,0 +1,19 @@
+[tasks]
+prove
+prove_dwell3
+cover
+[options]
+prove: mode prove
+prove_dwell3: mode prove
+cover: mode cover
+prove: depth 6
+prove_dwell3: depth 6
+cover: depth 40
+[engines]
+smtbmc z3
+[script]
+read -formal -sv corr_mode_ctrl.v
+prove_dwell3: chparam -set DWELL 3 corr_mode_ctrl
+prep -top corr_mode_ctrl
+[files]
+../rtl/corr_mode_ctrl.v

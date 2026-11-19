@@ -1,0 +1,9 @@
+wrote 6500 windows to /sessions/rcw-01sx4vbweyeq6m7kctri3xuy/mnt/Github_projects/Projects/FHSS-Link/lab3/dataset/windows.csv in 22.8 s
+train 5200 {'none': 1040, 'static': 1040, 'sweep': 1040, 'random': 1040, 'reactive': 1040}
+test 1300 {'none': 260, 'static': 260, 'sweep': 260, 'random': 260, 'reactive': 260}
+windows with < 3 lost packets (loss-structure features all zero): 922 (14.2 %)
+by label: windows with <3 losses: {'none': 577, 'static': 73, 'sweep': 131, 'random': 141, 'reactive': 0}
+raw log dataset/raw/none_blind_M13.log: 1500 lines, 1500 parse OK (CRC checked)
+raw log dataset/raw/static_blind_M13.log: 1500 lines, 1500 parse OK (CRC checked)
+raw log dataset/raw/sweep_blind_M13.log: 1500 lines, 1500 parse OK (CRC checked)
+raw log dataset/raw/random_blind_M13.log: 1500 lines, 1500 parse OK (CRC checked)

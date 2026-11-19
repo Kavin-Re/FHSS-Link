@@ -1,0 +1,5 @@
+cross-check: sim/attack.py attack_run identification slot == randcheck.hops_to_identify for seeds 1..500: OK
+exhaustive over all 65535 nonzero seeds, M=13: min=8 max=9 mean=8.375 median=8
+  identified after 8 hops: 40961 seeds (62.5 %)
+  identified after 9 hops: 24574 seeds (37.5 %)
+information floor log13(65535) = 4.32 hops

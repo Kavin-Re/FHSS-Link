@@ -1,0 +1,7 @@
+slot 2027 [static-2]: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [5, 1]
+slot 2165 [static-2]: ADAPT -> NORMAL because loss fell to 0% and stayed low for 100 slots
+slot 2202 [static-2]: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [1, 0]
+slot 6042 [random-4]: ADAPT -> CODED because loss 26% over the last 50 attempts; most-hit channels [4, 8]
+slot 7572 [random-4]: CODED -> ADAPT because loss fell to 16% and stayed low for 100 slots
+slot 7614 [random-4]: ADAPT -> CODED because loss 26% over the last 50 attempts; most-hit channels [7, 8]
+slot 8106 [clean]: CODED -> NORMAL because loss fell to 2% and stayed low for 100 slots

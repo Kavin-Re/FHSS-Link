@@ -1,0 +1,18 @@
+E17 20 seeds. 16 configs; jammer 5 dBm at 25 m; goodput relative to the unjammed static link (1.0). clean = no jammer.
+  n configs (H bits) | clean | learning-jammer goodput | offline-oracle jammer goodput
+    1 (0)  | 1.000 +/- 0.000 | 0.208 +/- 0.006 | 0.164 +/- 0.003
+    2 (1)  | 1.000 +/- 0.000 | 0.346 +/- 0.007 | 0.297 +/- 0.003
+    4 (2)  | 1.000 +/- 0.000 | 0.401 +/- 0.008 | 0.363 +/- 0.003
+    8 (3)  | 0.944 +/- 0.000 | 0.500 +/- 0.006 | 0.476 +/- 0.003
+   16 (4)  | 0.721 +/- 0.001 | 0.512 +/- 0.004 | 0.472 +/- 0.001
+  oracle-jammer goodput vs jammer power at 25 m (static n=1 / n=4 / n=16):
+     -10 dBm: 0.85 +/- 0.00 / 0.93 +/- 0.00 / 0.70 +/- 0.00
+       0 dBm: 0.38 +/- 0.01 / 0.62 +/- 0.00 / 0.59 +/- 0.00
+       5 dBm: 0.16 +/- 0.01 / 0.36 +/- 0.01 / 0.47 +/- 0.00
+      10 dBm: 0.06 +/- 0.00 / 0.16 +/- 0.00 / 0.35 +/- 0.00
+      15 dBm: 0.02 +/- 0.00 / 0.06 +/- 0.00 / 0.23 +/- 0.00
+      20 dBm: 0.01 +/- 0.00 / 0.02 +/- 0.00 / 0.13 +/- 0.00
+      30 dBm: 0.00 +/- 0.00 / 0.00 +/- 0.00 / 0.02 +/- 0.00
+  best diversity under attack: n=16; paired gain over static +0.304 +/- 0.006
+KEY NUMBER: goodput vs learning jammer, static (n=1) / n=4 / n=16 = 0.208 +/- 0.006 / 0.401 +/- 0.008 / 0.512 +/- 0.004
+KEY NUMBER: clean goodput cost of diversity n=16 vs static = 0.721 +/- 0.001

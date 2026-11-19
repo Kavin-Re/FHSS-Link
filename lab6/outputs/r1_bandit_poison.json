@@ -1,0 +1,62 @@
+{
+ "uniform|poison=False": {
+  "p1": 0.9889999999999999,
+  "p2": 0.7675000000000001,
+  "p2_first300": 0.7770833333333333,
+  "jam_cost": 0.0
+ },
+ "uniform|poison=True": {
+  "p1": 0.62775,
+  "p2": 0.7737499999999999,
+  "p2_first300": 0.7775,
+  "jam_cost": 7500.0
+ },
+ "Thompson|poison=False": {
+  "p1": 0.9888333333333332,
+  "p2": 0.9839166666666668,
+  "p2_first300": 0.96875,
+  "jam_cost": 0.0
+ },
+ "Thompson|poison=True": {
+  "p1": 0.9809166666666667,
+  "p2": 0.897,
+  "p2_first300": 0.52125,
+  "jam_cost": 7500.0
+ },
+ "Thompson + floor 0.1|poison=False": {
+  "p1": 0.99,
+  "p2": 0.96575,
+  "p2_first300": 0.95625,
+  "jam_cost": 0.0
+ },
+ "Thompson + floor 0.1|poison=True": {
+  "p1": 0.9465833333333333,
+  "p2": 0.8049166666666667,
+  "p2_first300": 0.21000000000000002,
+  "jam_cost": 7500.0
+ },
+ "Thompson + discount 0.98|poison=False": {
+  "p1": 0.9909166666666667,
+  "p2": 0.9655,
+  "p2_first300": 0.95875,
+  "jam_cost": 0.0
+ },
+ "Thompson + discount 0.98|poison=True": {
+  "p1": 0.9185833333333333,
+  "p2": 0.9623333333333333,
+  "p2_first300": 0.9383333333333334,
+  "jam_cost": 7500.0
+ },
+ "Thompson + both|poison=False": {
+  "p1": 0.9915,
+  "p2": 0.9555,
+  "p2_first300": 0.9508333333333333,
+  "jam_cost": 0.0
+ },
+ "Thompson + both|poison=True": {
+  "p1": 0.8898333333333334,
+  "p2": 0.9516666666666667,
+  "p2_first300": 0.9299999999999999,
+  "jam_cost": 7500.0
+ }
+}

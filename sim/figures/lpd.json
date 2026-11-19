@@ -1,0 +1,10 @@
+{
+ "fixed channel, eavesdropper tuned to it": -20.387220396251855,
+ "FH, wideband radiometer": -9.247786873183486,
+ "DS-SS, wideband radiometer": -9.247786873183486,
+ "DS-SS, one-channel scanner (gets 1/M of power and 1/M of noise)": -9.247786873183486,
+ "N100": -3.8318477898820937,
+ "N1000": -9.247786873183486,
+ "N10000": -14.371438966451606,
+ "N100000": -19.40981968384654
+}

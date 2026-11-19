@@ -1,0 +1,24 @@
+[tasks]
+prove_dw64
+prove_dw32
+prove_rw8
+cover_dw64
+[options]
+prove_dw64: mode prove
+prove_dw32: mode prove
+prove_rw8: mode prove
+cover_dw64: mode cover
+prove_dw64: depth 5
+prove_dw32: depth 5
+prove_rw8: depth 5
+cover_dw64: depth 40
+[engines]
+smtbmc z3
+[script]
+read -formal -DFORMAL_ENV -sv hop_keyed_lean.v
+prove_dw32: chparam -set DW 32 hop_keyed_lean
+prove_rw8: chparam -set RW 8 hop_keyed_lean
+prove_rw8: chparam -set NCH 1 hop_keyed_lean
+prep -top hop_keyed_lean
+[files]
+../rtl/hop_keyed_lean.v

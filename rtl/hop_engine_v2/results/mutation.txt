@@ -1,0 +1,30 @@
+unmutated baseline passes: True
+[engine] rotl13 -> rotl12: caught
+[engine] rotl16(v3) wrong: caught
+[engine] rotl21(v3) wrong: caught
+[engine] rotl17(v1) wrong: caught
+[engine] rotl32 of op0 dropped: caught
+[engine] operand mux op2 uses v1: caught
+[engine] final-block constant wrong: caught
+[engine] 0xff xor wrong: caught
+[engine] msg xor at wrong round: caught
+[engine] threshold wrong (needs RW=8 configs): caught
+[engine] retry increment wrong: caught
+[engine] slot increment wrong: caught
+[engine] chunk shift wrong: caught
+[engine] DW=32 carry dropped: caught
+[engine] DW=32 carry not stored: caught
+[wrapper] beacon compare inverted: caught
+[wrapper] since-beacon not restarted: caught
+[wrapper] overrun never set: caught
+[wrapper] busy key write not blocked: caught
+[wrapper] SLOT_HI width: caught
+[wrapper] hop counter not counting: caught
+[wrapper] holdover compare off by one: caught
+[wrapper] beacon accepted while BCN_EN=0: caught
+[wrapper] drift not sticky: caught
+[wrapper] key readable: caught
+[lfsr_fold] fold constant +2 -> +1: caught
+[lfsr_fold] fold sign (b not inverted): caught
+[lfsr_fold] second fold threshold 26->27: caught
+mutations not caught or errors: 0

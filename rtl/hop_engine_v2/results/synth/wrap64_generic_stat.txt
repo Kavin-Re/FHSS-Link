@@ -1,0 +1,31 @@
+
+8. Printing statistics.
+
+=== hop_sync_axil ===
+
+   Number of wires:               4398
+   Number of wire bits:           5342
+   Number of public wires:          57
+   Number of public wire bits:     885
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5159
+     $_ANDNOT_                     133
+     $_AND_                       1003
+     $_DFFE_PP_                    388
+     $_DFF_P_                       56
+     $_MUX_                        577
+     $_NAND_                      1271
+     $_NOR_                         23
+     $_NOT_                         49
+     $_ORNOT_                      221
+     $_OR_                         468
+     $_SDFFCE_PN0P_                  5
+     $_SDFFCE_PP0P_                 10
+     $_SDFFE_PN0P_                 206
+     $_SDFFE_PP0P_                  17
+     $_SDFF_PN0_                    39
+     $_XNOR_                       401
+     $_XOR_                        292
+

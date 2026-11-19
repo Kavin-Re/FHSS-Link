@@ -1,0 +1,196 @@
+{
+ "n_chips": 64,
+ "ros_per_chip": 2048,
+ "pairs_per_chip": 1024,
+ "reads_per_condition": 20,
+ "assumptions": {
+  "sigma_proc": 1.0,
+  "layout_gradient_span_sigma": 3.0,
+  "read_noise_sigma": 0.05,
+  "temp_coeff_sigma_per_C": 0.0025,
+  "hot_dT": 60,
+  "cold_dT": -40,
+  "enrol": "majority of 15 nominal reads"
+ },
+ "metrics": {
+  "far": {
+   "uniqueness_mean": 0.24834090944320436,
+   "uniqueness_std": 0.013847285240577437,
+   "uniqueness_min": 0.20703125,
+   "uniqueness_max": 0.291015625,
+   "bit_aliasing_mean_abs_dev": 0.3546600341796875,
+   "bit_aliasing_max_abs_dev": 0.46875,
+   "frac_bits_stuck_gt90pct": 0.1650390625,
+   "uniformity_mean": 0.1453399658203125,
+   "entropy_sum_indep_upper_bound_bits": 600.395293786532,
+   "n_bits": 1024,
+   "n_chips": 64,
+   "ber_nominal_mean": 0.0097808837890625,
+   "ber_nominal_worst_chip": 0.01484375,
+   "reliability_nominal_pct": 99.02191162109375,
+   "ber_hot_plus60C_mean": 0.02901763916015625,
+   "ber_hot_plus60C_worst_chip": 0.039892578125,
+   "reliability_hot_plus60C_pct": 97.09823608398438,
+   "ber_cold_minus40C_mean": 0.02051239013671875,
+   "ber_cold_minus40C_worst_chip": 0.032373046875,
+   "reliability_cold_minus40C_pct": 97.94876098632812
+  },
+  "far_planefit": {
+   "uniqueness_mean": 0.4993441142733135,
+   "uniqueness_std": 0.015352485719626587,
+   "uniqueness_min": 0.443359375,
+   "uniqueness_max": 0.5537109375,
+   "bit_aliasing_mean_abs_dev": 0.05145263671875,
+   "bit_aliasing_max_abs_dev": 0.21875,
+   "frac_bits_stuck_gt90pct": 0.0,
+   "uniformity_mean": 0.501953125,
+   "entropy_sum_indep_upper_bound_bits": 1011.392991144477,
+   "n_bits": 1024,
+   "n_chips": 64,
+   "ber_nominal_mean": 0.016670989990234374,
+   "ber_nominal_worst_chip": 0.021142578125,
+   "reliability_nominal_pct": 98.33290100097656,
+   "ber_hot_plus60C_mean": 0.050151824951171875,
+   "ber_hot_plus60C_worst_chip": 0.063720703125,
+   "reliability_hot_plus60C_pct": 94.98481750488281,
+   "ber_cold_minus40C_mean": 0.035839080810546875,
+   "ber_cold_minus40C_worst_chip": 0.047705078125,
+   "reliability_cold_minus40C_pct": 96.41609191894531
+  },
+  "neighbor": {
+   "uniqueness_mean": 0.49966866629464285,
+   "uniqueness_std": 0.015283824770411293,
+   "uniqueness_min": 0.4453125,
+   "uniqueness_max": 0.5517578125,
+   "bit_aliasing_mean_abs_dev": 0.050201416015625,
+   "bit_aliasing_max_abs_dev": 0.203125,
+   "frac_bits_stuck_gt90pct": 0.0,
+   "uniformity_mean": 0.489410400390625,
+   "entropy_sum_indep_upper_bound_bits": 1011.8750684717438,
+   "n_bits": 1024,
+   "n_chips": 64,
+   "ber_nominal_mean": 0.016857147216796875,
+   "ber_nominal_worst_chip": 0.0224609375,
+   "reliability_nominal_pct": 98.31428527832031,
+   "ber_hot_plus60C_mean": 0.04911346435546875,
+   "ber_hot_plus60C_worst_chip": 0.06337890625,
+   "reliability_hot_plus60C_pct": 95.08865356445312,
+   "ber_cold_minus40C_mean": 0.03670806884765625,
+   "ber_cold_minus40C_worst_chip": 0.047216796875,
+   "reliability_cold_minus40C_pct": 96.32919311523438
+  }
+ },
+ "ber_theory_nominal": 0.015902251256176378,
+ "ber_theory_hot": 0.04991598295380935,
+ "fuzzy_extractor_by_condition": {
+  "no ECC (128 raw bits)": {
+   "raw_bits_used": 128,
+   "secret_bits": 128,
+   "helper_bits": 128,
+   "fail_nominal": 0.85703125,
+   "trials_nominal": 1280,
+   "fail_hot_plus60C": 1.0,
+   "trials_hot_plus60C": 1280,
+   "fail_cold_minus40C": 0.99375,
+   "trials_cold_minus40C": 1280
+  },
+  "rep-5 majority": {
+   "raw_bits_used": 640,
+   "secret_bits": 128,
+   "helper_bits": 640,
+   "fail_nominal": 0.01484375,
+   "trials_nominal": 1280,
+   "fail_hot_plus60C": 0.134375,
+   "trials_hot_plus60C": 1280,
+   "fail_cold_minus40C": 0.071875,
+   "trials_cold_minus40C": 1280
+  },
+  "BCH(15,7,t=2) x19": {
+   "raw_bits_used": 285,
+   "secret_bits": 133,
+   "helper_bits": 285,
+   "fail_nominal": 0.03046875,
+   "trials_nominal": 1280,
+   "fail_hot_plus60C": 0.4734375,
+   "trials_hot_plus60C": 1280,
+   "fail_cold_minus40C": 0.24765625,
+   "trials_cold_minus40C": 1280
+  },
+  "rep-3 + BCH(15,7)": {
+   "raw_bits_used": 855,
+   "secret_bits": 133,
+   "helper_bits": 855,
+   "fail_nominal": 0.0,
+   "trials_nominal": 1280,
+   "fail_hot_plus60C": 0.00234375,
+   "trials_hot_plus60C": 1280,
+   "fail_cold_minus40C": 0.0,
+   "trials_cold_minus40C": 1280
+  }
+ },
+ "noise_sweep": {
+  "sigma_noise": [
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.3
+  ],
+  "ber_measured": [
+   0.016782379150390624,
+   0.03374977111816406,
+   0.04951820373535156,
+   0.0661834716796875,
+   0.09694023132324218
+  ],
+  "fail": {
+   "no ECC (128 raw bits)": [
+    0.883203125,
+    0.985546875,
+    0.998828125,
+    1.0,
+    1.0
+   ],
+   "rep-5 majority": [
+    0.0078125,
+    0.055078125,
+    0.115234375,
+    0.29453125,
+    0.63828125
+   ],
+   "BCH(15,7,t=2) x19": [
+    0.031640625,
+    0.225,
+    0.490625,
+    0.751171875,
+    0.961328125
+   ],
+   "rep-3 + BCH(15,7)": [
+    0.0,
+    0.0,
+    0.003125,
+    0.012109375,
+    0.10546875
+   ]
+  },
+  "trials": [
+   2560,
+   2560,
+   2560,
+   2560,
+   2560
+  ]
+ },
+ "end_to_end_hop_schedule_match": {
+  "matches": 960,
+  "total": 960
+ },
+ "key_uniqueness_distinct_keys_of_64": 64,
+ "helper_data_leakage_note": {
+  "response_bits_used": 855,
+  "secret_bits": 133,
+  "redundancy_bits_n_minus_k": 722,
+  "empirical_entropy_deficit_bits_upper_bound_on_response": 10.123844195956053
+ },
+ "runtime_s": 10.102208137512207
+}

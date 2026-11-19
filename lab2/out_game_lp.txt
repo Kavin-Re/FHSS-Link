@@ -1,0 +1,47 @@
+== homogeneous channels: LP value vs analytic, delivery jammed 0.05 / clean 0.99 unless stated ==
+(M,k,d_jam,d_clean) | cols | LP value | analytic | |x-unif|max | jammer marginal/channel (k/M) | LP gap | simplex it | time
+(13,1,0.05,0.99) |    13 | 0.917692 | 0.917692 | 1.4e-16 | 0.0769..0.0769 (0.0769) | 3.3e-16 |   13 | 0.00s
+(13,2,0.05,0.99) |    78 | 0.845385 | 0.845385 | 1.9e-16 | 0.1538..0.1538 (0.1538) | 5.6e-16 |   48 | 0.01s
+(13,3,0.05,0.99) |   286 | 0.773077 | 0.773077 | 2.8e-16 | 0.2308..0.2308 (0.2308) | 1.7e-15 |  118 | 0.02s
+(13,4,0.05,0.99) |   715 | 0.700769 | 0.700769 | 4.0e-16 | 0.3077..0.3077 (0.3077) | 4.0e-15 |  250 | 0.04s
+(13,6,0.05,0.99) |  1716 | 0.556154 | 0.556154 | 3.7e-16 | 0.4615..0.4615 (0.4615) | 4.7e-15 |  581 | 0.13s
+( 8,1,0.05,0.99) |     8 | 0.872500 | 0.872500 | 1.4e-16 | 0.1250..0.1250 (0.1250) | 2.2e-16 |    8 | 0.00s
+(20,2,0.05,0.99) |   190 | 0.896000 | 0.896000 | 1.6e-16 | 0.1000..0.1000 (0.1000) | 4.4e-16 |  110 | 0.03s
+(13,1,0.50,0.99) |    13 | 0.952308 | 0.952308 | 1.2e-16 | 0.0769..0.0769 (0.0769) | 0.0e+00 |   13 | 0.00s
+(13,1,0.05,0.80) |    13 | 0.742308 | 0.742308 | 8.3e-17 | 0.0769..0.0769 (0.0769) | 1.1e-16 |   13 | 0.00s
+(13,3,0.50,0.80) |   286 | 0.730769 | 0.730769 | 2.8e-16 | 0.2308..0.2308 (0.2308) | 4.4e-16 |  118 | 0.03s
+
+== EXP3 simulation from sim/game.py (M=13, one-channel EXP3 jammer, 20000 slots, 3 seeds) ==
+blind  PDR last 5000 slots = 0.9197
+mixed  PDR last 5000 slots = 0.9219
+ucb    PDR last 5000 slots = 0.9237
+game value (LP) M=13 k=1: 0.9177; analytic 0.9177
+
+== cost variant: M=13, k<=3, jammed set size 0..3, cost c per jammed channel (defender payoff = delivery + c|S|) ==
+c      | LP value | analytic | jammer E|S| | gap
+0.0000 | 0.773077 | 0.773077 | 3.000 | 2.6e-15
+0.0200 | 0.833077 | 0.833077 | 3.000 | 1.2e-15
+0.0500 | 0.923077 | 0.923077 | 3.000 | 2.0e-15
+0.0723 | 0.989977 | 0.989977 | 3.000 | 1.2e-15
+0.0800 | 0.990000 | 0.990000 | 0.000 | 4.4e-16
+0.1000 | 0.990000 | 0.990000 | 0.000 | 3.3e-16
+break-even cost Delta/M = 0.0723
+
+== channel-quality variant: M=13, q = [0.99, 0.99, 0.99, 0.99, 0.99, 0.95, 0.95, 0.95, 0.8, 0.8, 0.8, 0.5, 0.3] , jammed delivery = 0.05*q ==
+k | LP value | uniform-hop guarantee | best-channel-only | k=1 closed form | x on channels (sorted by quality) | gap
+1 | 0.8589 | 0.7738 | 0.0495 | 0.8589 (m=8) | [0.123, 0.123, 0.123, 0.123, 0.123, 0.128, 0.128, 0.128, 0.0, 0.0, 0.0, 0.0, 0.0] | 1.1e-16
+2 | 0.7610 | 0.7015 | 0.0495 | - | [0.084, 0.084, 0.084, 0.084, 0.084, 0.088, 0.088, 0.088, 0.105, 0.105, 0.105, 0.0, 0.0] | 6.7e-16
+3 | 0.6815 | 0.6291 | 0.0495 | - | [0.084, 0.084, 0.084, 0.084, 0.084, 0.088, 0.088, 0.088, 0.105, 0.105, 0.105, 0.0, 0.0] | 6.7e-16
+
+== Hedge (multiplicative weights) cross-check on the unequal-channel games: gap of averaged strategies vs proven bound ==
+(the homogeneous game is symmetric, so Hedge started at uniform would be trivially exact; this one is not)
+k=1 T=  1000: gap 8.47e-03 (bound 6.98e-02); value estimate 0.85928 vs LP 0.85888
+k=1 T= 10000: gap 2.59e-03 (bound 2.21e-02); value estimate 0.85929 vs LP 0.85888
+k=1 T=100000: gap 7.76e-04 (bound 6.98e-03); value estimate 0.85905 vs LP 0.85888
+k=2 T=  1000: gap 9.40e-03 (bound 8.04e-02); value estimate 0.76140 vs LP 0.76097
+k=2 T= 10000: gap 3.26e-03 (bound 2.54e-02); value estimate 0.76125 vs LP 0.76097
+k=2 T=100000: gap 8.33e-04 (bound 8.04e-03); value estimate 0.76085 vs LP 0.76097
+k=3 T=  1000: gap 1.24e-02 (bound 8.68e-02); value estimate 0.68272 vs LP 0.68153
+k=3 T= 10000: gap 3.38e-03 (bound 2.74e-02); value estimate 0.68163 vs LP 0.68153
+k=3 T=100000: gap 9.72e-04 (bound 8.68e-03); value estimate 0.68131 vs LP 0.68153
+saved figures/game_lp.png

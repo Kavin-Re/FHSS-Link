@@ -1,0 +1,11 @@
+TB[m13] M=13 RW=32 NCH=2: hops=60000 chan_errs=0 digest_checked=3000 digest_errs=0 hops_with_retry=0
+TB[m13] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=12 avg=12.00
+RESULT m13 PASS
+TB[m13_rw8] M=13 RW=8 NCH=1: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=692
+TB[m13_rw8] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=12 avg=12.00
+RESULT m13_rw8 PASS
+TB[m13_rw8n4] M=13 RW=8 NCH=4: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m13_rw8n4] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=14 avg=12.03
+RESULT m13_rw8n4 PASS
+TB[lfsr] hops=80000 errs=0 max cycles req->valid=1
+RESULT lfsr PASS

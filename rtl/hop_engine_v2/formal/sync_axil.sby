@@ -1,0 +1,20 @@
+[tasks]
+prove_dw64
+prove_dw32
+cover_dw64
+[options]
+prove_dw64: mode prove
+prove_dw32: mode prove
+cover_dw64: mode cover
+prove_dw64: depth 5
+prove_dw32: depth 5
+cover_dw64: depth 60
+[engines]
+smtbmc z3
+[script]
+read -formal -sv hop_keyed_lean.v hop_sync_axil.v
+prove_dw32: chparam -set DW 32 hop_sync_axil
+prep -top hop_sync_axil
+[files]
+../rtl/hop_keyed_lean.v
+../rtl/hop_sync_axil.v

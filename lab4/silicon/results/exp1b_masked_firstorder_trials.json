@@ -1,0 +1,40 @@
+{
+ "sigma": 1.0,
+ "batches": {
+  "2000/1": {
+   "N": 2000,
+   "batch": 1,
+   "trials": 20,
+   "stage1_hits": 0,
+   "stage2_hits": 0
+  },
+  "2000/2": {
+   "N": 2000,
+   "batch": 2,
+   "trials": 20,
+   "stage1_hits": 0,
+   "stage2_hits": 4
+  },
+  "8000/1": {
+   "N": 8000,
+   "batch": 1,
+   "trials": 20,
+   "stage1_hits": 1,
+   "stage2_hits": 0
+  },
+  "8000/2": {
+   "N": 8000,
+   "batch": 2,
+   "trials": 20,
+   "stage1_hits": 0,
+   "stage2_hits": 0
+  },
+  "32000/1": {
+   "N": 32000,
+   "batch": 1,
+   "trials": 10,
+   "stage1_hits": 0,
+   "stage2_hits": 0
+  }
+ }
+}

@@ -1,0 +1,4 @@
+scenario=clean slots=3000 seed=1  (HOST SIMULATION - nothing here has run on an ESP32)
+  TX: slots 3001 acked 2945 (98.1%) crit 299/301 missed 2 | ladder switches 2 final mode NORMAL
+  TX frame errors: crc 0 mac 0 | RX: frames 2977 crc 0 mac 0 dup 0 time-rejected 0 | RX sync TRACK acq 1 lost 0 search 0
+  medium: tx 5978 delivered 5922 jam-dropped 0 jam-corrupted 0 clean-dropped 56 | jam emitted 0 ms, guard allow 0 deny 0 (denies: duty 0 burst 0 no-token 0 killed 0)

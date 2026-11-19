@@ -1,0 +1,22 @@
+TOOLS_READY (cloud container only; nothing installed on the laptop)   2026-10-07
+
+WORKING
+  iverilog      12.0 (stable)                     apt-get install iverilog
+  yosys         0.33 (git sha1 2584903a060)       apt-get install yosys     (includes yosys-smtbmc, yosys-witness, yosys-abc)
+  verilator     5.020 2024-01-01                  apt-get install verilator (--lint-only and --binary --timing both work)
+  z3 (binary)   5.1.0 at /usr/local/bin/z3 (pip z3-solver 5.1.0.0; apt also installed z3 4.8.12 which is shadowed in PATH)
+  SymbiYosys    NOT available from apt/pip. Upstream sby python sources (YosysHQ/SymbiYosys master, sbysrc/*.py) were fetched file-by-file
+                from raw.githubusercontent.com into /home/claude/work/sby and run via a wrapper (hopengine/formal/sby) with python click 8.5.0.
+                Verified working with yosys 0.33 + z3: k-induction proofs and cover mode succeed (see hopengine/results/formal.log).
+  yowasp-yosys  0.69.0.0.post1233 (pip) installed as a spare; not used for any reported number (reported numbers are yosys 0.33)
+  sky130 liberty: sky130_fd_sc_hd__tt_025C_1v80.lib (12.8 MB) fetched from raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow-scripts
+                (flow/platforms/sky130hd/lib). Stored at /home/claude/work/lib/sky130hd_tt.lib; a copy with 'dont_use : true' added to
+                113 cells (lpflow, probe, clkbuf, dlygate, sdf, ebuf, einv, *_8/_16, ...) is sky130hd_tt_du.lib (used for mapping).
+
+FAILED / NOT AVAILABLE
+  apt: symbiyosys, yices2, boolector -> "E: Unable to locate package"
+  pip: sby, sky130-fd-sc-hd -> "No matching distribution found"
+  github.com tarball downloads (codeload, archive) -> HTTP 403 via the proxy; raw.githubusercontent.com works
+  raw.githubusercontent.com/google/skywater-pdk-libs-sky130_fd_sc_hd/... and efabless/... paths -> 404 (the OpenROAD-flow-scripts copy was used instead)
+  yosys 0.33 'abc' has no -dont_use option (hence the liberty copy with dont_use attributes)
+  apt-get update printed 403 for download.docker.com only (irrelevant); other sources worked

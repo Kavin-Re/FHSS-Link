@@ -1,0 +1,17 @@
+E12 30 random patrol/base instances (seed = instance)
+  clean delivery 1.0000 +/- 0.0000
+  worst-spot jammer, no relay      : grid 0.901 +/- 0.015, after continuous refinement 0.898 +/- 0.015 (max refinement gain 0.0143)
+  ... random relay (mean of 10)    : 0.924 +/- 0.011
+  ... relay at path centroid       : 0.967 +/- 0.005
+  ... relay colocated with base    : 0.910 +/- 0.015
+  ... Stackelberg relay            : 0.976 +/- 0.005
+  paired gain Stackelberg - no relay : 0.075 +/- 0.014
+  paired gain Stackelberg - random   : 0.053 +/- 0.009
+  worst jammer spot: 10.6 +/- 0.3 m from nearest path point (standoff 10 m), 40.4 +/- 2.9 m from base
+  relay-to-base distance 36.8 +/- 3.4 m
+  MC with fading+shadowing: delivery at J* 0.878 +/- 0.018, random positions 0.931 +/- 0.014; share of random positions hurting LESS than J* 0.974 +/- 0.015
+  MC (fading+shadowing) at each side's best-response spot: no relay 0.878 +/- 0.018, Stackelberg relay 0.975 +/- 0.004, paired gain 0.097 +/- 0.016
+  Stackelberg relay, jammer refined: 0.974 +/- 0.005
+  paired gain (both refined) 0.076 +/- 0.013
+KEY NUMBER: worst-spot delivery no relay (refined jammer) = 0.898 +/- 0.015
+KEY NUMBER: worst-spot delivery with Stackelberg relay (refined jammer) = 0.974 +/- 0.005

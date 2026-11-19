@@ -1,0 +1,37 @@
+game value M=13, k=1 (module 4 / analytic): 0.9177; max entropy 3.700 bits
+
+== A. genome = probability vector, GA on mean delivery (S=1 both sides, unrestricted jammer), 300 generations ==
+A seed 1: deliv(last150)=0.8122 instantaneous pop entropy=0.271 time-averaged entropy=1.635 individual entropy=0.251 best-defender worst-case=0.0517 (max p=0.998) median worst-case=0.0501
+A seed 2: deliv(last150)=0.8326 instantaneous pop entropy=0.690 time-averaged entropy=2.226 individual entropy=0.654 best-defender worst-case=0.0641 (max p=0.985) median worst-case=0.0514
+A seed 3: deliv(last150)=0.9441 instantaneous pop entropy=0.002 time-averaged entropy=0.002 individual entropy=0.002 best-defender worst-case=0.0505 (max p=0.999) median worst-case=0.0501
+A seed 4: deliv(last150)=0.9016 instantaneous pop entropy=0.104 time-averaged entropy=0.530 individual entropy=0.095 best-defender worst-case=0.0822 (max p=0.966) median worst-case=0.0588
+A seed 5: deliv(last150)=0.7606 instantaneous pop entropy=0.424 time-averaged entropy=1.650 individual entropy=0.403 best-defender worst-case=0.5282 (max p=0.491) median worst-case=0.4771
+A mean over 5 seeds: deliv 0.8502  inst. entropy 0.298  time-avg entropy 1.209  indiv entropy 0.281  best worst-case 0.1553  median worst-case 0.1375
+A first generation: delivery 0.9174, individual entropy 3.137
+
+== A2. same, but defender fitness is robust (mean of its worst 25% opponents) instead of the mean, 150 generations ==
+A2 seed 1: deliv(last150)=0.8847 instantaneous pop entropy=0.961 time-averaged entropy=2.508 individual entropy=0.888 best-defender worst-case=0.0560 (max p=0.994) median worst-case=0.0524
+A2 seed 2: deliv(last150)=0.8960 instantaneous pop entropy=1.118 time-averaged entropy=2.842 individual entropy=1.030 best-defender worst-case=0.0893 (max p=0.958) median worst-case=0.0607
+A2 seed 3: deliv(last150)=0.8597 instantaneous pop entropy=1.967 time-averaged entropy=2.985 individual entropy=1.839 best-defender worst-case=0.7392 (max p=0.267) median worst-case=0.4987
+
+== B. 4-state FSA defenders (ACK-driven) vs 4-state FSA jammers (sense our last channel), 150 generations ==
+B seed 1: deliv(last20)=0.8965 ent_pop=2.669 ent_ind=2.411 best defender vs fresh evolved jammers = 0.3994
+B seed 2: deliv(last20)=0.8925 ent_pop=1.997 ent_ind=1.659 best defender vs fresh evolved jammers = 0.3408
+B seed 3: deliv(last20)=0.9432 ent_pop=1.851 ent_ind=1.572 best defender vs fresh evolved jammers = 0.1199
+B seed 4: deliv(last20)=0.9077 ent_pop=2.922 ent_ind=2.606 best defender vs fresh evolved jammers = 0.6491
+B seed 5: deliv(last20)=0.9232 ent_pop=1.848 ent_ind=1.553 best defender vs fresh evolved jammers = 0.2496
+B mean: deliv 0.9126; fresh-jammer exploit delivery 0.3517
+
+== D. population = mixed strategy (pure-channel genomes, 500 individuals/side, selection+mutation), 600 generations, last 300 averaged, 5 seeds ==
+|W| | LP game value | deliv | inst. entropy | time-avg entropy | max channel share | mass on W | log2(13-|W|)
+ 13 | 0.9177 | 0.9029 | 3.373 | 3.698 | 0.182 | 1.000 | nan
+  9 | 0.9900 | 0.9768 | 2.352 | 2.560 | 0.386 | 0.115 | 2.000
+  5 | 0.9900 | 0.9824 | 2.875 | 3.113 | 0.270 | 0.040 | 3.000
+  3 | 0.9900 | 0.9857 | 3.015 | 3.286 | 0.257 | 0.014 | 3.322
+
+== C. vector GA of A with a restricted jammer (can only emit on |W| channels), 150 generations, 3 seeds ==
+|W| | deliv(last20) | inst. entropy | defender mass on W | best worst-case
+ 13 | 0.7832 | 1.274 | 1.000 | 0.5641
+  5 | 0.9900 | 0.008 | 0.000 | 0.0509
+  3 | 0.9900 | 0.264 | 0.000 | 0.2345
+saved figures/evolve.png

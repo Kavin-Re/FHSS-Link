@@ -1,0 +1,11 @@
+8. Executing LTP pass (find longest path).
+
+Longest topological path in hop_lfsr (length=6):
+    0: \seed_in [15]
+    1: $abc$278$new_n65_ (via $abc$278$auto$blifparse.cc:386:parse_blif$289)
+    2: $abc$278$new_n66_ (via $abc$278$auto$blifparse.cc:386:parse_blif$290)
+    3: $abc$278$new_n70_ (via $abc$278$auto$blifparse.cc:386:parse_blif$294)
+    4: $abc$278$new_n71_ (via $abc$278$auto$blifparse.cc:386:parse_blif$295)
+    5: $abc$278$new_n72_ (via $abc$278$auto$blifparse.cc:386:parse_blif$296)
+    6: $abc$222$procmux$28_Y[0] (via $abc$278$auto$blifparse.cc:386:parse_blif$297)
+   ff: \s [0] (via $auto$ff.cc:266:slice$206)

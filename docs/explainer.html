@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spread spectrum, step by step</title>
+<style>:root{--bg:#f6f8fa;--p:#fff;--ink:#1f2328;--m:#59636e;--a:#0969da;--b:#cf222e;--c:#1a7f37;--l:#d0d7de}@media(prefers-color-scheme:dark){:root{--bg:#0f1419;--p:#171d25;--ink:#e6edf3;--m:#8b98a5;--a:#58a6ff;--b:#ff7b72;--c:#3fb950;--l:#30363d}}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}main{max-width:860px;margin:auto;padding:16px}h1{font-size:20px}h2{font-size:16px;margin:0 0 6px}
+.p{background:var(--p);border:1px solid var(--l);border-radius:8px;padding:12px;margin:12px 0}canvas{width:100%;height:90px;background:var(--bg);border-radius:6px;display:block;margin:4px 0}
+label{display:block;color:var(--m);font-size:12px;margin-top:6px}input[type=range]{width:100%}.r b{color:var(--a)}small{color:var(--m)}</style></head><body><main>
+<h1>Spread spectrum, step by step</h1><p>A message bit is multiplied by a fast random-looking code (the chips), sent, hit by a jammer, then multiplied by the same code again. The jammer is smeared out; the message adds up. Move the sliders.</p>
+<div class="p"><label>Chips per bit (processing gain G<sub>p</sub>) = <span id="gv"></span></label><input type="range" id="g" min="1" max="64" value="16">
+<label>Jammer strength relative to the signal (dB) = <span id="jv"></span></label><input type="range" id="j" min="-10" max="25" value="10">
+<label>Noise level = <span id="nv"></span></label><input type="range" id="n" min="0" max="2" step="0.1" value="0.5"><button id="re">New random bits and code</button></div>
+<div class="p"><h2>1. Bits</h2><canvas id="c1"></canvas><h2>2. Spread: bits x code (what is transmitted)</h2><canvas id="c2"></canvas><h2>3. Received: spread signal + jammer tone + noise</h2><canvas id="c3"></canvas><h2>4. Despread: received x code, then add up over each bit</h2><canvas id="c4"></canvas>
+<p class="r" id="out"></p></div>
+<div class="p"><h2>Same idea with hopping</h2><p>Instead of multiplying by a fast code, the transmitter jumps between channels in a secret order. A jammer on one channel only hits the slots where we happen to be on it: with M channels that is 1 slot in M. Hopping spreads the signal in <i>time</i>; spreading by a code spreads it in <i>bandwidth</i>. Both give the receiver an advantage over a jammer who does not know the code.</p>
+<canvas id="c5" style="height:120px"></canvas><label>Channels M = <span id="mv"></span></label><input type="range" id="m" min="2" max="16" value="8"><p class="r" id="hout"></p></div>
+<small>Part of the FHSS-Link project. Simulation in the browser, no data leaves your device.</small></main>
+<script>
+const $=i=>document.getElementById(i),cs=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let seed=5;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;const gauss=()=>Math.sqrt(-2*Math.log(rnd()+1e-12))*Math.cos(2*Math.PI*rnd());
+let bits=[],code=[];function fresh(){seed=Math.floor(Math.random()*1e6)+1;bits=Array.from({length:8},()=>rnd()<.5?-1:1);code=Array.from({length:64},()=>rnd()<.5?-1:1)}
+function cv(id){const c=$(id),d=devicePixelRatio||1,w=c.clientWidth,h=c.clientHeight;c.width=w*d;c.height=h*d;const x=c.getContext("2d");x.setTransform(d,0,0,d,0,0);return{x,w,h}}
+function plot(id,v,col,mx,marks){const{x,w,h}=cv(id);x.strokeStyle=cs("--l");x.beginPath();x.moveTo(0,h/2);x.lineTo(w,h/2);x.stroke();x.strokeStyle=col;x.lineWidth=1.3;x.beginPath();v.forEach((y,i)=>{const px=i/(v.length-1)*w,py=h/2-Math.max(-1,Math.min(1,y/mx))*h*.45;i?x.lineTo(px,py):x.moveTo(px,py)});x.stroke();
+ if(marks){x.strokeStyle=cs("--l");marks.forEach(m=>{x.beginPath();x.moveTo(m*w,0);x.lineTo(m*w,h);x.stroke()})}}
+function run(){const G=+$("g").value,J=Math.pow(10,+$("j").value/20),N=+$("n").value,B=bits.length;$("gv").textContent=G;$("jv").textContent=$("j").value;$("nv").textContent=N;
+ const L=B*G,tx=[],rx=[],ds=[],bitsig=[];for(let i=0;i<L;i++){const b=bits[Math.floor(i/G)];bitsig.push(b);tx.push(b*code[i%64]);rx.push(b*code[i%64]+J*Math.sin(2*Math.PI*i/ (G*0.37+3)+1)+N*gauss())}
+ for(let i=0;i<L;i++)ds.push(rx[i]*code[i%64]);const dec=[];for(let b=0;b<B;b++){let s=0;for(let k=0;k<G;k++)s+=ds[b*G+k];dec.push(s/G)}
+ const marks=bits.map((_,i)=>i/B);plot("c1",bitsig,cs("--a"),1.4,marks);plot("c2",tx,cs("--c"),1.4,marks);plot("c3",rx,cs("--b"),Math.max(2,J+1),marks);
+ const sm=ds.map((v,i)=>{const b=Math.floor(i/G);return dec[b]});plot("c4",sm,cs("--a"),1.4,marks);
+ const err=dec.filter((d,i)=>Math.sign(d)!==bits[i]).length;const pg=10*Math.log10(G);
+ $("out").innerHTML=`Processing gain G<sub>p</sub> = <b>${G}</b> = <b>${pg.toFixed(1)} dB</b>. The jammer is <b>${$("j").value} dB</b> above the signal, so after despreading it is about <b>${($("j").value-pg).toFixed(1)} dB</b> relative to the bit. Bits decoded wrongly: <b>${err} of ${B}</b>. (Only 8 bits shown; try several random sets.)`;
+ const M=+$("m").value;$("mv").textContent=M;const {x,w,h}=cv("c5");const slots=24;const jam=Math.floor(rnd()*M);let hit=0;for(let t=0;t<slots;t++){const c=Math.floor(rnd()*M);x.fillStyle=cs("--l");for(let k=0;k<M;k++)x.fillRect(t*w/slots+1,k*h/M+1,w/slots-2,h/M-2);x.fillStyle=cs("--b");x.globalAlpha=.4;x.fillRect(t*w/slots+1,jam*h/M+1,w/slots-2,h/M-2);x.globalAlpha=1;const bad=c===jam;if(bad)hit++;x.fillStyle=bad?cs("--b"):cs("--c");x.fillRect(t*w/slots+2,c*h/M+2,w/slots-4,h/M-4)}
+ $("hout").innerHTML=`Jammer sits on one channel. Hit ${hit} of ${slots} slots (expected about ${(slots/M).toFixed(1)}). With a fixed frequency every slot would be hit.`}
+["g","j","n","m"].forEach(i=>$(i).addEventListener("input",run));$("re").onclick=()=>{fresh();run()};addEventListener("resize",run);fresh();run();
+</script></body></html>

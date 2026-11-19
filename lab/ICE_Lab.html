@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICE Lab - Communication Engineering revision</title>
+<style>
+:root{--bg:#f6f8fa;--panel:#fff;--ink:#1f2328;--mut:#59636e;--a:#0969da;--b:#cf222e;--c:#1a7f37;--line:#d0d7de}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1419;--panel:#171d25;--ink:#e6edf3;--mut:#8b98a5;--a:#58a6ff;--b:#ff7b72;--c:#3fb950;--line:#30363d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,sans-serif}
+header{padding:12px 16px;border-bottom:1px solid var(--line)}h1{font-size:17px;margin:0}header span{color:var(--mut);font-size:12px}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px}nav button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+nav button.on{background:var(--a);color:#fff;border-color:var(--a)}
+main{max-width:980px;margin:auto;padding:0 16px 40px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:12px}
+.row{display:flex;flex-wrap:wrap;gap:14px}.row>div{flex:1 1 240px}label{display:block;font-size:12px;color:var(--mut);margin-top:8px}input[type=range]{width:100%}
+input[type=text],select{width:100%;padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+canvas{width:100%;height:190px;background:var(--bg);border-radius:6px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:5px 8px;text-align:left;font-size:14px}
+.res b{color:var(--a)}.trap{border-left:4px solid var(--b);padding:6px 10px;background:var(--bg);margin-top:8px;font-size:14px}
+.f{font-family:ui-monospace,monospace;background:var(--bg);padding:2px 6px;border-radius:4px}h2{font-size:15px;margin:0 0 8px}
+section{display:none}section.on{display:block}
+</style></head><body>
+<header><h1>ICE Lab: Introduction to Communication Engineering</h1><span>Move the sliders, watch the waveform, read the formula and the trap. Based on the syllabus units, not a textbook.</span></header>
+<nav id="nav"></nav><main id="main">
+
+<section id="am"><div class="panel"><h2>Unit 1: Amplitude modulation</h2><div class="row"><div>
+<label>Modulation index &mu; = <span id="am_mu_v"></span></label><input type="range" id="am_mu" min="0" max="1.6" step="0.05" value="0.7">
+<label>Message bandwidth f<sub>m</sub> (kHz) = <span id="am_fm_v"></span></label><input type="range" id="am_fm" min="1" max="10" step="1" value="4">
+<label>Carrier power P<sub>c</sub> (W) = <span id="am_pc_v"></span></label><input type="range" id="am_pc" min="1" max="100" step="1" value="100"></div>
+<div class="res" id="am_out"></div></div><canvas id="am_c"></canvas>
+<div class="trap">Standard AM: s(t) = A<sub>c</sub>[1 + &mu;cos(2&pi;f<sub>m</sub>t)]cos(2&pi;f<sub>c</sub>t); &mu; = A<sub>m</sub>/A<sub>c</sub>. Bandwidth = 2f<sub>m</sub>. P<sub>t</sub> = P<sub>c</sub>(1 + &mu;&sup2;/2). Efficiency &eta; = &mu;&sup2;/(2+&mu;&sup2;), max 33.3% at &mu;=1. &mu;&gt;1 = overmodulation: the envelope detector distorts. Two thirds of the power is wasted in the carrier; DSB-SC removes it, SSB also halves the bandwidth. Superhet: f<sub>IF</sub> = f<sub>RF</sub> - f<sub>LO</sub> constant; image frequency = f<sub>RF</sub> + 2f<sub>IF</sub>.</div></div>
+<div class="panel"><h2>Superheterodyne quick calculator</h2><div class="row"><div><label>Station f<sub>RF</sub> (kHz)</label><input type="text" id="sh_rf" value="1000"><label>IF (kHz)</label><input type="text" id="sh_if" value="455"></div><div class="res" id="sh_out"></div></div></div></section>
+
+<section id="fm"><div class="panel"><h2>Unit 2: FM and PM</h2><div class="row"><div>
+<label>Frequency deviation &Delta;f (kHz) = <span id="fm_df_v"></span></label><input type="range" id="fm_df" min="1" max="75" step="1" value="30">
+<label>Message frequency f<sub>m</sub> (kHz) = <span id="fm_fm_v"></span></label><input type="range" id="fm_fm" min="1" max="15" step="1" value="5"></div><div class="res" id="fm_out"></div></div><canvas id="fm_c"></canvas>
+<div class="trap">&beta; = &Delta;f/f<sub>m</sub>. Carson: BW &asymp; 2(&Delta;f + f<sub>m</sub>) = 2f<sub>m</sub>(&beta;+1). NBFM: &beta; &lt; 1 (BW &asymp; 2f<sub>m</sub>); WBFM: &beta; &gt; 1. FM: &Delta;f &prop; message AMPLITUDE (independent of f<sub>m</sub>). PM: phase deviation &prop; message amplitude, so &Delta;f &prop; A<sub>m</sub>&middot;f<sub>m</sub>. Broadcast FM: &Delta;f = 75 kHz, f<sub>m</sub> = 15 kHz, &beta; = 5, BW = 180 kHz (200 kHz channel). FM is constant-envelope: noise is clipped by a limiter, so it beats AM against noise but needs more bandwidth.</div></div></section>
+
+<section id="pcm"><div class="panel"><h2>Unit 3: Sampling, PCM, quantisation</h2><div class="row"><div>
+<label>Signal frequency f (Hz) = <span id="pc_f_v"></span></label><input type="range" id="pc_f" min="1" max="20" step="1" value="3">
+<label>Sampling rate f<sub>s</sub> (Hz) = <span id="pc_fs_v"></span></label><input type="range" id="pc_fs" min="2" max="60" step="1" value="16">
+<label>Bits per sample n = <span id="pc_n_v"></span></label><input type="range" id="pc_n" min="1" max="8" step="1" value="3"></div><div class="res" id="pc_out"></div></div><canvas id="pc_c"></canvas>
+<div class="trap">Nyquist: f<sub>s</sub> &ge; 2f<sub>max</sub>. Below it, aliasing: the tone appears at |f - k&middot;f<sub>s</sub>| (nearest k). Levels L = 2<sup>n</sup>; step &Delta; = 2A/L; max quantisation error &Delta;/2; SNR<sub>q</sub> = 6.02n + 1.76 dB (full-scale sine; each extra bit = +6 dB). PCM bit rate = n&middot;f<sub>s</sub>; minimum channel BW = n&middot;f<sub>s</sub>/2. Delta modulation: 1 bit/sample, suffers slope overload (step too small) and granular noise (step too big). DPCM codes the difference between samples.</div></div></section>
+
+<section id="dig"><div class="panel"><h2>Unit 4: Digital modulation (ASK / FSK / PSK)</h2><div class="row"><div>
+<label>Scheme</label><select id="dg_s"><option>ASK</option><option>FSK</option><option selected>PSK</option></select>
+<label>Bits</label><input type="text" id="dg_b" value="1011001">
+<label>E<sub>b</sub>/N<sub>0</sub> (dB) = <span id="dg_e_v"></span></label><input type="range" id="dg_e" min="0" max="14" step="0.5" value="8"></div><div class="res" id="dg_out"></div></div><canvas id="dg_c"></canvas>
+<div class="trap">Bit error probability (coherent): BPSK P<sub>b</sub> = Q(&radic;(2E<sub>b</sub>/N<sub>0</sub>)); coherent BFSK P<sub>b</sub> = Q(&radic;(E<sub>b</sub>/N<sub>0</sub>)); so PSK is 3 dB better than FSK for the same BER. Bandwidth: ASK and PSK about 2R<sub>b</sub>; FSK about 2&Delta;f + 2R<sub>b</sub> (widest). PSK has constant envelope and best noise performance but needs a coherent carrier; ASK is simplest but most noise-sensitive. Multiplexing and spread spectrum: TDM shares time, FDM shares frequency, CDMA shares codes.</div></div></section>
+
+<section id="mf"><div class="panel"><h2>Unit 3: Matched filter and ISI (eye diagram)</h2><div class="row"><div>
+<label>Roll-off &alpha; = <span id="mf_a_v"></span></label><input type="range" id="mf_a" min="0" max="1" step="0.05" value="0.35">
+<label>Noise level on the eye = <span id="mf_n_v"></span></label><input type="range" id="mf_n" min="0" max="0.5" step="0.02" value="0.08">
+<label>Timing error (fraction of T) = <span id="mf_t_v"></span></label><input type="range" id="mf_t" min="0" max="0.4" step="0.02" value="0"></div><div class="res" id="mf_out"></div></div><canvas id="mf_c" style="height:240px"></canvas>
+<div class="trap">Matched filter: h(t) = s(T - t); maximises output SNR at t = T; SNR<sub>max</sub> = 2E/N<sub>0</sub> (depends on energy, not pulse shape). Nyquist criterion for zero ISI: pulse = 0 at all other sampling instants. Raised cosine: BW = (1+&alpha;)R<sub>s</sub>/2; &alpha;=0 is the ideal sinc (minimum BW R<sub>s</sub>/2 but timing-sensitive), &alpha;=1 doubles the BW. Eye opening shrinks with noise and ISI; timing error closes the eye horizontally.</div></div></section>
+
+<section id="mux"><div class="panel"><h2>Unit 4: Multiplexing, spread spectrum, switching, OSI</h2><div class="row"><div>
+<label>Voice channels N</label><input type="text" id="mx_n" value="24"><label>Bits per sample</label><input type="text" id="mx_b" value="8"><label>Sampling rate (Hz)</label><input type="text" id="mx_fs" value="8000">
+<label>Bandwidth per channel (kHz, FDM)</label><input type="text" id="mx_bw" value="4"><label>Guard band (kHz)</label><input type="text" id="mx_g" value="1">
+<label>Chip rate (Mchip/s)</label><input type="text" id="mx_rc" value="1.2288"><label>Bit rate (kbit/s)</label><input type="text" id="mx_rb" value="9.6"><label>Required Eb/N0 (dB)</label><input type="text" id="mx_eb" value="7"></div><div class="res" id="mx_out"></div></div>
+<div class="trap">TDM bit rate = N&middot;n&middot;f<sub>s</sub> (+ framing). FDM bandwidth = N&middot;BW + (N-1) guards. Processing gain G<sub>p</sub> = T<sub>b</sub>/T<sub>c</sub> = R<sub>c</sub>/R<sub>b</sub> (dB: 10log<sub>10</sub>). Jamming margin = G<sub>p</sub> - (E<sub>b</sub>/N<sub>0</sub>)<sub>min</sub> - losses. FH-SS: carrier hops over many channels by a pseudo-random code (fast hop: several hops per symbol; slow hop: several symbols per hop); DS-SS multiplies by a fast code.</div>
+<table><tr><th></th><th>Circuit switching</th><th>Packet switching</th></tr><tr><td>Path</td><td>Dedicated, set up before talking</td><td>No dedicated path, each packet routed</td></tr><tr><td>Delay</td><td>Set-up delay, then constant</td><td>Variable (queuing)</td></tr><tr><td>Efficiency</td><td>Idle bandwidth wasted</td><td>Statistical sharing, efficient for bursty data</td></tr><tr><td>Example</td><td>Telephone (PSTN)</td><td>Internet</td></tr></table>
+<table style="margin-top:10px"><tr><th>OSI layer</th><th>Job (and example)</th></tr><tr><td>7 Application</td><td>User services (HTTP, SMTP)</td></tr><tr><td>6 Presentation</td><td>Format, encryption, compression</td></tr><tr><td>5 Session</td><td>Dialogue control, sync</td></tr><tr><td>4 Transport</td><td>End-to-end reliability (TCP/UDP)</td></tr><tr><td>3 Network</td><td>Routing, logical addressing (IP)</td></tr><tr><td>2 Data link</td><td>Framing, MAC addressing, error detection (Ethernet)</td></tr><tr><td>1 Physical</td><td>Bits on the medium: voltage, frequency, cables</td></tr></table></div></section>
+
+<section id="info"><div class="panel"><h2>Unit 5: Information theory</h2><div class="row"><div>
+<label>Symbol probabilities (comma separated, sum to 1)</label><input type="text" id="in_p" value="0.4, 0.3, 0.15, 0.1, 0.05">
+<label>Bandwidth B (kHz) = <span id="in_b_v"></span></label><input type="range" id="in_b" min="1" max="100" step="1" value="3">
+<label>SNR (dB) = <span id="in_s_v"></span></label><input type="range" id="in_s" min="-10" max="40" step="1" value="30">
+<label>Binary symmetric channel error p = <span id="in_e_v"></span></label><input type="range" id="in_e" min="0" max="0.5" step="0.01" value="0.1"></div><div class="res" id="in_out"></div></div>
+<div class="trap">Information of a symbol I = log<sub>2</sub>(1/p) bits. Entropy H = &Sigma; p log<sub>2</sub>(1/p) &le; log<sub>2</sub>M (equal only for equiprobable symbols). Source coding: average length L &ge; H; efficiency = H/L; Huffman gives the shortest prefix code (merge the two least probable symbols repeatedly). Shannon capacity C = B log<sub>2</sub>(1 + S/N) with S/N as a ratio, not dB! BSC capacity C = 1 - H(p). Reliable communication is possible at any rate below C (noisy-channel coding theorem).</div></div></section>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id), cs=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const TABS=[["am","1 AM"],["fm","2 FM/PM"],["pcm","3 PCM"],["mf","3 Matched filter/ISI"],["dig","4 ASK/FSK/PSK"],["mux","4 TDM/FDM/SS/OSI"],["info","5 Information"]];
+const nav=$("nav");TABS.forEach(([id,t],i)=>{const b=document.createElement("button");b.textContent=t;b.onclick=()=>show(id);b.id="tab_"+id;nav.appendChild(b)});
+function show(id){TABS.forEach(([i])=>{$(i).classList.toggle("on",i===id);$("tab_"+i).classList.toggle("on",i===id)});draw()}
+const f2=(x,d=2)=>Number(x).toFixed(d), Q=x=>0.5*erfc(x/Math.SQRT2);
+function erfc(x){const z=Math.abs(x),t=1/(1+0.5*z),r=t*Math.exp(-z*z-1.26551223+t*(1.00002368+t*(0.37409196+t*(0.09678418+t*(-0.18628806+t*(0.27886807+t*(-1.13520398+t*(1.48851587+t*(-0.82215223+t*0.17087277)))))))));return x>=0?r:2-r}
+function cv(id){const c=$(id),d=devicePixelRatio||1,w=c.clientWidth,h=c.clientHeight;if(c.width!==w*d||c.height!==h*d){c.width=w*d;c.height=h*d}const x=c.getContext("2d");x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,w,h);return{x,w,h}}
+function line(x,pts,col,wid=1.5){x.strokeStyle=col;x.lineWidth=wid;x.beginPath();pts.forEach(([a,b],i)=>i?x.lineTo(a,b):x.moveTo(a,b));x.stroke()}
+function sl(id,fmt=v=>v){const e=$(id);const u=()=>{$(id+"_v").textContent=fmt(+e.value);draw()};e.addEventListener("input",u);$(id+"_v").textContent=fmt(+e.value)}
+const grid=(x,w,h)=>{x.strokeStyle=cs("--line");x.beginPath();x.moveTo(0,h/2);x.lineTo(w,h/2);x.stroke()};
+
+function huffman(p){let nodes=p.map((q,i)=>({p:q,l:[i]})),len=new Array(p.length).fill(0);while(nodes.length>1){nodes.sort((a,b)=>a.p-b.p);const a=nodes.shift(),b=nodes.shift();a.l.concat(b.l).forEach(i=>len[i]++);nodes.push({p:a.p+b.p,l:a.l.concat(b.l)})}return len}
+function entropy(p){return p.reduce((s,q)=>s+(q>0?q*Math.log2(1/q):0),0)}
+function Hb(p){return p<=0||p>=1?0:-p*Math.log2(p)-(1-p)*Math.log2(1-p)}
+
+function drawAM(){const mu=+$("am_mu").value,fm=+$("am_fm").value,pc=+$("am_pc").value;const{x,w,h}=cv("am_c");grid(x,w,h);const N=600,pts=[],env=[],env2=[];
+ for(let i=0;i<N;i++){const t=i/N*3;const e=1+mu*Math.cos(2*Math.PI*t);const v=e*Math.cos(2*Math.PI*25*t);pts.push([i/N*w,h/2-v*h/4.3]);env.push([i/N*w,h/2-Math.abs(e)*h/4.3]);env2.push([i/N*w,h/2+Math.abs(e)*h/4.3])}
+ line(x,pts,cs("--a"),1);line(x,env,cs("--b"),1.5);line(x,env2,cs("--b"),1.5);
+ const pt=pc*(1+mu*mu/2),eta=mu*mu/(2+mu*mu);$("am_out").innerHTML=`Bandwidth = 2f<sub>m</sub> = <b>${2*fm} kHz</b><br>Total power = <b>${f2(pt,1)} W</b><br>Sideband power = <b>${f2(pt-pc,1)} W</b><br>Efficiency &eta; = <b>${f2(eta*100,1)} %</b>${mu>1?"<br><b style='color:var(--b)'>Overmodulation: envelope distorted</b>":""}`}
+function drawFM(){const df=+$("fm_df").value,fm=+$("fm_fm").value,beta=df/fm;const{x,w,h}=cv("fm_c");grid(x,w,h);const N=900,pts=[];
+ for(let i=0;i<N;i++){const t=i/N*2;const ph=2*Math.PI*30*t+Math.min(beta,12)*Math.sin(2*Math.PI*2*t);pts.push([i/N*w,h/2-Math.cos(ph)*h/2.5])}line(x,pts,cs("--a"),1);
+ $("fm_out").innerHTML=`&beta; = <b>${f2(beta)}</b> (${beta<1?"narrowband":"wideband"})<br>Carson BW = 2(&Delta;f+f<sub>m</sub>) = <b>${2*(df+fm)} kHz</b><br>NBFM-style BW 2f<sub>m</sub> = ${2*fm} kHz<br>If this were PM with the same &beta;: &Delta;f would scale with f<sub>m</sub>, not stay fixed.`}
+function drawPCM(){const f=+$("pc_f").value,fs=+$("pc_fs").value,n=+$("pc_n").value;const{x,w,h}=cv("pc_c");grid(x,w,h);const T=1,N=700,L=2**n;const y=t=>Math.sin(2*Math.PI*f*t);
+ const pts=[];for(let i=0;i<N;i++){const t=i/N*T;pts.push([i/N*w,h/2-y(t)*h*.4])}line(x,pts,cs("--a"),1.5);
+ const rec=[];const m=Math.floor(fs*T);const q=v=>{const d=2/L;return Math.min(1-d/2,Math.max(-1+d/2,(Math.floor((v+1)/d)+.5)*d-1))};
+ for(let k=0;k<=m;k++){const t=k/fs;if(t>T)break;const px=t/T*w,py=h/2-q(y(t))*h*.4;x.fillStyle=cs("--b");x.beginPath();x.arc(px,py,3.5,0,7);x.fill();rec.push([px,py])}
+ line(x,rec,cs("--c"),1);
+ let k=Math.round(f/fs),fa=Math.abs(f-k*fs);const ok=fs>=2*f;
+ $("pc_out").innerHTML=`Levels L = <b>${L}</b>, step &Delta; = <b>${f2(2/L,4)}</b> (A=1)<br>SNR<sub>q</sub> = <b>${f2(6.02*n+1.76)} dB</b><br>PCM bit rate = n&middot;f<sub>s</sub> = <b>${n*fs} bit/s</b>, min BW = <b>${n*fs/2} Hz</b><br>${ok?"Nyquist satisfied (f<sub>s</sub> &ge; 2f)":"<b style='color:var(--b)'>ALIASING: tone appears at "+f2(fa,1)+" Hz</b>"}`}
+function drawDig(){const s=$("dg_s").value,bits=($("dg_b").value.replace(/[^01]/g,"")||"1").slice(0,16).split("").map(Number);const{x,w,h}=cv("dg_c");grid(x,w,h);const N=bits.length,per=w/N,pts=[];
+ for(let i=0;i<N*60;i++){const k=Math.floor(i/60),t=(i%60)/60;let v;if(s==="ASK")v=bits[k]?Math.sin(2*Math.PI*4*t):0;else if(s==="FSK")v=Math.sin(2*Math.PI*(bits[k]?6:3)*t);else v=Math.sin(2*Math.PI*4*t+(bits[k]?0:Math.PI));pts.push([i/60*per,h/2-v*h*.38])}line(x,pts,cs("--a"),1.3);
+ x.fillStyle=cs("--mut");bits.forEach((b,k)=>x.fillText(b,k*per+per/2-3,12));
+ const e=Math.pow(10,+$("dg_e").value/10);const pb={PSK:Q(Math.sqrt(2*e)),FSK:Q(Math.sqrt(e)),ASK:Q(Math.sqrt(e/2))};
+ $("dg_out").innerHTML=`At E<sub>b</sub>/N<sub>0</sub> = ${f2($("dg_e").value,1)} dB:<br>BPSK P<sub>b</sub> = <b>${pb.PSK.toExponential(2)}</b><br>Coherent BFSK P<sub>b</sub> = <b>${pb.FSK.toExponential(2)}</b><br>On-off ASK (peak-amplitude convention) P<sub>b</sub> = <b>${pb.ASK.toExponential(2)}</b><br>Bandwidth: ASK/PSK ~ 2R<sub>b</sub>, FSK ~ 2&Delta;f + 2R<sub>b</sub>.<br><span style="color:var(--mut)">Your syllabus formula for ASK may differ by a convention; use the one in class.</span>`}
+function rc(t,a){if(Math.abs(t)<1e-9)return 1;const s=Math.sin(Math.PI*t)/(Math.PI*t);const d=1-(2*a*t)**2;return Math.abs(d)<1e-6?s*Math.PI/4:s*Math.cos(Math.PI*a*t)/d}
+function drawMF(){const a=+$("mf_a").value,nz=+$("mf_n").value,te=+$("mf_t").value;const{x,w,h}=cv("mf_c");const rnd=(()=>{let s=3;return()=>(s=(s*16807)%2147483647)/2147483647})();
+ const span=2,traces=60,bitsN=traces+8,B=[];for(let i=0;i<bitsN;i++)B.push(rnd()<.5?-1:1);
+ x.strokeStyle=cs("--line");x.beginPath();x.moveTo(0,h/2);x.lineTo(w,h/2);x.moveTo(w/2,0);x.lineTo(w/2,h);x.stroke();
+ let worst=1;for(let k=4;k<4+traces;k++){const pts=[];for(let i=0;i<=80;i++){const t=-1+i/40;let v=0;for(let j=-5;j<=5;j++)v+=B[k+j]*rc(t-j,a);v+=nz*(rnd()-.5)*2;pts.push([i/80*w,h/2-v*h*.3])}x.globalAlpha=.35;line(x,pts,cs("--a"),1.2)}x.globalAlpha=1;
+ let isi=0;const samp=te;for(let j=-5;j<=5;j++)if(j!==0)isi+=Math.abs(rc(samp-j,a));const open=rc(samp,a)-isi-nz;
+ $("mf_out").innerHTML=`Bandwidth = (1+&alpha;)R<sub>s</sub>/2 = <b>${f2((1+a)/2,3)} R<sub>s</sub></b><br>Worst-case eye opening at the sampling time = <b>${f2(Math.max(open,0),2)}</b> (1.00 = ideal)<br>${te===0&&nz===0?"Zero ISI at the sampling instants (Nyquist criterion)":"Timing error / noise closes the eye"}<br>Matched filter peak SNR = 2E/N<sub>0</sub>`}
+function drawMux(){const g=id=>+$(id).value;const N=g("mx_n"),n=g("mx_b"),fs=g("mx_fs"),bw=g("mx_bw"),gd=g("mx_g"),rc_=g("mx_rc")*1e6,rb=g("mx_rb")*1e3,eb=g("mx_eb");const gp=rc_/rb,gpd=10*Math.log10(gp);
+ $("mx_out").innerHTML=`TDM payload rate = N&middot;n&middot;f<sub>s</sub> = <b>${(N*n*fs/1e3).toFixed(1)} kbit/s</b> (frame length ${(1e6/fs).toFixed(0)} &micro;s, slot ${(1e6/fs/N).toFixed(2)} &micro;s)<br>FDM bandwidth = N&middot;BW + (N-1)&middot;guard = <b>${(N*bw+(N-1)*gd).toFixed(0)} kHz</b><br>Processing gain G<sub>p</sub> = R<sub>c</sub>/R<sub>b</sub> = <b>${f2(gp,1)}</b> = <b>${f2(gpd,1)} dB</b><br>Jamming margin = G<sub>p</sub> - E<sub>b</sub>/N<sub>0</sub> = <b>${f2(gpd-eb,1)} dB</b> (before losses)`}
+function drawInfo(){const p=$("in_p").value.split(",").map(Number).filter(v=>v>0);const sum=p.reduce((a,b)=>a+b,0);const pn=p.map(v=>v/sum);const H=entropy(pn),len=huffman(pn),L=pn.reduce((s,v,i)=>s+v*len[i],0);
+ const B=+$("in_b").value*1e3,snr=Math.pow(10,+$("in_s").value/10),C=B*Math.log2(1+snr),e=+$("in_e").value;
+ $("in_out").innerHTML=`${Math.abs(sum-1)>1e-6?"<b style='color:var(--b)'>Probabilities sum to "+f2(sum,3)+": normalised for you</b><br>":""}Entropy H = <b>${f2(H,3)} bit/symbol</b> (max ${f2(Math.log2(pn.length),3)})<br>Huffman lengths: <b>${len.join(", ")}</b><br>Average length L = <b>${f2(L,3)}</b>, efficiency H/L = <b>${f2(H/L*100,1)} %</b><br>Shannon C = B log<sub>2</sub>(1+S/N) = <b>${f2(C/1e3,1)} kbit/s</b> (S/N = ${f2(snr,1)} as a ratio)<br>BSC capacity 1 - H(p) = <b>${f2(1-Hb(e),3)} bit/use</b>`}
+const R={am:drawAM,fm:drawFM,pcm:drawPCM,mf:drawMF,dig:drawDig,mux:drawMux,info:drawInfo};let cur="am";
+function draw(){const on=TABS.find(([i])=>$(i).classList.contains("on"));cur=on?on[0]:"am";R[cur]();const r=$("sh_rf");if(cur==="am"){const rf=+$("sh_rf").value,i=+$("sh_if").value;$("sh_out").innerHTML=`Local oscillator f<sub>LO</sub> = f<sub>RF</sub> + f<sub>IF</sub> = <b>${rf+i} kHz</b><br>Image frequency = f<sub>RF</sub> + 2f<sub>IF</sub> = <b>${rf+2*i} kHz</b><br>Image rejection comes from the RF stage before the mixer.`}}
+["am_mu","am_fm","am_pc","fm_df","fm_fm","pc_f","pc_fs","pc_n","dg_e","mf_a","mf_n","mf_t","in_b","in_s","in_e"].forEach(id=>sl(id));
+["sh_rf","sh_if","dg_s","dg_b","mx_n","mx_b","mx_fs","mx_bw","mx_g","mx_rc","mx_rb","mx_eb","in_p"].forEach(id=>$(id).addEventListener("input",draw));
+addEventListener("resize",draw);window.__lab={entropy,huffman,Q,erfc};show("am");
+</script></body></html>

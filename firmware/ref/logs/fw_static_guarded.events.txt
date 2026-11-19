@@ -1,0 +1,17 @@
+build: guard hard limits duty=10% power=1 burst=2000 ms (clamped=1)
+follower: acquired beacon
+slot 19: NORMAL -> ADAPT because loss 15% over the last 20 attempts; most-hit channels [3, 0]
+guard t=1000 ms deny: duty cycle would exceed limit
+guard t=1001 ms deny: duty cycle would exceed limit
+guard t=1002 ms deny: duty cycle would exceed limit
+slot 360: ADAPT -> NORMAL because loss fell to 2% and stayed low for 100 slots
+slot 510: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [3, 4]
+slot 653: ADAPT -> NORMAL because loss fell to 4% and stayed low for 100 slots
+slot 1045: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [3, 4]
+slot 1164: ADAPT -> NORMAL because loss fell to 2% and stayed low for 100 slots
+slot 1547: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [3, 4]
+slot 1719: ADAPT -> NORMAL because loss fell to 2% and stayed low for 100 slots
+slot 2015: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [3, 4]
+slot 2190: ADAPT -> NORMAL because loss fell to 2% and stayed low for 100 slots
+slot 2515: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [3, 4]
+slot 2778: ADAPT -> NORMAL because loss fell to 0% and stayed low for 100 slots

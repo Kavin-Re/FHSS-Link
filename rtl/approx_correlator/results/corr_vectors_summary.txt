@@ -1,0 +1,7 @@
+n16_loa3: N=16 ATYPE=1 K=3 COMP=-7 frames=4000 clocks=8001 approx_frames=1366 exact_frames=2634
+n32_loa3: N=32 ATYPE=1 K=3 COMP=-15 frames=4000 clocks=8078 approx_frames=1602 exact_frames=2398
+n64_loa3: N=64 ATYPE=1 K=3 COMP=-31 frames=4000 clocks=8019 approx_frames=1712 exact_frames=2288
+n32_trunc2: N=32 ATYPE=2 K=2 COMP=48 frames=4000 clocks=8007 approx_frames=1466 exact_frames=2534
+n32_eta3: N=32 ATYPE=3 K=3 COMP=0 frames=4000 clocks=7915 approx_frames=1387 exact_frames=2613
+n64_loa4: N=64 ATYPE=1 K=4 COMP=0 frames=4000 clocks=7940 approx_frames=1726 exact_frames=2274
+n32_exact: N=32 ATYPE=0 K=0 COMP=0 frames=4000 clocks=8111 approx_frames=1708 exact_frames=2292

@@ -1,0 +1,6 @@
+m13: M=13 RW=32 NCH=2 keys=3 slots/key=20000 hops_with_retry=0
+m13_rw8: M=13 RW=8 NCH=1 keys=1 slots/key=20000 hops_with_retry=692
+m13_rw8n4: M=13 RW=8 NCH=4 keys=1 slots/key=20000 hops_with_retry=0
+m37: M=37 RW=32 NCH=2 keys=1 slots/key=3000 hops_with_retry=0
+m16: M=16 RW=32 NCH=2 keys=1 slots/key=3000 hops_with_retry=0
+lfsr: seeds ['0xace1', '0x1234', '0x0', '0xffff'] x 20000

@@ -1,0 +1,19 @@
+decisions collected: 71 records (17 from sim/ladder.py, 54 from sim/safety.py Guard)
+sample_log.jsonl: ok=True records=71 blocks=5 head=005a98fb65bc6298...
+sample_log_hmac.jsonl (demo key demo-key-NOT-SECRET): ok=True ; wrong key -> ok=False
+
+== single-record tamper, every position, no recomputation by the attacker (N=71) ==
+attack   positions  detected flagged==i  example(first problem for i=20)
+edit            71        71         71  record at position 20: stored hash != recomputed hash (content edited or key wrong)
+delete          71        71         71  expected record 20 here but found index 21 (deleted, inserted or reordered)
+insert          71        71         71  record at position 20: stored hash != recomputed hash (content edited or key wrong)
+reorder         70        70         70  expected record 20 here but found index 21 (deleted, inserted or reordered)
+
+== limits ==
+tail truncation (drop last block seal + last 2 records) without anchor: ok=True ; with anchored head: ok=False
+drop last 3 records (and keep block seal): ok=False first_bad=68
+clean truncation at a block boundary (records >=32 and their seals removed): plain ok=True ; with anchored count=71: ok=False ; with anchored head: ok=False
+strong attacker rewrites record 20 and recomputes the whole chain: PLAIN verifier ok=True (integrity alone cannot catch it) ; with anchored head: ok=False
+same attack against HMAC log, attacker lacks the key: verifier(key) ok=False first_bad=0
+Merkle inclusion proof for record 5 of block 0: 4 hashes (128 bytes), verifies=True; against wrong record verifies=False
+speed: 20000 records written in 0.24 s, verified in 0.34 s

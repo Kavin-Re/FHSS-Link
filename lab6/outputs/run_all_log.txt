@@ -1,0 +1,69 @@
+===== exp1: exp1_bandit_poison
+policy                        clean p2  poisoned p2  poisoned first300
+uniform                          0.768        0.774              0.777
+Thompson                         0.984        0.897              0.521
+Thompson + floor 0.1             0.966        0.805              0.210
+Thompson + discount 0.98         0.966        0.962              0.938
+Thompson + both                  0.956        0.952              0.930
+KEY NUMBER: Thompson delivery after poisoning (phase 2) vs uniform = 0.897 vs 0.774
+===== exp2: exp2_learning_rate
+L (slots)                        10     20     50    100    200    500   1000   6000
+uniform (no memory)           0.772  0.774  0.768  0.769  0.771  0.771  0.773  0.772
+gamma=0.90 (N=10)             0.838  0.865  0.890  0.899  0.902  0.906  0.907  0.904
+gamma=0.98 (N=50)             0.846  0.889  0.924  0.943  0.956  0.964  0.965  0.967
+gamma=0.995 (N=200)           0.840  0.878  0.931  0.948  0.966  0.976  0.980  0.982
+gamma=1.0 (no forgetting)     0.800  0.816  0.869  0.902  0.952  0.965  0.982  0.990
+gamma=1.0 + switch-detect     0.857  0.890  0.939  0.960  0.968  0.979  0.984  0.990
+gamma=0.98 + switch-detect    0.847  0.889  0.925  0.943  0.956  0.964  0.965  0.967
+KEY NUMBER: worst delivery of 'gamma=0.98' over L (L*, value) vs uniform = (10, 0.8463333333333334) vs 0.771
+===== exp3: exp3_control_plane
+config                no jammer  data jam  control jam  (jammer duty: data 1.00, control 0.05)
+R=1, D=60 (naive)         0.990     0.917        0.135
+R=3, D=60                 0.990     0.917        0.904
+R=5, D=100                0.990     0.917        0.988
+R=5, D=200                0.990     0.917        0.990
+KEY NUMBER: availability under beacon-only jamming, R=1 vs R=5/D=100 = 0.135 vs 0.988
+===== exp4: exp4_time_push
+false-alarm rate of skew-rate check without attack (900 s): 0.00; NIS-gate hits per run with NO attack (t>=150): 2.2
+push ppm viol. frac  t_viol s  det frac  t_det s  NIS gate hits/run
+     0.1       1.00     290.0      0.00     None                2.2
+     0.2       1.00     149.5      0.00     None                2.2
+     0.5       1.00      60.0      0.17     42.5                2.3
+     1.0       1.00      32.0      0.92     39.0                3.0
+     2.0       1.00      19.5      1.00     17.5               10.9
+     5.0       1.00      11.0      1.00      9.0               38.6
+KEY NUMBER: push 1 ppm: median seconds to guard violation vs to skew-rate alarm = 32.0 vs 39.0
+===== exp5: exp5_prng_graveyard
+LCG24        {'hops_needed': 8.0, 'max': 8}
+xorshift32   {'hops_needed': 9.0, 'max': 9}
+MT19937      {'hops_needed': 624, 'max': 624, 'clone_ok': True}
+HMAC-SHA256  {'hops_needed': None, 'accuracy': 0.08433333333333333, 'chance': 0.07692307692307693}
+cost (us/hop, pure Python): {'LCG24': 0.11, 'xorshift32': 0.66, 'MT19937': 0.07, 'HMAC_SHA256': 4.61}
+KEY NUMBER: hops observed to break LCG24 / xorshift32 / MT19937(32-bit leak) / HMAC = 8.0 / 9.0 / 624 / unbroken (acc 0.084)
+===== exp6: exp6_keyfromair_drain
+ alpha | still only:     H  pdis  rate  mon | still+shift 0.3:     H  pdis  rate  hmin  mon
+  1.00 |              1.00  0.20  0.27 True |                   1.00  0.20  0.27  1.00 True
+  0.70 |              1.00  0.27  0.16 True |                   0.95  0.25  0.13  0.65 False
+  0.50 |              1.00  0.33  0.08 False |                   0.92  0.30  0.04  0.59 False
+  0.30 |              1.00  0.41  0.02 False |                   0.89  0.36  0.00  0.52 False
+  0.20 |              1.00  0.46  0.01 False |                   0.87  0.38  0.00  0.49 False
+  0.10 |              1.00  0.49  0.00 False |                   0.85  0.39  0.00  0.47 False
+  0.05 |              1.00  0.50  0.00 False |                   0.85  0.40  0.00  0.47 False
+KEY NUMBER: alpha=0.1: secret bits/sample (still+shift) vs normal; min-entropy of a 128-bit key an attacker could guess = 0.000 vs 0.273; 60.2 of 128 bits
+===== exp7: exp7_myopic_jammer
+blind 1-channel jammer delivery 0.918; perfect zero-latency follower 0.050; history predictor accuracy 0.0773 (chance 0.0769)
+a=0.25: delivery at d=0, 0.5, 0.75, 1.0: 0.701 0.701 0.918 0.918
+a=0.5: delivery at d=0, 0.5, 0.75, 1.0: 0.484 0.484 0.918 0.918
+a=1.0: delivery at d=0, 0.5, 0.75, 1.0: 0.050 0.050 0.918 0.918
+KEY NUMBER: delivery vs perfect-detection follower with latency 0 / 0.5 / 0.75 dwell (theta=0.25) = 0.050 / 0.050 / 0.918
+===== exp8: exp8_scorecard
+attack                       cost tier                                          BASELINE         HARDENED
+R1 bandit poisoning          medium (jams 10 ch at 50% for 1500 slots)    0.48  DEGRADED   0.03     HOLDS
+R2 learning-rate attack      medium (needs learner memory length)         0.18     HOLDS   0.14     HOLDS
+R3 control-plane jamming     cheap (5% duty, 1 channel)                   0.85    BROKEN   0.00     HOLDS
+R4 time-pushing              medium (needs a growing-delay relay)         1.00    BROKEN   0.67    BROKEN
+R5 weak-PRNG schedule        cheap (8 observed hops, LCG24)                      1.00    BROKEN   0.02     HOLDS
+R6 key-from-air drain        medium (control environment)                 0.53  DEGRADED   0.00     HOLDS
+R7 myopic follower jammer    medium (fast detector)                       1.00    BROKEN   0.09     HOLDS
+R8 timing leak               cheap (10% airtime)                          0.94    BROKEN   0.00     HOLDS
+KEY NUMBER: attacks rated BROKEN: baseline vs hardened (of 8) = 5 vs 1

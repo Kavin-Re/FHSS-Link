@@ -1,0 +1,25 @@
+PDR vs jammer dwell H (slots); k=2, M=13, keyed reference 0.8454; feedback delay D
+-- D = 0
+keyed     H1:0.849 H2:0.854 H4:0.847 H8:0.848 H16:0.847 H32:0.851 H64:0.845 H128:0.843 H256:0.850 H1000:0.841
+afh       H1:0.848 H2:0.850 H4:0.846 H8:0.841 H16:0.849 H32:0.849 H64:0.854 H128:0.873 H256:0.906 H1000:0.954
+ucb       H1:0.849 H2:0.877 H4:0.887 H8:0.900 H16:0.919 H32:0.942 H64:0.958 H128:0.962 H256:0.966 H1000:0.973
+thompson  H1:0.847 H2:0.852 H4:0.880 H8:0.912 H16:0.946 H32:0.966 H64:0.978 H128:0.982 H256:0.984 H1000:0.986
+  afh: first H where it beats keyed by >=0.02: 128;  H where it is >=0.02 WORSE than keyed: []
+  ucb: first H where it beats keyed by >=0.02: 2;  H where it is >=0.02 WORSE than keyed: []
+  thompson: first H where it beats keyed by >=0.02: 4;  H where it is >=0.02 WORSE than keyed: []
+-- D = 8
+keyed     H1:0.849 H2:0.854 H4:0.847 H8:0.848 H16:0.847 H32:0.851 H64:0.845 H128:0.843 H256:0.850 H1000:0.841
+afh       H1:0.848 H2:0.850 H4:0.846 H8:0.841 H16:0.849 H32:0.848 H64:0.856 H128:0.873 H256:0.904 H1000:0.953
+ucb       H1:0.842 H2:0.846 H4:0.833 H8:0.844 H16:0.861 H32:0.885 H64:0.905 H128:0.923 H256:0.944 H1000:0.967
+thompson  H1:0.844 H2:0.843 H4:0.846 H8:0.839 H16:0.883 H32:0.936 H64:0.960 H128:0.970 H256:0.978 H1000:0.983
+  afh: first H where it beats keyed by >=0.02: 128;  H where it is >=0.02 WORSE than keyed: []
+  ucb: first H where it beats keyed by >=0.02: 32;  H where it is >=0.02 WORSE than keyed: []
+  thompson: first H where it beats keyed by >=0.02: 16;  H where it is >=0.02 WORSE than keyed: []
+-- D = 32
+keyed     H1:0.849 H2:0.854 H4:0.847 H8:0.848 H16:0.847 H32:0.851 H64:0.845 H128:0.843 H256:0.850 H1000:0.841
+afh       H1:0.848 H2:0.850 H4:0.846 H8:0.841 H16:0.849 H32:0.846 H64:0.849 H128:0.868 H256:0.898 H1000:0.950
+ucb       H1:0.849 H2:0.846 H4:0.839 H8:0.846 H16:0.834 H32:0.859 H64:0.867 H128:0.887 H256:0.900 H1000:0.943
+thompson  H1:0.845 H2:0.851 H4:0.855 H8:0.850 H16:0.849 H32:0.846 H64:0.908 H128:0.939 H256:0.966 H1000:0.980
+  afh: first H where it beats keyed by >=0.02: 128;  H where it is >=0.02 WORSE than keyed: []
+  ucb: first H where it beats keyed by >=0.02: 64;  H where it is >=0.02 WORSE than keyed: []
+  thompson: first H where it beats keyed by >=0.02: 64;  H where it is >=0.02 WORSE than keyed: []

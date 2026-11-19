@@ -1,0 +1,57 @@
+input powers: signal 1.00, interference total 1100.2 -> SINR_in = -30.4 dB (tone 30 dB, hum 20 dB, noise -10 dB re signal); L=64 taps, fs=2000 Hz
+
+== SINR improvement vs step size (3 seeds, slow sinusoidal drift +-5 Hz, N=16000) ==
+algo     param  gain dB  SINRout  conv samples  conv ms
+lms      0.001      9.4    -21.0          3400     1700
+lms      0.003     13.1    -17.3          6800     3400
+lms      0.010     19.1    -11.3          6400     3200
+lms      0.030     27.4     -3.0          6600     3300
+lms      0.100     34.2      3.8          4667     2333
+lms      0.300     32.9      2.5          1467      733
+lms      1.000     28.8     -1.6           600      300
+nlms     0.001      9.4    -21.0          3400     1700
+nlms     0.003     13.2    -17.2          6800     3400
+nlms     0.010     19.5    -10.9          6400     3200
+nlms     0.030     28.3     -2.1          6733     3367
+nlms     0.100     33.7      3.3          4133     2067
+nlms     0.300     30.6      0.2          1200      600
+nlms     1.000     25.3     -5.2           467      233
+rls     0.9900     30.8      0.4           400      200
+rls     0.9950     32.2      1.8           533      267
+rls     0.9980     32.5      2.1           667      333
+rls     0.9990     32.7      2.3           933      467
+rls     0.9995     32.8      2.4          1200      600
+best setting per algorithm: {'lms': (0.1, 34.2), 'nlms': (0.1, 33.7), 'rls': (0.9995, 32.8)}  (tuned on the same scenario -> optimistic)
+[19s elapsed]
+
+== spreading gain vs canceller (bit-level SINR, same interference; canceller=best setting above) ==
+  Gp  Gp dB SINR in(chip)  despread only  canceller only(chip)  canceller+despread
+  16   12.0         -30.4          -18.3                   2.5                14.5
+  64   18.1         -30.4          -12.2                   2.5                20.8
+ 256   24.1         -30.4           -6.6                   2.4                26.9
+BER at Gp=64 (8 seeds; canceller branches counted after 1st half for convergence): despread only: 1282/3200 = 0.4006; canceller+despread: 0/1600 = 0.0000; canceller only (1 chip=1 bit): 9585/102400 = 0.0936
+
+== linear frequency drift (chirp rate) : SINR improvement dB at the best-grid step (picked per rate), N=12000 ==
+ rate Hz/s      lms     nlms      rls
+         0     33.9     33.1     32.6
+       100     29.2     28.3     28.0
+       500     24.4     23.8     22.0
+      2000     18.2     17.8     10.4
+      8000      7.5      7.5      0.3
+[78s elapsed]
+
+== interferer HOPS to a random frequency (150-900 Hz) every `dwell` samples: SINR improvement dB (best grid step per dwell), N=12000 ==
+dwell smp     ms      lms     nlms      rls   spreading gain Gp=16/64/256: 12.0/18.1/24.1 dB
+     4000   2000     21.0     21.5     22.3
+     1000    500     16.8     16.9     18.7
+      400    200     12.6     12.6     14.5
+      200    100     10.3     10.3     12.2
+      100     50      7.1      7.1      8.8
+       50     25      4.5      4.5      5.0
+
+wideband (Gaussian) interferer of the same power instead of a tone: RLS gain 0.0 dB (a predictor cannot cancel what is not predictable)
+[113s total]
+
+real	2m1.834s
+user	2m0.763s
+sys	0m0.192s

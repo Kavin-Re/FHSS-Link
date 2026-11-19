@@ -1,0 +1,10 @@
+== verilator --lint-only -Wall
+-- hop_keyed_lean DW=64
+-- hop_sync_axil DW=64
+-- hop_keyed_lean DW=32
+-- hop_sync_axil DW=32
+-- hop_lfsr_fold FV=0
+-- hop_lfsr_fold FV=1
+(no output under a heading = clean)
+== iverilog -Wall
+(no output above = clean)

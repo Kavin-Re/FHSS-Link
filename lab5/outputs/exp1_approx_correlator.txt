@@ -1,0 +1,31 @@
+cfg | energy | BER@4dB | BER@8dB | BER@8dB+tone15dB
+('exact',)       1.000  0.01272  0.00019  0.1690
+('loa', 1)       0.950  0.02359  0.00181  0.1746
+('loa', 2)       0.883  0.02405  0.00210  0.1740
+('loa', 3)       0.817  0.02835  0.00512  0.1778
+('loa', 4)       0.750  0.06332  0.14002  0.2291
+('loa', 5)       0.683  0.45008  0.50079  0.0669
+('loa', 6)       0.617  0.50121  0.50095  0.5012
+('loac', 1)      0.950  0.01388  0.00022  0.1712
+('loac', 2)      0.883  0.01701  0.00065  0.1759
+('loac', 3)      0.817  0.02756  0.00409  0.1890
+('loac', 4)      0.750  0.06332  0.14008  0.2291
+('loac', 5)      0.683  0.45008  0.50079  0.0669
+('loac', 6)      0.617  1.00000  0.99974  1.0000
+('loac', 7)      0.550  1.00000  0.99974  1.0000
+('trunc', 1)     0.917  0.01423  0.00031  0.1716
+('trunc', 2)     0.833  0.02044  0.00146  0.1789
+('trunc', 3)     0.750  0.05174  0.01682  0.1953
+('trunc', 4)     0.667  0.11767  0.02626  0.2048
+('trunc', 5)     0.583  0.12111  0.02626  0.4185
+('truncraw', 1)  0.917  0.02710  0.00250  0.1777
+('truncraw', 2)  0.833  0.15802  0.11637  0.2317
+('truncraw', 3)  0.750  0.47688  0.49617  0.3905
+mode configs: {'NORMAL': ('trunc', 1), 'ADAPT': ('loac', 1), 'CODED': ('exact',), 'SURVIVAL': ('exact',)}
+fixed_exact PDR 0.7933  energy 1.000  phases {'clean': 0.997, 'static-2': 0.844, 'wide-8of13': 0.421, 'random-4': 0.708}  occ {'NORMAL': 1.0, 'ADAPT': 0.0, 'CODED': 0.0, 'SURVIVAL': 0.0}
+fixed_cheap PDR 0.7917  energy 0.917  phases {'clean': 0.996, 'static-2': 0.841, 'wide-8of13': 0.42, 'random-4': 0.707}  occ {'NORMAL': 1.0, 'ADAPT': 0.0, 'CODED': 0.0, 'SURVIVAL': 0.0}
+ladder_exact PDR 0.9325  energy 1.000  phases {'clean': 0.997, 'static-2': 0.989, 'wide-8of13': 0.974, 'random-4': 0.706}  occ {'NORMAL': 0.39, 'ADAPT': 0.4, 'CODED': 0.21, 'SURVIVAL': 0.0}
+ladder_scalable PDR 0.9325  energy 0.947  phases {'clean': 0.996, 'static-2': 0.989, 'wide-8of13': 0.972, 'random-4': 0.711}  occ {'NORMAL': 0.39, 'ADAPT': 0.4, 'CODED': 0.2, 'SURVIVAL': 0.0}
+tolerance sweep NORMAL<= 1.3x exact stress BER: {'tol': 1.3, 'normal': "('trunc', 1)", 'pdr': 0.9324666666666667, 'energy': 0.9471144444443104, 'clean_pdr': 0.9955833333333333}
+tolerance sweep NORMAL<= 2.0x exact stress BER: {'tol': 2.0, 'normal': "('trunc', 2)", 'pdr': 0.9272333333333332, 'energy': 0.9191066666666502, 'clean_pdr': 0.9809166666666665}
+tolerance sweep NORMAL<= 4.0x exact stress BER: {'tol': 4.0, 'normal': "('loa', 3)", 'pdr': 0.9274666666666667, 'energy': 0.9528461111111467, 'clean_pdr': 0.98575}

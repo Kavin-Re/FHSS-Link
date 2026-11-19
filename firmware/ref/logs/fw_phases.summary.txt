@@ -1,0 +1,9 @@
+scenario=phases slots=3000 seed=1  (HOST SIMULATION - nothing here has run on an ESP32)
+  phase clean      slots  600  critical  60/ 60 (1.00)  bulk goodput 0.88 pkts/slot  mode at end NORMAL
+  phase static-2   slots  600  critical  60/ 60 (1.00)  bulk goodput 0.83 pkts/slot  mode at end ADAPT
+  phase wide-8of13 slots  600  critical  24/ 60 (0.40)  bulk goodput 0.02 pkts/slot  mode at end SURVIVAL
+  phase random-4   slots  600  critical  60/ 60 (1.00)  bulk goodput 0.45 pkts/slot  mode at end CODED
+  phase clean2     slots  601  critical  60/ 61 (0.98)  bulk goodput 0.88 pkts/slot  mode at end NORMAL
+  TX: slots 3001 acked 2223 (74.1%) crit 264/301 missed 37 | ladder switches 5 final mode NORMAL
+  TX frame errors: crc 5 mac 0 | RX: frames 2378 crc 112 mac 0 dup 0 time-rejected 1 | RX sync TRACK acq 4 lost 3 search 3
+  medium: tx 173266 delivered 4606 jam-dropped 292 jam-corrupted 117 clean-dropped 39 | jam emitted 36000 ms, guard allow 36000 deny 0 (denies: duty 0 burst 0 no-token 0 killed 0)

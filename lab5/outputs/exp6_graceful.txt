@@ -1,0 +1,18 @@
+static LADDER  critical: 0.99 1.00 1.00 1.00 1.00 0.99 1.00 1.00 0.99 0.98 0.94 0.88 0.74
+static LADDER  bulk    : 0.89 0.89 0.88 0.86 0.58 0.52 0.14 0.04 0.00 0.00 0.00 0.00 0.00
+static NORMAL  critical: 0.99 0.90 0.83 0.76 0.69 0.62 0.55 0.47 0.40 0.33 0.26 0.20 0.13
+static NORMAL  bulk    : 0.89 0.83 0.76 0.70 0.63 0.57 0.50 0.44 0.37 0.31 0.25 0.18 0.12
+static CLIFF   critical: 0.99 0.90 0.75 0.38 0.16 0.12 0.09 0.08 0.07 0.06 0.04 0.03 0.03
+static CLIFF   bulk    : 0.89 0.83 0.69 0.33 0.13 0.09 0.08 0.07 0.06 0.05 0.04 0.03 0.02
+random LADDER  critical: 0.99 1.00 0.99 1.00 1.00 0.99 0.98 0.99 0.99 0.97 0.94 0.88 0.73
+random LADDER  bulk    : 0.89 0.81 0.67 0.49 0.43 0.34 0.17 0.01 0.00 0.00 0.00 0.00 0.00
+random NORMAL  critical: 0.99 0.91 0.84 0.77 0.69 0.60 0.54 0.46 0.40 0.35 0.26 0.23 0.13
+random NORMAL  bulk    : 0.89 0.83 0.76 0.70 0.63 0.57 0.50 0.43 0.36 0.30 0.23 0.18 0.11
+random CLIFF   critical: 0.99 0.91 0.82 0.38 0.17 0.11 0.09 0.07 0.06 0.05 0.04 0.03 0.02
+random CLIFF   bulk    : 0.89 0.83 0.73 0.32 0.14 0.10 0.08 0.06 0.06 0.04 0.03 0.03 0.02
+static LADDER  max one-step drop 0.14 (k=11->12), first k with critical<0.5: None, mean critical over k: 0.97
+static NORMAL  max one-step drop 0.08 (k=0->1), first k with critical<0.5: 7, mean critical over k: 0.55
+static CLIFF   max one-step drop 0.38 (k=2->3), first k with critical<0.5: 3, mean critical over k: 0.27
+random LADDER  max one-step drop 0.15 (k=11->12), first k with critical<0.5: None, mean critical over k: 0.97
+random NORMAL  max one-step drop 0.10 (k=11->12), first k with critical<0.5: 7, mean critical over k: 0.55
+random CLIFF   max one-step drop 0.44 (k=2->3), first k with critical<0.5: 3, mean critical over k: 0.27

@@ -1,0 +1,28 @@
+
+18. Printing statistics.
+
+=== approx_correlator ===
+
+   Number of wires:               2734
+   Number of wire bits:           3210
+   Number of public wires:          14
+   Number of public wire bits:     490
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2757
+     $_ANDNOT_                      18
+     $_AND_                         92
+     $_DFF_P_                        3
+     $_MUX_                          1
+     $_NAND_                      1194
+     $_NOR_                          9
+     $_NOT_                          1
+     $_ORNOT_                       64
+     $_OR_                          32
+     $_SDFFE_PN0P_                  18
+     $_SDFFE_PN1P_                   2
+     $_SDFF_PN0_                     1
+     $_XNOR_                       380
+     $_XOR_                        942
+

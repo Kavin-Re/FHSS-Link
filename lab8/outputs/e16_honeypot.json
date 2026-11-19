@@ -1,0 +1,1430 @@
+{
+ "none|freq": [
+  {
+   "deliv": 0.568699999999989,
+   "wasted_frac": 0.773,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5984666666666572,
+   "wasted_frac": 0.7886666666666666,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5838999999999896,
+   "wasted_frac": 0.781,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5889666666666566,
+   "wasted_frac": 0.7836666666666666,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6000499999999904,
+   "wasted_frac": 0.7895,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5924499999999902,
+   "wasted_frac": 0.7855,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5911833333333234,
+   "wasted_frac": 0.7848333333333334,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5889666666666566,
+   "wasted_frac": 0.7836666666666666,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6016333333333239,
+   "wasted_frac": 0.7903333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6051166666666574,
+   "wasted_frac": 0.7921666666666667,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5848499999999898,
+   "wasted_frac": 0.7815,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5876999999999899,
+   "wasted_frac": 0.783,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6016333333333239,
+   "wasted_frac": 0.7903333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6082833333333242,
+   "wasted_frac": 0.7938333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5990999999999904,
+   "wasted_frac": 0.789,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6142999999999912,
+   "wasted_frac": 0.797,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6038499999999907,
+   "wasted_frac": 0.7915,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5873833333333232,
+   "wasted_frac": 0.7828333333333334,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.5892833333333233,
+   "wasted_frac": 0.7838333333333334,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6000499999999904,
+   "wasted_frac": 0.7895,
+   "decoy_per_slot": 0.0
+  }
+ ],
+ "none|exp3": [
+  {
+   "deliv": 0.6193666666666581,
+   "wasted_frac": 0.7996666666666666,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.637416666666659,
+   "wasted_frac": 0.8091666666666667,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6389999999999924,
+   "wasted_frac": 0.81,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6332999999999921,
+   "wasted_frac": 0.807,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6367833333333256,
+   "wasted_frac": 0.8088333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6405833333333257,
+   "wasted_frac": 0.8108333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6469166666666594,
+   "wasted_frac": 0.8141666666666667,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6491333333333262,
+   "wasted_frac": 0.8153333333333334,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.644383333333326,
+   "wasted_frac": 0.8128333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6665499999999936,
+   "wasted_frac": 0.8245,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6196833333333247,
+   "wasted_frac": 0.7998333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6446999999999926,
+   "wasted_frac": 0.813,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.631399999999992,
+   "wasted_frac": 0.806,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6725666666666605,
+   "wasted_frac": 0.8276666666666667,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6434333333333259,
+   "wasted_frac": 0.8123333333333334,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6573666666666599,
+   "wasted_frac": 0.8196666666666667,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.646283333333326,
+   "wasted_frac": 0.8138333333333333,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6285499999999918,
+   "wasted_frac": 0.8045,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6589499999999933,
+   "wasted_frac": 0.8205,
+   "decoy_per_slot": 0.0
+  },
+  {
+   "deliv": 0.6320333333333253,
+   "wasted_frac": 0.8063333333333333,
+   "decoy_per_slot": 0.0
+  }
+ ],
+ "rho=.1|freq": [
+  {
+   "deliv": 0.568699999999989,
+   "wasted_frac": 0.773,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5984666666666572,
+   "wasted_frac": 0.7886666666666666,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5854833333333231,
+   "wasted_frac": 0.7818333333333334,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5889666666666566,
+   "wasted_frac": 0.7836666666666666,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6006833333333239,
+   "wasted_frac": 0.7898333333333334,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5937166666666569,
+   "wasted_frac": 0.7861666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5914999999999901,
+   "wasted_frac": 0.785,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5889666666666566,
+   "wasted_frac": 0.7836666666666666,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6016333333333239,
+   "wasted_frac": 0.7903333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6051166666666574,
+   "wasted_frac": 0.7921666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5848499999999898,
+   "wasted_frac": 0.7815,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5876999999999899,
+   "wasted_frac": 0.783,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6016333333333239,
+   "wasted_frac": 0.7903333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6089166666666576,
+   "wasted_frac": 0.7941666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6006833333333239,
+   "wasted_frac": 0.7898333333333334,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6146166666666578,
+   "wasted_frac": 0.7971666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6038499999999907,
+   "wasted_frac": 0.7915,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5889666666666566,
+   "wasted_frac": 0.7836666666666666,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.5956166666666569,
+   "wasted_frac": 0.7871666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6000499999999904,
+   "wasted_frac": 0.7895,
+   "decoy_per_slot": 0.4
+  }
+ ],
+ "rho=.1|exp3": [
+  {
+   "deliv": 0.6564166666666598,
+   "wasted_frac": 0.8191666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6649666666666603,
+   "wasted_frac": 0.8236666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6557833333333265,
+   "wasted_frac": 0.8188333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6412166666666591,
+   "wasted_frac": 0.8111666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6788999999999943,
+   "wasted_frac": 0.831,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6766833333333274,
+   "wasted_frac": 0.8298333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6605333333333266,
+   "wasted_frac": 0.8213333333333334,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6706666666666605,
+   "wasted_frac": 0.8266666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6659166666666603,
+   "wasted_frac": 0.8241666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6763666666666608,
+   "wasted_frac": 0.8296666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6424833333333259,
+   "wasted_frac": 0.8118333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6551499999999931,
+   "wasted_frac": 0.8185,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6469166666666594,
+   "wasted_frac": 0.8141666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.688083333333328,
+   "wasted_frac": 0.8358333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6586333333333266,
+   "wasted_frac": 0.8203333333333334,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6896666666666613,
+   "wasted_frac": 0.8366666666666667,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.669083333333327,
+   "wasted_frac": 0.8258333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6434333333333259,
+   "wasted_frac": 0.8123333333333334,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6766833333333274,
+   "wasted_frac": 0.8298333333333333,
+   "decoy_per_slot": 0.4
+  },
+  {
+   "deliv": 0.6598999999999933,
+   "wasted_frac": 0.821,
+   "decoy_per_slot": 0.4
+  }
+ ],
+ "rho=.3|freq": [
+  {
+   "deliv": 0.9562999999999999,
+   "wasted_frac": 0.977,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9863833333333333,
+   "wasted_frac": 0.9928333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9683333333333333,
+   "wasted_frac": 0.9833333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9740333333333333,
+   "wasted_frac": 0.9863333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9917666666666667,
+   "wasted_frac": 0.9956666666666667,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9753,
+   "wasted_frac": 0.987,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.98955,
+   "wasted_frac": 0.9945,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9927166666666667,
+   "wasted_frac": 0.9961666666666666,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9844833333333334,
+   "wasted_frac": 0.9918333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9901833333333333,
+   "wasted_frac": 0.9948333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9765666666666666,
+   "wasted_frac": 0.9876666666666667,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9905,
+   "wasted_frac": 0.995,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9753,
+   "wasted_frac": 0.987,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9867,
+   "wasted_frac": 0.993,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9901833333333333,
+   "wasted_frac": 0.9948333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9873333333333333,
+   "wasted_frac": 0.9933333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9848,
+   "wasted_frac": 0.992,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9829,
+   "wasted_frac": 0.991,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9879666666666667,
+   "wasted_frac": 0.9936666666666667,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9759333333333333,
+   "wasted_frac": 0.9873333333333333,
+   "decoy_per_slot": 1.2
+  }
+ ],
+ "rho=.3|exp3": [
+  {
+   "deliv": 0.9623166666666666,
+   "wasted_frac": 0.9801666666666666,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9217833333333336,
+   "wasted_frac": 0.9588333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9325500000000002,
+   "wasted_frac": 0.9645,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9404666666666668,
+   "wasted_frac": 0.9686666666666667,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9468000000000001,
+   "wasted_frac": 0.972,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9062666666666672,
+   "wasted_frac": 0.9506666666666667,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9686499999999999,
+   "wasted_frac": 0.9835,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9562999999999999,
+   "wasted_frac": 0.977,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9483833333333334,
+   "wasted_frac": 0.9728333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9635833333333332,
+   "wasted_frac": 0.9808333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.96485,
+   "wasted_frac": 0.9815,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9452166666666667,
+   "wasted_frac": 0.9711666666666666,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9543999999999999,
+   "wasted_frac": 0.976,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9341333333333335,
+   "wasted_frac": 0.9653333333333334,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9363500000000001,
+   "wasted_frac": 0.9665,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9531333333333333,
+   "wasted_frac": 0.9753333333333334,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9534499999999999,
+   "wasted_frac": 0.9755,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9217833333333336,
+   "wasted_frac": 0.9588333333333333,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9173500000000003,
+   "wasted_frac": 0.9565,
+   "decoy_per_slot": 1.2
+  },
+  {
+   "deliv": 0.9521833333333333,
+   "wasted_frac": 0.9748333333333333,
+   "decoy_per_slot": 1.2
+  }
+ ],
+ "rho=.6|freq": [
+  {
+   "deliv": 0.9936666666666667,
+   "wasted_frac": 0.9966666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9930333333333333,
+   "wasted_frac": 0.9963333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9920833333333333,
+   "wasted_frac": 0.9958333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.99525,
+   "wasted_frac": 0.9975,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9905,
+   "wasted_frac": 0.995,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.99335,
+   "wasted_frac": 0.9965,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9927166666666667,
+   "wasted_frac": 0.9961666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9949333333333333,
+   "wasted_frac": 0.9973333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9917666666666667,
+   "wasted_frac": 0.9956666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9920833333333333,
+   "wasted_frac": 0.9958333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9927166666666667,
+   "wasted_frac": 0.9961666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9927166666666667,
+   "wasted_frac": 0.9961666666666666,
+   "decoy_per_slot": 2.4
+  }
+ ],
+ "rho=.6|exp3": [
+  {
+   "deliv": 0.98385,
+   "wasted_frac": 0.9915,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9797333333333333,
+   "wasted_frac": 0.9893333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9835333333333334,
+   "wasted_frac": 0.9913333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.98195,
+   "wasted_frac": 0.9905,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9835333333333334,
+   "wasted_frac": 0.9913333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9803666666666666,
+   "wasted_frac": 0.9896666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9813166666666666,
+   "wasted_frac": 0.9901666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9835333333333334,
+   "wasted_frac": 0.9913333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9825833333333334,
+   "wasted_frac": 0.9908333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9787833333333333,
+   "wasted_frac": 0.9888333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9816333333333334,
+   "wasted_frac": 0.9903333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.98195,
+   "wasted_frac": 0.9905,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9863833333333333,
+   "wasted_frac": 0.9928333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9835333333333334,
+   "wasted_frac": 0.9913333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.98385,
+   "wasted_frac": 0.9915,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9851166666666666,
+   "wasted_frac": 0.9921666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9816333333333334,
+   "wasted_frac": 0.9903333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9848,
+   "wasted_frac": 0.992,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9844833333333334,
+   "wasted_frac": 0.9918333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.98195,
+   "wasted_frac": 0.9905,
+   "decoy_per_slot": 2.4
+  }
+ ],
+ "rho=1|freq": [
+  {
+   "deliv": 0.9936666666666667,
+   "wasted_frac": 0.9966666666666667,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9930333333333333,
+   "wasted_frac": 0.9963333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9920833333333333,
+   "wasted_frac": 0.9958333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.99525,
+   "wasted_frac": 0.9975,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9905,
+   "wasted_frac": 0.995,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.99335,
+   "wasted_frac": 0.9965,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9927166666666667,
+   "wasted_frac": 0.9961666666666666,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9949333333333333,
+   "wasted_frac": 0.9973333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9917666666666667,
+   "wasted_frac": 0.9956666666666667,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9924,
+   "wasted_frac": 0.996,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9920833333333333,
+   "wasted_frac": 0.9958333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9939833333333333,
+   "wasted_frac": 0.9968333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9927166666666667,
+   "wasted_frac": 0.9961666666666666,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9927166666666667,
+   "wasted_frac": 0.9961666666666666,
+   "decoy_per_slot": 4.0
+  }
+ ],
+ "rho=1|exp3": [
+  {
+   "deliv": 0.9879666666666667,
+   "wasted_frac": 0.9936666666666667,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9829,
+   "wasted_frac": 0.991,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9829,
+   "wasted_frac": 0.991,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9816333333333334,
+   "wasted_frac": 0.9903333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9841666666666666,
+   "wasted_frac": 0.9916666666666667,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9879666666666667,
+   "wasted_frac": 0.9936666666666667,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.981,
+   "wasted_frac": 0.99,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9841666666666666,
+   "wasted_frac": 0.9916666666666667,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9851166666666666,
+   "wasted_frac": 0.9921666666666666,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.98575,
+   "wasted_frac": 0.9925,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9832166666666666,
+   "wasted_frac": 0.9911666666666666,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9797333333333333,
+   "wasted_frac": 0.9893333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9825833333333334,
+   "wasted_frac": 0.9908333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9829,
+   "wasted_frac": 0.991,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.98195,
+   "wasted_frac": 0.9905,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9822666666666666,
+   "wasted_frac": 0.9906666666666667,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9851166666666666,
+   "wasted_frac": 0.9921666666666666,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9854333333333334,
+   "wasted_frac": 0.9923333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9844833333333334,
+   "wasted_frac": 0.9918333333333333,
+   "decoy_per_slot": 4.0
+  },
+  {
+   "deliv": 0.9829,
+   "wasted_frac": 0.991,
+   "decoy_per_slot": 4.0
+  }
+ ],
+ "rho=.6, Q_D=.5|freq": [
+  {
+   "deliv": 0.9753,
+   "wasted_frac": 0.987,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.98385,
+   "wasted_frac": 0.9915,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9806833333333334,
+   "wasted_frac": 0.9898333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9778333333333333,
+   "wasted_frac": 0.9883333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9898666666666667,
+   "wasted_frac": 0.9946666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9572499999999999,
+   "wasted_frac": 0.9775,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.98765,
+   "wasted_frac": 0.9935,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9870166666666667,
+   "wasted_frac": 0.9931666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9832166666666666,
+   "wasted_frac": 0.9911666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9917666666666667,
+   "wasted_frac": 0.9956666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9772,
+   "wasted_frac": 0.988,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9860666666666666,
+   "wasted_frac": 0.9926666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9816333333333334,
+   "wasted_frac": 0.9903333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9854333333333334,
+   "wasted_frac": 0.9923333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.981,
+   "wasted_frac": 0.99,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.98575,
+   "wasted_frac": 0.9925,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9882833333333333,
+   "wasted_frac": 0.9938333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9825833333333334,
+   "wasted_frac": 0.9908333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9775166666666666,
+   "wasted_frac": 0.9881666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9825833333333334,
+   "wasted_frac": 0.9908333333333333,
+   "decoy_per_slot": 2.4
+  }
+ ],
+ "rho=.6, Q_D=.5|exp3": [
+  {
+   "deliv": 0.9173500000000003,
+   "wasted_frac": 0.9565,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9122833333333338,
+   "wasted_frac": 0.9538333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9255833333333336,
+   "wasted_frac": 0.9608333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9509166666666666,
+   "wasted_frac": 0.9741666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9572499999999999,
+   "wasted_frac": 0.9775,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9414166666666668,
+   "wasted_frac": 0.9691666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9436333333333334,
+   "wasted_frac": 0.9703333333333334,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9686499999999999,
+   "wasted_frac": 0.9835,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9525,
+   "wasted_frac": 0.975,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9021500000000006,
+   "wasted_frac": 0.9485,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9430000000000001,
+   "wasted_frac": 0.97,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9319166666666668,
+   "wasted_frac": 0.9641666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9240000000000003,
+   "wasted_frac": 0.96,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9186166666666671,
+   "wasted_frac": 0.9571666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9385666666666668,
+   "wasted_frac": 0.9676666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9319166666666668,
+   "wasted_frac": 0.9641666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9594666666666666,
+   "wasted_frac": 0.9786666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9461666666666667,
+   "wasted_frac": 0.9716666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9078500000000005,
+   "wasted_frac": 0.9515,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.9192500000000003,
+   "wasted_frac": 0.9575,
+   "decoy_per_slot": 2.4
+  }
+ ],
+ "rho=.6, Q_D=1|freq": [
+  {
+   "deliv": 0.568699999999989,
+   "wasted_frac": 0.773,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5984666666666572,
+   "wasted_frac": 0.7886666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5838999999999896,
+   "wasted_frac": 0.781,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5889666666666566,
+   "wasted_frac": 0.7836666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6000499999999904,
+   "wasted_frac": 0.7895,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5924499999999902,
+   "wasted_frac": 0.7855,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5911833333333234,
+   "wasted_frac": 0.7848333333333334,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5889666666666566,
+   "wasted_frac": 0.7836666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6016333333333239,
+   "wasted_frac": 0.7903333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6051166666666574,
+   "wasted_frac": 0.7921666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5848499999999898,
+   "wasted_frac": 0.7815,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5876999999999899,
+   "wasted_frac": 0.783,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6016333333333239,
+   "wasted_frac": 0.7903333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6082833333333242,
+   "wasted_frac": 0.7938333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5990999999999904,
+   "wasted_frac": 0.789,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6142999999999912,
+   "wasted_frac": 0.797,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6038499999999907,
+   "wasted_frac": 0.7915,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5873833333333232,
+   "wasted_frac": 0.7828333333333334,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.5892833333333233,
+   "wasted_frac": 0.7838333333333334,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6000499999999904,
+   "wasted_frac": 0.7895,
+   "decoy_per_slot": 2.4
+  }
+ ],
+ "rho=.6, Q_D=1|exp3": [
+  {
+   "deliv": 0.6193666666666581,
+   "wasted_frac": 0.7996666666666666,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.637416666666659,
+   "wasted_frac": 0.8091666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6389999999999924,
+   "wasted_frac": 0.81,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6332999999999921,
+   "wasted_frac": 0.807,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6367833333333256,
+   "wasted_frac": 0.8088333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6405833333333257,
+   "wasted_frac": 0.8108333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6469166666666594,
+   "wasted_frac": 0.8141666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6491333333333262,
+   "wasted_frac": 0.8153333333333334,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.644383333333326,
+   "wasted_frac": 0.8128333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6665499999999936,
+   "wasted_frac": 0.8245,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6196833333333247,
+   "wasted_frac": 0.7998333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6446999999999926,
+   "wasted_frac": 0.813,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.631399999999992,
+   "wasted_frac": 0.806,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6725666666666605,
+   "wasted_frac": 0.8276666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6434333333333259,
+   "wasted_frac": 0.8123333333333334,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6573666666666599,
+   "wasted_frac": 0.8196666666666667,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.646283333333326,
+   "wasted_frac": 0.8138333333333333,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6285499999999918,
+   "wasted_frac": 0.8045,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6589499999999933,
+   "wasted_frac": 0.8205,
+   "decoy_per_slot": 2.4
+  },
+  {
+   "deliv": 0.6320333333333253,
+   "wasted_frac": 0.8063333333333333,
+   "decoy_per_slot": 2.4
+  }
+ ]
+}

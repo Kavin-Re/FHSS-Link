@@ -1,0 +1,9 @@
+keyed RTL key1 (20000 hops)        {'chi_p': 0.567, 'serial_corr_p': 0.701, 'runs_p': 0.555, 'entropy_bits': 3.7, 'max_entropy': 3.7, 'predictor_acc': 0.0708, 'chance': 0.0769, 'min_count': 1475, 'max_count': 1603}
+keyed RTL key2 (20000 hops)        {'chi_p': 0.15, 'serial_corr_p': 0.407, 'runs_p': 0.669, 'entropy_bits': 3.7, 'max_entropy': 3.7, 'predictor_acc': 0.0671, 'chance': 0.0769, 'min_count': 1463, 'max_count': 1625}
+keyed RTL key3 (20000 hops)        {'chi_p': 0.627, 'serial_corr_p': 0.227, 'runs_p': 0.255, 'entropy_bits': 3.7, 'max_entropy': 3.7, 'predictor_acc': 0.0706, 'chance': 0.0769, 'min_count': 1479, 'max_count': 1583}
+keyed RTL all 60000                {'chi_p': 0.733, 'serial_corr_p': 0.165, 'runs_p': 0.583, 'entropy_bits': 3.7, 'max_entropy': 3.7, 'predictor_acc': 0.0759, 'chance': 0.0769, 'min_count': 4500, 'max_count': 4687}
+LFSR16 RTL (20000 hops)            {'chi_p': 0.794, 'serial_corr_p': 0.0, 'runs_p': 0.282, 'entropy_bits': 3.7, 'max_entropy': 3.7, 'predictor_acc': 0.2356, 'chance': 0.0769, 'min_count': 1490, 'max_count': 1592}
+
+LFSR break on RTL stream (seed ACE1): identified after 8 hops True
+LFSR break over 300 random seeds: identified 300/300; hops to identify min=8 median=8 mean=8.4 p90=9 max=9
+same attacker vs keyed RTL stream: identified=False, candidate set exhausted after 2 hops

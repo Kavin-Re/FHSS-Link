@@ -1,0 +1,34 @@
+== guard time for 99.9% reception vs beacon period (calibrate seed 0, hold-out seed 1) ==
+ T_b[s] | rms err naive/kalman [us] | guard g naive / kalman [us] | hold-out reception naive / kalman | eta naive / kalman | saved [pp]
+   0.10 |       3.1       0.9 |       10.1        3.8 | 0.9991 0.9994 | 0.980 0.986 |    0.6
+   0.25 |       3.5       1.0 |       11.5        3.9 | 0.9990 0.9995 | 0.985 0.992 |    0.7
+   0.50 |       4.6       1.2 |       15.0        4.1 | 0.9991 0.9993 | 0.983 0.994 |    1.1
+   1.00 |       7.6       1.5 |       23.4        4.7 | 0.9992 0.9990 | 0.976 0.994 |    1.8
+   2.00 |      14.4       2.1 |       41.6        6.1 | 0.9992 0.9984 | 0.960 0.993 |    3.4
+   5.00 |      35.3       3.2 |       98.6        9.3 | 0.9993 0.9989 | 0.910 0.991 |    8.1
+  10.00 |      70.3       4.4 |      195.5       13.1 | 0.9993 0.9989 | 0.836 0.987 |   15.1
+  30.00 |     210.8       8.5 |      591.5       27.5 | 0.9991 0.9991 | 0.628 0.973 |   34.5
+  60.00 |     422.1      16.1 |     1206.7       54.3 | 0.9989 0.9990 | 0.453 0.948 |   49.5
+ 120.00 |     847.4      40.5 |     2498.0      131.3 | 0.9988 0.9989 | 0.286 0.884 |   59.8
+
+== best operating point (max eta over the T_b grid) ==
+naive   best T_b=0.25 s  eta=0.985  guard=11.5 us
+kalman  best T_b=1 s  eta=0.994  guard=4.7 us
+at each method's own best T_b: kalman - naive = 1.0 pp useful airtime
+naive   longest T_b on the grid keeping guard <= 100 us: 5 s
+kalman  longest T_b on the grid keeping guard <= 100 us: 60 s
+
+== beacon loss p_bl=0.2, T_b=5 s ==
+p_bl=0.0: guard naive 98.6 us, kalman 9.3 us
+p_bl=0.2: guard naive 338.7 us, kalman 13.1 us
+
+== filter mismatch at T_b=30 s: skew-walk density used by the filter x true ==
+q_s multiplier   0.01: guard 49.7 us, rms 16.2 us
+q_s multiplier   0.10: guard 37.5 us, rms 13.2 us
+q_s multiplier   1.00: guard 27.5 us, rms 8.5 us
+q_s multiplier  10.00: guard 24.1 us, rms 6.3 us
+q_s multiplier 100.00: guard 26.4 us, rms 6.5 us
+
+== without thermal sinusoid and without skew walk (pure constant skew), T_b=30 s ==
+guard naive 582.0 us, kalman 7.6 us
+saved figures/clock_kalman.png

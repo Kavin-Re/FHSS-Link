@@ -1,0 +1,12 @@
+train 5200 windows, test 1300 windows, 7 features, 5 classes
+test accuracy majority          0.200
+test accuracy nearest centroid  0.739
+test accuracy softmax           0.816
+softmax confusion (rows true, cols predicted) ['none', 'static', 'sweep', 'random', 'reactive']
+[[257   2   0   1   0]
+ [ 28 187  12  32   1]
+ [ 36   7 189  28   0]
+ [ 50  12  20 175   3]
+ [  0   0   0   7 253]]
+softmax per-class recall: {'none': 0.988, 'static': 0.719, 'sweep': 0.727, 'random': 0.673, 'reactive': 0.973}
+softmax accuracy by M: {8: 0.924, 13: 0.839, 16: 0.823, 24: 0.788, 32: 0.711}

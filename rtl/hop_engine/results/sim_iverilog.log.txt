@@ -1,0 +1,28 @@
+TB[m13] M=13 RW=32 NCH=2: hops=60000 chan_errs=0 digest_checked=3000 digest_errs=0 hops_with_retry=0
+TB[m13] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=12 avg=12.00
+RESULT m13 PASS
+tb/tb_hop_keyed.v:73: $finish called at 8100620000 (1ps)
+TB[m13_rw8] M=13 RW=8 NCH=1: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=692
+TB[m13_rw8] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=12 avg=12.00
+RESULT m13_rw8 PASS
+tb/tb_hop_keyed.v:73: $finish called at 2776870000 (1ps)
+TB[m13_rw8n4] M=13 RW=8 NCH=4: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m13_rw8n4] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=14 avg=12.03
+RESULT m13_rw8n4 PASS
+tb/tb_hop_keyed.v:73: $finish called at 2704900000 (1ps)
+WARNING: tb/tb_hop_keyed.v:39: $readmemh(/home/claude/work/hopengine/vectors/vec_m13_rw8n4.mem): Too many words in the file for the requested range [0:1999].
+TB[m13_rw8n4] M=13 RW=8 NCH=4: hops=2000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m13_rw8n4] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=14 avg=12.03
+RESULT m13_rw8n4 PASS
+tb/tb_hop_keyed.v:73: $finish called at 269920000 (1ps)
+TB[m37] M=37 RW=32 NCH=2: hops=3000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m37] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=12 avg=12.00
+RESULT m37 PASS
+tb/tb_hop_keyed.v:73: $finish called at 404050000 (1ps)
+TB[m16] M=16 RW=32 NCH=2: hops=3000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m16] cycles req->valid (retry-free hops, req sampled->valid seen): min=12 max=12 avg=12.00
+RESULT m16 PASS
+tb/tb_hop_keyed.v:73: $finish called at 404050000 (1ps)
+TB[lfsr] hops=80000 errs=0 max cycles req->valid=1
+RESULT lfsr PASS
+tb/tb_hop_lfsr.v:27: $finish called at 800120000 (1ps)

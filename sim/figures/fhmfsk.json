@@ -1,0 +1,53 @@
+{
+ "no_jammer": 0.002175,
+ "jsr-6": {
+  "plain": 0.0264,
+  "keyed": 0.027975
+ },
+ "jsr0": {
+  "plain": 0.4729,
+  "keyed": 0.4774
+ },
+ "jsr3": {
+  "plain": 0.8925,
+  "keyed": 0.896175
+ },
+ "jsr6": {
+  "plain": 0.9376,
+  "keyed": 0.94095
+ },
+ "jsr10": {
+  "plain": 0.937675,
+  "keyed": 0.941
+ },
+ "M4": {
+  "ser": 0.748725,
+  "bits_per_slot": 2.0,
+  "good_bits": 0.50255
+ },
+ "M8": {
+  "ser": 0.876075,
+  "bits_per_slot": 3.0,
+  "good_bits": 0.37177499999999986
+ },
+ "M16": {
+  "ser": 0.94095,
+  "bits_per_slot": 4.0,
+  "good_bits": 0.2362000000000002
+ },
+ "M32": {
+  "ser": 0.96765,
+  "bits_per_slot": 5.0,
+  "good_bits": 0.16174999999999995
+ },
+ "detail_plain": {
+  "erased": 0.842025,
+  "undetected_error": 0.0959,
+  "decoded_equals_attacker_target": 0.999975
+ },
+ "detail_keyed": {
+  "erased": 0.8376,
+  "undetected_error": 0.099575,
+  "decoded_equals_attacker_target": 0.062325
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "LFSR16": {
+  "chi_p": 0.794,
+  "serial_corr_p": 0.0,
+  "runs_p": 0.282,
+  "entropy_bits": 3.7,
+  "max_entropy": 3.7,
+  "predictor_acc": 0.2356,
+  "chance": 0.0769
+ },
+ "keyed PRF": {
+  "chi_p": 0.41,
+  "serial_corr_p": 0.465,
+  "runs_p": 0.533,
+  "entropy_bits": 3.7,
+  "max_entropy": 3.7,
+  "predictor_acc": 0.0673,
+  "chance": 0.0769
+ },
+ "logistic map": {
+  "chi_p": 0.0,
+  "serial_corr_p": 0.0,
+  "runs_p": 0.0,
+  "entropy_bits": 3.559,
+  "max_entropy": 3.7,
+  "predictor_acc": 0.6448,
+  "chance": 0.0769
+ },
+ "Mersenne Twister": {
+  "chi_p": 0.226,
+  "serial_corr_p": 0.378,
+  "runs_p": 0.952,
+  "entropy_bits": 3.7,
+  "max_entropy": 3.7,
+  "predictor_acc": 0.0683,
+  "chance": 0.0769
+ }
+}

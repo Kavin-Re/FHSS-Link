@@ -1,0 +1,39 @@
+{
+ "original": {
+  "depth": 6,
+  "sequences": 137242,
+  "violations": {
+   "S1": {
+    "trace": [
+     [
+      "owner_issue"
+     ],
+     [
+      "tick",
+      4.0
+     ],
+     [
+      "deliver",
+      0
+     ],
+     [
+      "tick",
+      4.0
+     ],
+     [
+      "request"
+     ]
+    ],
+    "what": [
+     "S1 emission on authorisation issued 8.0 s ago (bound 7 s)",
+     8.0
+    ]
+   }
+  }
+ },
+ "challenge": {
+  "depth": 6,
+  "sequences": 299592,
+  "violations": {}
+ }
+}

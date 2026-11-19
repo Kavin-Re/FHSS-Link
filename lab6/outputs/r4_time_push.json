@@ -1,0 +1,48 @@
+{
+ "results": {
+  "0.1": {
+   "viol_frac": 1.0,
+   "t_viol": 290.0,
+   "det_frac": 0.0,
+   "t_det": null,
+   "nis": 2.25
+  },
+  "0.2": {
+   "viol_frac": 1.0,
+   "t_viol": 149.5,
+   "det_frac": 0.0,
+   "t_det": null,
+   "nis": 2.25
+  },
+  "0.5": {
+   "viol_frac": 1.0,
+   "t_viol": 60.0,
+   "det_frac": 0.16666666666666666,
+   "t_det": 42.5,
+   "nis": 2.3333333333333335
+  },
+  "1.0": {
+   "viol_frac": 1.0,
+   "t_viol": 32.0,
+   "det_frac": 0.9166666666666666,
+   "t_det": 39.0,
+   "nis": 3.0
+  },
+  "2.0": {
+   "viol_frac": 1.0,
+   "t_viol": 19.5,
+   "det_frac": 1.0,
+   "t_det": 17.5,
+   "nis": 10.916666666666666
+  },
+  "5.0": {
+   "viol_frac": 1.0,
+   "t_viol": 11.0,
+   "det_frac": 1.0,
+   "t_det": 9.0,
+   "nis": 38.583333333333336
+  }
+ },
+ "false_alarm": 0.0,
+ "nis_noattack": 2.25
+}

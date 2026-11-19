@@ -1,0 +1,90 @@
+[
+ {
+  "attack": "R1 bandit poisoning",
+  "idea": "idea 1",
+  "cost": "medium (jams 10 ch at 50% for 1500 slots)",
+  "baseline": 0.4848901098901099,
+  "hardened": 0.02655485674353597,
+  "base_note": "first-300-slot delivery 0.50 vs 0.97 unpoisoned",
+  "hard_note": "first-300-slot delivery 0.93 vs 0.95 unpoisoned",
+  "base_verdict": "DEGRADED",
+  "hard_verdict": "HOLDS"
+ },
+ {
+  "attack": "R2 learning-rate attack",
+  "idea": "idea 4",
+  "cost": "medium (needs learner memory length)",
+  "baseline": 0.1807239057239056,
+  "hardened": 0.13569023569023556,
+  "base_note": "worst 0.81 vs static-jammer 0.99 (uniform floor 0.77; 81% of learning advantage stripped)",
+  "hard_note": "worst 0.86 vs static-jammer 0.99 (uniform floor 0.77; 61% of learning advantage stripped)",
+  "base_verdict": "HOLDS",
+  "hard_verdict": "HOLDS"
+ },
+ {
+  "attack": "R3 control-plane jamming",
+  "idea": "idea 6",
+  "cost": "cheap (5% duty, 1 channel)",
+  "baseline": 0.8546732906702593,
+  "hardened": 0.0026607389444611718,
+  "base_note": "availability 0.14 vs 0.99",
+  "hard_note": "availability 0.99 vs 0.99",
+  "base_verdict": "BROKEN",
+  "hard_verdict": "HOLDS"
+ },
+ {
+  "attack": "R4 time-pushing",
+  "idea": "idea 7",
+  "cost": "medium (needs a growing-delay relay)",
+  "baseline": 1.0,
+  "hardened": 0.6666666666666666,
+  "base_note": "100% of runs misaligned before any alarm (push 1.0 ppm)",
+  "hard_note": "67% of runs misaligned before any alarm (push 1.0 ppm)",
+  "base_verdict": "BROKEN",
+  "hard_verdict": "BROKEN"
+ },
+ {
+  "attack": "R5 weak-PRNG schedule",
+  "idea": "idea 9",
+  "cost": "cheap (8 observed hops)",
+  "baseline": 1.0,
+  "hardened": 0.017777777777777778,
+  "base_note": "LCG24: future-hop prediction accuracy 1.00 after <=20 hops seen",
+  "hard_note": "HMAC: future-hop prediction accuracy 0.09 after <=20 hops seen",
+  "base_verdict": "BROKEN",
+  "hard_verdict": "HOLDS"
+ },
+ {
+  "attack": "R6 key-from-air drain",
+  "idea": "idea 10",
+  "cost": "medium (control environment)",
+  "baseline": 0.529531129325745,
+  "hardened": 0.0,
+  "base_note": "weak key accepted: min-entropy 0.47 bit/bit",
+  "hard_note": "monitor aborts key (availability lost, key not weakened)",
+  "base_verdict": "DEGRADED",
+  "hard_verdict": "HOLDS"
+ },
+ {
+  "attack": "R7 myopic follower jammer",
+  "idea": "idea 11",
+  "cost": "medium (fast detector)",
+  "baseline": 1.0,
+  "hardened": 0.08663967611336032,
+  "base_note": "follower delivery 0.05 (latency 0.1 dwell)",
+  "hard_note": "follower delivery 0.92 (latency 1.0 dwell)",
+  "base_verdict": "BROKEN",
+  "hard_verdict": "HOLDS"
+ },
+ {
+  "attack": "R8 timing leak",
+  "idea": "idea 5",
+  "cost": "cheap (10% airtime)",
+  "baseline": 0.9445,
+  "hardened": 0.0,
+  "base_note": "critical delivery 0.06 (periodic, 1 try)",
+  "hard_note": "critical delivery 1.00 (randomised, 3 tries)",
+  "base_verdict": "BROKEN",
+  "hard_verdict": "HOLDS"
+ }
+]

@@ -1,0 +1,8 @@
+RM+ T=20000 k=1: formula value 0.91769; defender guarantees 0.91716, jammer concedes at most 0.91825, gap 1.09e-03; max |x_avg - 1/13| = 6.27e-04
+RM+ T=20000 k=2: formula value 0.84538; defender guarantees 0.84418, jammer concedes at most 0.84623, gap 2.05e-03; max |x_avg - 1/13| = 7.09e-04
+EXP3 (gamma=0.07) vs uniform hopping, 60000 slots: mean delivery 0.9187 (value 0.9177); EXP3 mixed strategy entropy 3.379 of 3.700 bits, max p 0.152
+sim/game.py blind     EXP3-extracted delivery (last 5000, 3 seeds) 0.9197 | guarantee of its empirical usage 0.9153 | value 0.9177 | usage entropy 3.70
+sim/game.py afh       EXP3-extracted delivery (last 5000, 3 seeds) 0.9183 | guarantee of its empirical usage 0.9153 | value 0.9177 | usage entropy 3.70
+sim/game.py ucb       EXP3-extracted delivery (last 5000, 3 seeds) 0.9237 | guarantee of its empirical usage 0.9116 | value 0.9177 | usage entropy 3.70
+sim/game.py thompson  EXP3-extracted delivery (last 5000, 3 seeds) 0.9238 | guarantee of its empirical usage 0.9064 | value 0.9177 | usage entropy 3.70
+sim/game.py mixed     EXP3-extracted delivery (last 5000, 3 seeds) 0.9219 | guarantee of its empirical usage 0.9099 | value 0.9177 | usage entropy 3.70

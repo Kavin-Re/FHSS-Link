@@ -1,0 +1,87 @@
+{
+ "0.0": {
+  "naive": {
+   "energy_per_delivered": 1.3000000000000695,
+   "drain_per_packet_period": 1.3000000000000695,
+   "pdr": 1.0
+  },
+  "backoff": {
+   "energy_per_delivered": 1.3000000000000695,
+   "drain_per_packet_period": 1.3000000000000695,
+   "pdr": 1.0
+  },
+  "probe": {
+   "energy_per_delivered": 1.3000000000000695,
+   "drain_per_packet_period": 1.3000000000000695,
+   "pdr": 1.0
+  }
+ },
+ "0.2": {
+  "naive": {
+   "energy_per_delivered": 1.631177059019789,
+   "drain_per_packet_period": 1.630633333333449,
+   "pdr": 0.9996666666666667
+  },
+  "backoff": {
+   "energy_per_delivered": 1.6379793264422735,
+   "drain_per_packet_period": 1.6374333333334594,
+   "pdr": 0.9996666666666667
+  },
+  "probe": {
+   "energy_per_delivered": 1.637831164497957,
+   "drain_per_packet_period": 1.636193333333459,
+   "pdr": 0.999
+  }
+ },
+ "0.5": {
+  "naive": {
+   "energy_per_delivered": 2.5973084886130833,
+   "drain_per_packet_period": 2.5090000000002384,
+   "pdr": 0.966
+  },
+  "backoff": {
+   "energy_per_delivered": 2.643733609386108,
+   "drain_per_packet_period": 2.5538466666669803,
+   "pdr": 0.966
+  },
+  "probe": {
+   "energy_per_delivered": 2.6650650887577196,
+   "drain_per_packet_period": 2.251980000000273,
+   "pdr": 0.845
+  }
+ },
+ "0.8": {
+  "naive": {
+   "energy_per_delivered": 6.438309441422691,
+   "drain_per_packet_period": 4.341566666666035,
+   "pdr": 0.6743333333333333
+  },
+  "backoff": {
+   "energy_per_delivered": 6.732941176470019,
+   "drain_per_packet_period": 4.540246666666283,
+   "pdr": 0.6743333333333333
+  },
+  "probe": {
+   "energy_per_delivered": 6.789857819905399,
+   "drain_per_packet_period": 1.4326600000000393,
+   "pdr": 0.211
+  }
+ },
+ "0.95": {
+  "naive": {
+   "energy_per_delivered": 25.596226415087845,
+   "drain_per_packet_period": 5.878599999998508,
+   "pdr": 0.22966666666666666
+  },
+  "backoff": {
+   "energy_per_delivered": 27.23805515239081,
+   "drain_per_packet_period": 6.255673333332423,
+   "pdr": 0.22966666666666666
+  },
+  "probe": {
+   "energy_per_delivered": 27.145350318471998,
+   "drain_per_packet_period": 1.4206066666667012,
+   "pdr": 0.052333333333333336
+  }
+ }
+}

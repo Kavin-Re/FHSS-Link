@@ -1,0 +1,17 @@
+E14 20 seeds. target delivery loss 0.3; uJ per 1 ms slot; c(P)=P/0.3+30
+  blind optimum: 275.2 +/- 1.0 uJ/slot ; typical config {'P': 7.0, 'k': 13, 'd': 0.44999999999999996}
+  reactive optimum (listen 60 mW): 81.2 +/- 0.1 uJ/slot ; typical config {'P': 7.0, 'd': 0.49999999999999994}
+  blind at 'just enough on average' P=16 dBm: 685.4 +/- 1.7 ; at full power 30 dBm: 13453.3 +/- 0.0
+  blind optimal P* = 6.30 +/- 0.22 dBm (grid 1 dB)
+  reactive beats blind while listening power < 255 +/- 1 mW
+  slot-level replay: blind loss 0.302 +/- 0.001 energy 275.2 +/- 1.0 ; reactive loss 0.303 +/- 0.001 energy 81.2 +/- 0.1
+  margin pricing (blind jammer, same target): margin dB | jammer uJ/slot | defender uJ/slot | d(jammer)/d(defender) vs 0 dB
+     0 | 275 +/- 1 | 135 | -
+     3 | 356 +/- 1 | 240 | 0.77 +/- 0.00
+     6 | 482 +/- 2 | 450 | 0.66 +/- 0.00
+     9 | 698 +/- 3 | 867 | 0.58 +/- 0.00
+    12 | 1069 +/- 3 | 1701 | 0.51 +/- 0.00
+  defender ARQ extra energy 58 uJ/slot at loss 0.3; jammer/defender energy ratio (blind) 4.74 +/- 0.02, (reactive) 1.40 +/- 0.00
+KEY NUMBER: blind-jammer min energy (uJ/slot) for 30% delivery loss = 275.2 +/- 1.0
+KEY NUMBER: reactive-jammer min energy (uJ/slot) = 81.2 +/- 0.1
+KEY NUMBER: cost-exchange ratio jammer/defender (blind) = 4.74 +/- 0.02

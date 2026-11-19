@@ -1,0 +1,11 @@
+&get -n
+&st
+&dch
+&nf
+&put
+buffer -c
+topo
+stime -c
+upsize -c
+dnsize -c
+stime -p

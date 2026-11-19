@@ -1,0 +1,22 @@
+
+19. Printing statistics.
+
+=== corr_core ===
+
+   Number of wires:               2751
+   Number of wire bits:           3209
+   Number of public wires:           4
+   Number of public wire bits:     462
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2760
+     $_ANDNOT_                      17
+     $_AND_                        102
+     $_NAND_                      1228
+     $_NOR_                         69
+     $_ORNOT_                       28
+     $_OR_                          25
+     $_XNOR_                       322
+     $_XOR_                        969
+

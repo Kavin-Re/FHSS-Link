@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fhss-lab"
+version = "0.1.0"
+description = "FHSS-Link: simulators and tools for frequency-hopping / spread-spectrum link resilience (student project)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+plots = ["matplotlib"]
+
+[project.scripts]
+fhss-lab = "fhss_lab.__main__:main"
+
+[tool.setuptools]
+packages = ["fhss_lab"]
+# NOTE: the simulators live in sim/ (not packaged). Use an editable install from a checkout (pip install -e .) or set FHSS_SIM_DIR.

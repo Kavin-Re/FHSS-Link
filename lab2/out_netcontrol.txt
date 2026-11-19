@@ -1,0 +1,86 @@
+== pendulum dt=0.05 ==
+open-loop discrete eigenvalues [1.2479 0.8013]  unstable |a| = 1.2479
+LQR K = [[9.4401 2.1996]]  closed-loop |eig| = [0.836  0.7223]
+scalar-style bound with a=|unstable pole|: p_c = 1-1/a^2 = 0.3579
+
+== scalar plant x+=a x+u+w, deadbeat K=a, i.i.d. loss ==
+a    bound 1-1/a^2 | theory p_c zero  hold  pred | sample-path p (1% of runs exceed |x|>2 in 200 steps, zero)
+1.2    0.3056      | 0.3056   0.7549  0.3056 | 0.530
+1.5    0.5556      | 0.5556   0.8333  0.5556 | 0.772
+2.0    0.7500      | 0.7500   0.9000  0.7500 | 0.899
+
+== pendulum (LQR), i.i.d. loss: MSS threshold p_c ==
+zero  MSS theory p_c = 0.5770   sample-path p (1% of runs exceed 0.35 rad within 200 steps = 10 s) = 0.591
+hold  MSS theory p_c = 0.4831   sample-path p (1% of runs exceed 0.35 rad within 200 steps = 10 s) = 0.477
+pred  MSS theory p_c = 0.3579   sample-path p (1% of runs exceed 0.35 rad within 200 steps = 10 s) = 0.367
+validation of the second-moment theory where Monte Carlo is reliable (stationary E[theta^2], p high):
+  zero  p=0.95: analytic 4.6734e-05   Monte Carlo 4.6973e-05
+  zero  p=0.85: analytic 6.5711e-05   Monte Carlo 6.6084e-05
+  hold  p=0.95: analytic 4.1759e-05   Monte Carlo 4.1973e-05
+  hold  p=0.85: analytic 4.4353e-05   Monte Carlo 4.4509e-05
+  pred  p=0.95: analytic 4.2709e-05   Monte Carlo 4.2921e-05
+  pred  p=0.85: analytic 4.7604e-05   Monte Carlo 4.7787e-05
+
+== pendulum RMS angle (rad), i.i.d. loss (huge values = diverging) ==
+p            zero        hold        pred   theory rho(zero/hold/pred)
+ 0.30   1.773e+11        1025      0.1065   1.266/1.254/1.090
+ 0.35   5.449e+07       4.727     0.02882   1.217/1.187/1.012
+ 0.40   2.081e+05      0.1055     0.01984   1.169/1.118/0.934
+ 0.45       548.7     0.02743     0.01375   1.121/1.048/0.857
+ 0.50       3.149     0.01434     0.01121   1.073/0.975/0.779
+ 0.55     0.08157     0.01024    0.009837   1.026/0.902/0.701
+ 0.60     0.02565    0.008429    0.008873   0.978/0.829/0.699
+ 0.65     0.01657    0.007724    0.008272   0.932/0.756/0.699
+ 0.70     0.01248    0.007288    0.007799   0.886/0.693/0.699
+ 0.75     0.01043       0.007    0.007433   0.842/0.688/0.699
+ 0.80    0.009045    0.006788    0.007127   0.801/0.690/0.699
+ 0.85    0.008079    0.006644    0.006884   0.764/0.692/0.699
+ 0.90    0.007381    0.006536     0.00669   0.734/0.695/0.699
+ 0.90    0.007381    0.006536     0.00669   0.734/0.695/0.699
+ 0.92    0.007145    0.006497    0.006619   0.725/0.695/0.699
+ 0.94    0.006931    0.006465    0.006554   0.716/0.696/0.699
+ 0.96    0.006728    0.006437    0.006494   0.710/0.697/0.699
+ 0.98    0.006553    0.006409    0.006439   0.704/0.698/0.699
+ 1.00    0.006386    0.006386    0.006386   0.699/0.699/0.699
+lossless RMS (p=1): {'zero': 0.00639, 'hold': 0.00639, 'pred': 0.00639}
+highest grid p at which RMS exceeds 2x lossless RMS (i.i.d.): {'zero': 0.65, 'hold': 0.5, 'pred': 0.45}
+
+== burstiness (Gilbert-Elliott from hopping; dG=0.99 dB=0.05; M=13: k=1 -> q=0.077, k=3 -> q=0.23) ==
+theory: MSS spectral radius rho at q=1/13 (mean delivery 0.93) vs mean dwell D (rho<1 = mean-square stable)
+D           1     1.5       2       3       5      10      20
+zero    0.726   0.762   0.869   1.059   1.234   1.370   1.439
+hold    0.695   0.708   0.876   1.079   1.255   1.392   1.462
+pred    0.699   0.699   0.797   1.024   1.206   1.343   1.411
+theory: MSS threshold on MEAN delivery rate (bisect over q; n/a = unstable for every q>0)
+zero  D=1: 0.577  D=1.5: 0.682  D=2: 0.787  D=3: n/a
+hold  D=1: 0.483  D=1.5: 0.650  D=2: 0.792  D=3: n/a
+pred  D=1: 0.358  D=1.5: 0.509  D=2: 0.661  D=3: 0.964
+empirical RMS angle (rad) at fixed mean delivery (huge = diverging):
+mean     zero/D=1     zero/D=2     zero/D=5     hold/D=1     hold/D=2     hold/D=5     pred/D=1     pred/D=2     pred/D=5
+0.95     0.006851     0.007486       0.1736     0.006482     0.007179       0.1569     0.006554     0.007016      0.09967
+0.90     0.007389     0.009235       0.2232     0.006561     0.008058       0.3341     0.006712     0.007659       0.1135
+0.85     0.008112      0.01242        5.091     0.006662      0.01136        2.331     0.006904     0.008369       0.4494
+0.80     0.009083      0.02431        43.81     0.006816       0.0186        24.47     0.007138      0.01046       0.4893
+0.70      0.01263      0.06867        586.4     0.007273      0.02892        130.2     0.007804      0.01804        1.732
+
+fraction of runs that exceed 0.35 rad within 200 steps (10 s), N=2000:
+q (k/M)  mean   D     zero    hold    pred
+ 0.077  0.918    1   0.000   0.000   0.000
+ 0.077  0.918    2   0.001   0.000   0.000
+ 0.077  0.918    5   0.052   0.055   0.022
+ 0.077  0.918   20   0.249   0.242   0.151
+ 0.231  0.773    1   0.000   0.000   0.000
+ 0.231  0.773    2   0.010   0.004   0.002
+ 0.231  0.773    5   0.292   0.269   0.115
+ 0.231  0.773   20   0.620   0.609   0.433
+sample-path critical MEAN delivery (1% fall in 10 s, q grid step 0.08) zero D=1: 0.609
+sample-path critical MEAN delivery (1% fall in 10 s, q grid step 0.08) zero D=5: 0.977
+sample-path critical MEAN delivery (1% fall in 10 s, q grid step 0.08) pred D=1: 0.373
+sample-path critical MEAN delivery (1% fall in 10 s, q grid step 0.08) pred D=5: 0.950
+
+saved figures/netcontrol_rms.png
+
+== summary of thresholds ==
+pendulum a=1.248: MSS floor (i.i.d.) zero 0.577 / hold 0.483 / pred 0.358
+bursty MSS floor on mean delivery, D=2: zero 0.7871386391100372 / hold 0.7921287506556853 / pred 0.6609203373693961
+2x-RMS point (i.i.d.): {'zero': 0.65, 'hold': 0.5, 'pred': 0.45}

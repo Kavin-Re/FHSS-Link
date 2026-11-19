@@ -1,0 +1,24 @@
+[tasks]
+prove_default
+prove_rw8
+cover_default
+
+[options]
+prove_default: mode prove
+prove_rw8: mode prove
+cover_default: mode cover
+prove_default: depth 5
+prove_rw8: depth 5
+cover_default: depth 30
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal -sv hop_keyed.v
+prove_rw8: chparam -set RW 8 hop_keyed
+prove_rw8: chparam -set NCH 1 hop_keyed
+prep -top hop_keyed
+
+[files]
+../rtl/hop_keyed.v

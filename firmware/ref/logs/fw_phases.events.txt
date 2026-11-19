@@ -1,0 +1,13 @@
+build: guard hard limits duty=100% power=3 burst=60000 ms (clamped=0)
+follower: acquired beacon
+slot 622: NORMAL -> ADAPT because loss 8% over the last 50 attempts; most-hit channels [3, 1]
+slot 1219: ADAPT -> CODED because loss 26% over the last 50 attempts; most-hit channels [1, 0]
+slot 1245: CODED -> SURVIVAL because loss 56% over the last 50 attempts; most-hit channels [1, 7]
+follower: lost sync
+follower: acquired beacon
+follower: lost sync
+follower: acquired beacon
+follower: lost sync
+follower: acquired beacon
+slot 1910: SURVIVAL -> CODED because loss fell to 36% and stayed low for 100 slots
+slot 2504: CODED -> NORMAL because loss fell to 4% and stayed low for 100 slots

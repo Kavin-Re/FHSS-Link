@@ -1,0 +1,21 @@
+ABC: WireLoad = "Small"  Gates =    166 (  9.6 %)   Cap =  5.9 ff (  1.1 %)   Area =     1106.06 ( 97.6 %)   Delay =  4499.47 ps  ( 22.9 %)               
+ABC: WireLoad = "none"  Gates =    166 (  9.6 %)   Cap =  6.1 ff (  8.9 %)   Area =     1153.61 ( 76.5 %)   Delay =  3665.76 ps  ( 28.3 %)               
+ABC: Path  0 --      13 : 0    6 pi                        A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  16.9 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     124 : 3    2 sky130_fd_sc_hd__xnor3_1  A =  22.52  Df = 390.0  -10.2 ps  S = 107.7 ps  Cin =  3.7 ff  Cout =   8.1 ff  Cmax = 154.7 ff  G =  209  
+ABC: Path  2 --     146 : 3    2 sky130_fd_sc_hd__xnor3_2  A =  23.77  Df = 649.9  -11.1 ps  S =  86.3 ps  Cin =  3.7 ff  Cout =   8.1 ff  Cmax = 301.2 ff  G =  209  
+ABC: Path  3 --     150 : 3    2 sky130_fd_sc_hd__xor3_1   A =  23.77  Df = 888.8  -26.7 ps  S =  92.3 ps  Cin =  3.7 ff  Cout =   6.1 ff  Cmax = 151.1 ff  G =  156  
+ABC: Path  4 --     151 : 3    2 sky130_fd_sc_hd__or3b_1   A =   8.76  Df =1236.7 -150.7 ps  S =  86.7 ps  Cin =  1.6 ff  Cout =   6.6 ff  Cmax = 167.6 ff  G =  408  
+ABC: Path  5 --     156 : 3    4 sky130_fd_sc_hd__a21oi_2  A =   8.76  Df =1425.3 -269.5 ps  S = 148.8 ps  Cin =  4.6 ff  Cout =   9.2 ff  Cmax = 128.2 ff  G =  192  
+ABC: Path  6 --     166 : 3    4 sky130_fd_sc_hd__o21bai_1 A =   7.51  Df =1532.0 -185.5 ps  S = 201.2 ps  Cin =  2.1 ff  Cout =   7.9 ff  Cmax =  77.8 ff  G =  356  
+ABC: Path  7 --     173 : 5    4 sky130_fd_sc_hd__o2111a_2 A =  12.51  Df =1797.6  -77.3 ps  S =  84.4 ps  Cin =  2.4 ff  Cout =  11.2 ff  Cmax = 299.4 ff  G =  438  
+ABC: Path  8 --     176 : 3    2 sky130_fd_sc_hd__or3_1    A =   6.26  Df =2049.0 -124.9 ps  S =  83.8 ps  Cin =  1.5 ff  Cout =   6.3 ff  Cmax = 167.6 ff  G =  391  
+ABC: Path  9 --     177 : 3    5 sky130_fd_sc_hd__nand3_2  A =  10.01  Df =2182.7 -116.6 ps  S = 137.2 ps  Cin =  4.4 ff  Cout =  18.6 ff  Cmax = 260.0 ff  G =  406  
+ABC: Path 10 --     183 : 4    2 sky130_fd_sc_hd__a31oi_4  A =  21.27  Df =2373.3  -58.7 ps  S = 233.5 ps  Cin =  8.5 ff  Cout =  21.6 ff  Cmax = 211.5 ff  G =  248  
+ABC: Path 11 --     194 : 3    4 sky130_fd_sc_hd__mux2_4   A =  15.01  Df =2669.6   -0.4 ps  S =  72.2 ps  Cin =  3.2 ff  Cout =  16.7 ff  Cmax = 536.5 ff  G =  487  
+ABC: Path 12 --     195 : 4    4 sky130_fd_sc_hd__a211oi_4 A =  20.02  Df =2883.4 -169.5 ps  S = 238.0 ps  Cin =  8.8 ff  Cout =  12.4 ff  Cmax = 141.9 ff  G =  131  
+ABC: Path 13 --     198 : 3    3 sky130_fd_sc_hd__nor3_1   A =   5.00  Df =2983.7  -25.4 ps  S = 280.7 ps  Cin =  2.4 ff  Cout =   7.7 ff  Cmax =  52.2 ff  G =  301  
+ABC: Path 14 --     203 : 5    2 sky130_fd_sc_hd__o32ai_2  A =  16.27  Df =3246.3  -74.0 ps  S = 249.0 ps  Cin =  4.4 ff  Cout =   7.2 ff  Cmax =  88.8 ff  G =  155  
+ABC: Path 15 --     206 : 3    6 sky130_fd_sc_hd__o21ai_2  A =   8.76  Df =3394.7  -22.8 ps  S = 229.9 ps  Cin =  4.5 ff  Cout =  16.9 ff  Cmax = 139.2 ff  G =  358  
+ABC: Path 16 --     213 : 4    1 sky130_fd_sc_hd__a31o_1   A =   8.76  Df =3591.6  -31.8 ps  S =  39.1 ps  Cin =  2.4 ff  Cout =   1.8 ff  Cmax = 160.2 ff  G =   72  
+ABC: Path 17 --     215 : 3    1 sky130_fd_sc_hd__o21ai_0  A =   5.00  Df =3665.8  -66.7 ps  S =  57.3 ps  Cin =  1.7 ff  Cout =   0.0 ff  Cmax =  50.4 ff  G =    0  
+ABC: Start-point = pi12 (\s [3]).  End-point = po18 ($auto$rtlil.cc:2609:MuxGate$3975).

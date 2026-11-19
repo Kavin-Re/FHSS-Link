@@ -1,0 +1,29 @@
+
+7. Printing statistics.
+
+=== hop_keyed ===
+
+   Number of wires:               3700
+   Number of wire bits:           4506
+   Number of public wires:          22
+   Number of public wire bits:     688
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4272
+     $_ANDNOT_                     169
+     $_AND_                        610
+     $_DFFE_PP_                    388
+     $_DFF_P_                       56
+     $_MUX_                        174
+     $_NAND_                      1213
+     $_NOR_                         26
+     $_NOT_                         71
+     $_ORNOT_                      118
+     $_OR_                         469
+     $_SDFFCE_PN0P_                 13
+     $_SDFFE_PN0P_                   3
+     $_SDFF_PN0_                     1
+     $_XNOR_                       548
+     $_XOR_                        413
+

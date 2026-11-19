@@ -1,0 +1,62 @@
+patrol trajectories: 30 train x 600 msgs, 12 test x 600 msgs, 1 msg/s, keyframe every 20
+keyframe at 1 m / 5 deg / 0.5 m/s / 1 % : 9 bytes (1 type + 4 seq + 14+14 position + 7 batt + 4 flags + 7 heading + 6 speed + 1 stop + 8 CRC = 66 bits, padded)
+round trip check (no loss) ... pos RMS 0.41 m (true includes 0.7 m GPS jitter per axis; quantisation only), bytes/msg 4.10
+
+== rate-distortion (Huffman retrained per level, test trajectories, no loss, keyframe every 20) ==
+level          predict bytes/msg  posRMS m  pos p95 head deg speed m/s
+q0 1m/1deg     False        4.44      0.41     0.60     0.25      0.06
+q1 1m/5deg     False        4.01      0.41     0.60     1.25      0.12
+q2 2m/5deg     False        3.65      0.82     1.19     1.25      0.12
+q3 4m/10deg    False        3.37      1.63     2.39     2.51      0.29
+q4 8m/10deg    False        3.26      3.28     4.82     2.51      0.29
+q5 16m/20deg   False        3.21      6.51     9.53     4.87      0.53
+q6 32m/45deg   False        3.15     13.06    19.24    11.11      1.39
+q0 1m/1deg     True         4.38      0.41     0.60     0.25      0.06
+q1 1m/5deg     True         4.03      0.41     0.60     1.25      0.12
+q2 2m/5deg     True         3.69      0.82     1.19     1.25      0.12
+q3 4m/10deg    True         3.45      1.63     2.39     2.51      0.29
+q4 8m/10deg    True         3.31      3.28     4.82     2.51      0.29
+q5 16m/20deg   True         3.22      6.51     9.53     4.87      0.53
+q6 32m/45deg   True         3.16     13.06    19.24    11.11      1.39
+all-keyframe baseline at q1: 9.00 bytes/msg ; Huffman-delta saves 55 %
+code lengths (bits) of the most common symbol per field, q1: {'dx': 2, 'dy': 2, 'dh': 1, 'dv': 1, 'db': 1}
+
+== lost messages: keyframe interval K vs loss rate (q1, no predictor), two decoder strategies ==
+  K  loss strategy bytes/msg meanErr m  frac>5m frac stale
+  1  0.00 naive         9.00       0.4    0.000      0.000
+  1  0.00 gap           9.00       0.4    0.000      0.000
+  1  0.05 naive         9.00       0.5    0.005      0.000
+  1  0.05 gap           9.00       0.5    0.005      0.048
+  1  0.20 naive         9.00       3.6    0.024      0.000
+  1  0.20 gap           9.00       3.6    0.024      0.197
+  5  0.00 naive         4.80       0.4    0.000      0.000
+  5  0.00 gap           4.80       0.4    0.000      0.000
+  5  0.05 naive         4.80       0.7    0.018      0.000
+  5  0.05 gap           4.80       1.2    0.058      0.146
+  5  0.20 naive         4.80      16.0    0.107      0.003
+  5  0.20 gap           4.80      17.8    0.222      0.455
+ 10  0.00 naive         4.27       0.4    0.000      0.000
+ 10  0.00 gap           4.27       0.4    0.000      0.000
+ 10  0.05 naive         4.27       1.1    0.038      0.000
+ 10  0.05 gap           4.27       3.0    0.153      0.242
+ 10  0.20 naive         4.27      31.4    0.202      0.007
+ 10  0.20 gap           4.27      37.3    0.443      0.628
+ 20  0.00 naive         4.01       0.4    0.000      0.000
+ 20  0.00 gap           4.01       0.4    0.000      0.000
+ 20  0.05 naive         4.01       1.6    0.068      0.000
+ 20  0.05 gap           4.01       8.1    0.298      0.377
+ 20  0.20 naive         4.01      62.2    0.372      0.018
+ 20  0.20 gap           4.01      79.0    0.678      0.790
+ 50  0.00 naive         3.85       0.4    0.000      0.000
+ 50  0.00 gap           3.85       0.4    0.000      0.000
+ 50  0.05 naive         3.85       3.2    0.156      0.011
+ 50  0.05 gap           3.85      27.7    0.543      0.590
+ 50  0.20 naive         3.85     152.6    0.671      0.109
+ 50  0.20 gap           3.85     195.0    0.867      0.908
+
+single-bit corruption, all bit positions of 60 messages (2416 flips): 2220 detected (CRC/format), 194 hit only unprotected pad bits (decoded identical), 2 ACCEPTED WITH WRONG CONTENT (a flip can change the variable-length parse so the CRC is read from the wrong place: ~1/256 chance of a false accept for such flips)
+lat/lon conversion round trip error 7.98e-10 m
+
+real	1m13.875s
+user	1m12.244s
+sys	0m0.297s

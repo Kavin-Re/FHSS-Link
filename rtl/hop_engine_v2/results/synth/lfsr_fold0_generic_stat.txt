@@ -1,0 +1,27 @@
+
+7. Printing statistics.
+
+=== hop_lfsr_fold ===
+
+   Number of wires:                138
+   Number of wire bits:            174
+   Number of public wires:           9
+   Number of public wire bits:      45
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                154
+     $_ANDNOT_                       8
+     $_AND_                         24
+     $_DFFE_PP_                      4
+     $_MUX_                         19
+     $_NAND_                        25
+     $_NOR_                          7
+     $_ORNOT_                        4
+     $_OR_                          14
+     $_SDFFE_PN0P_                   8
+     $_SDFFE_PN1P_                   8
+     $_SDFF_PP0_                     1
+     $_XNOR_                        18
+     $_XOR_                         14
+

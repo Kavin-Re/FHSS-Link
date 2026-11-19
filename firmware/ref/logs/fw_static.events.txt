@@ -1,0 +1,3 @@
+build: guard hard limits duty=100% power=3 burst=60000 ms (clamped=0)
+follower: acquired beacon
+slot 19: NORMAL -> ADAPT because loss 15% over the last 20 attempts; most-hit channels [3, 0]

@@ -1,0 +1,30 @@
+ABC: WireLoad = "Small"  Gates =   1014 (  3.9 %)   Cap =  6.8 ff (  0.0 %)   Area =     8834.72 (100.0 %)   Delay =  8817.17 ps  (  4.2 %)               
+ABC: WireLoad = "none"  Gates =   1014 (  3.9 %)   Cap =  6.5 ff (  4.9 %)   Area =     8657.05 ( 89.1 %)   Delay =  7368.97 ps  (  4.2 %)               
+ABC: Path  0 --      40 : 0    8 pi                        A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  39.7 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     260 : 2    4 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df = 174.1  -45.2 ps  S = 179.5 ps  Cin =  8.5 ff  Cout =   9.7 ff  Cmax = 121.8 ff  G =  109  
+ABC: Path  2 --     264 : 4    3 sky130_fd_sc_hd__or4_4    A =  11.26  Df = 674.6 -247.2 ps  S =  91.6 ps  Cin =  2.4 ff  Cout =   8.7 ff  Cmax = 534.7 ff  G =  344  
+ABC: Path  3 --     384 : 4    2 sky130_fd_sc_hd__a2bb2o_4 A =  20.02  Df = 883.4 -248.1 ps  S =  42.2 ps  Cin =  4.6 ff  Cout =   5.4 ff  Cmax = 502.6 ff  G =  112  
+ABC: Path  4 --     387 : 3    2 sky130_fd_sc_hd__xnor3_1  A =  22.52  Df =1268.9 -262.3 ps  S =  83.1 ps  Cin =  3.7 ff  Cout =   5.4 ff  Cmax = 154.7 ff  G =  138  
+ABC: Path  5 --     390 : 3    3 sky130_fd_sc_hd__xnor3_2  A =  23.77  Df =1681.4 -242.9 ps  S =  87.9 ps  Cin =  3.7 ff  Cout =   8.5 ff  Cmax = 301.2 ff  G =  220  
+ABC: Path  6 --     392 : 3    2 sky130_fd_sc_hd__xnor3_1  A =  22.52  Df =2071.2 -283.5 ps  S = 138.6 ps  Cin =  3.7 ff  Cout =  11.5 ff  Cmax = 154.7 ff  G =  294  
+ABC: Path  7 --     394 : 2    2 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =2264.6 -298.6 ps  S = 148.5 ps  Cin =  8.5 ff  Cout =   7.0 ff  Cmax = 121.8 ff  G =   79  
+ABC: Path  8 --     396 : 2    2 sky130_fd_sc_hd__xor2_1   A =   8.76  Df =2483.9 -347.5 ps  S = 163.2 ps  Cin =  4.4 ff  Cout =   5.4 ff  Cmax =  76.9 ff  G =  119  
+ABC: Path  9 --     437 : 3    2 sky130_fd_sc_hd__xnor3_1  A =  22.52  Df =2925.1 -342.5 ps  S =  97.0 ps  Cin =  3.7 ff  Cout =   6.9 ff  Cmax = 154.7 ff  G =  178  
+ABC: Path 10 --     439 : 2    1 sky130_fd_sc_hd__xor2_1   A =   8.76  Df =3104.0 -333.2 ps  S = 148.2 ps  Cin =  4.4 ff  Cout =   4.7 ff  Cmax =  76.9 ff  G =  104  
+ABC: Path 11 --     440 : 2    2 sky130_fd_sc_hd__xnor2_1  A =   8.76  Df =3314.2 -355.9 ps  S = 225.9 ps  Cin =  4.5 ff  Cout =   8.1 ff  Cmax =  69.6 ff  G =  172  
+ABC: Path 12 --     442 : 3    3 sky130_fd_sc_hd__xnor3_1  A =  22.52  Df =3739.5 -462.7 ps  S = 101.4 ps  Cin =  3.7 ff  Cout =   7.4 ff  Cmax = 154.7 ff  G =  190  
+ABC: Path 13 --     445 : 3    3 sky130_fd_sc_hd__xnor3_2  A =  23.77  Df =4166.0 -441.8 ps  S =  92.4 ps  Cin =  3.7 ff  Cout =  10.4 ff  Cmax = 301.2 ff  G =  266  
+ABC: Path 14 --     447 : 3    2 sky130_fd_sc_hd__xor3_2   A =  25.02  Df =4508.0 -365.6 ps  S =  96.4 ps  Cin =  3.7 ff  Cout =  11.0 ff  Cmax = 285.7 ff  G =  281  
+ABC: Path 15 --     448 : 2    2 sky130_fd_sc_hd__xor2_2   A =  16.27  Df =4670.6 -363.0 ps  S = 136.0 ps  Cin =  8.6 ff  Cout =   6.7 ff  Cmax = 130.0 ff  G =   76  
+ABC: Path 16 --     449 : 3    2 sky130_fd_sc_hd__xnor3_1  A =  22.52  Df =4926.3 -386.9 ps  S = 101.8 ps  Cin =  3.7 ff  Cout =   7.5 ff  Cmax = 154.7 ff  G =  192  
+ABC: Path 17 --     465 : 3    2 sky130_fd_sc_hd__maj3_2   A =  11.26  Df =5260.9 -502.1 ps  S =  68.3 ps  Cin =  3.3 ff  Cout =   8.1 ff  Cmax = 304.9 ff  G =  235  
+ABC: Path 18 --     602 : 3    2 sky130_fd_sc_hd__xor3_1   A =  23.77  Df =5645.4 -414.6 ps  S = 111.0 ps  Cin =  3.7 ff  Cout =   8.1 ff  Cmax = 151.1 ff  G =  209  
+ABC: Path 19 --     610 : 2    1 sky130_fd_sc_hd__xor2_1   A =   8.76  Df =5804.5 -409.1 ps  S = 134.6 ps  Cin =  4.4 ff  Cout =   3.9 ff  Cmax =  76.9 ff  G =   85  
+ABC: Path 20 --     611 : 3    2 sky130_fd_sc_hd__maj3_2   A =  11.26  Df =6139.5 -498.2 ps  S =  80.5 ps  Cin =  3.3 ff  Cout =  11.5 ff  Cmax = 304.9 ff  G =  332  
+ABC: Path 21 --     762 : 2    3 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =6335.6 -501.2 ps  S = 167.6 ps  Cin =  8.5 ff  Cout =   8.6 ff  Cmax = 121.8 ff  G =   98  
+ABC: Path 22 --     764 : 3    3 sky130_fd_sc_hd__or3b_4   A =  11.26  Df =6759.0 -242.7 ps  S =  84.0 ps  Cin =  2.1 ff  Cout =  13.7 ff  Cmax = 469.7 ff  G =  631  
+ABC: Path 23 --    1066 : 3    2 sky130_fd_sc_hd__a21oi_4  A =  16.27  Df =6896.2 -328.4 ps  S = 108.3 ps  Cin =  8.8 ff  Cout =   7.1 ff  Cmax = 221.6 ff  G =   77  
+ABC: Path 24 --    1205 : 3    3 sky130_fd_sc_hd__a21oi_2  A =   8.76  Df =6990.2 -196.0 ps  S = 221.7 ps  Cin =  4.6 ff  Cout =  16.1 ff  Cmax = 128.2 ff  G =  337  
+ABC: Path 25 --    1244 : 3    3 sky130_fd_sc_hd__nor3_4   A =  16.27  Df =7213.6 -341.0 ps  S = 172.0 ps  Cin =  8.7 ff  Cout =   9.6 ff  Cmax = 153.8 ff  G =  106  
+ABC: Path 26 --    1249 : 2    1 sky130_fd_sc_hd__xnor2_1  A =   8.76  Df =7369.0 -381.6 ps  S =  61.4 ps  Cin =  4.5 ff  Cout =   0.0 ff  Cmax =  69.6 ff  G =    0  
+ABC: Start-point = pi39 (\code [19]).  End-point = po10 (\sum [10]).

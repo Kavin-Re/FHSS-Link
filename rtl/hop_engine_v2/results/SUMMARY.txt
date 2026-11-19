@@ -1,0 +1,20 @@
+design                                                 generic  gate | sky130 flops  area um2     GE | delay ns (SmallWL) | clk req->valid
+v1 keyed engine (4 adders/clk) [re-synthesised here]      4272   181 |   3903   461     31394   8364 |     5.57      6.82 |             12
+v2 lean, DW=64 (1 x 64-bit adder)                         3923   132 |   3567   463     29588   7883 |     4.35      5.29 |             36
+v2 lean, DW=32 (1 x 32-bit adder + carry flop)            3866    71 |   3664   465     29850   7952 |     4.11      4.93 |             68
+v1 LFSR16, M=13 (plain % 13 on 16 bit)                     218    67 |    245    21      1828    487 |     8.04     10.34 |              1
+v2 LFSR16 fold, FV=0 (8-bit % 13)                          154    35 |    162    21      1366    364 |     3.67      4.50 |              1
+v2 LFSR16 fold, FV=1 (no divider)                          159    37 |    172    21      1430    381 |     4.17      5.24 |              1
+v2 lean64 + beacon/AXI-lite wrapper                       5159   132 |   5352   721     41570  11075 |     4.08      5.15 |             36
+v2 lean32 + beacon/AXI-lite wrapper                       5129    72 |   5085   723     41532  11065 |     3.67      4.91 |             68
+
+relative to v1 keyed (same script, same machine):
+  v2 lean, DW=64 (1 x 64-bit adder)                    area   -5.8 %   flops +2   latency 36 vs 12 clk   area x latency = 2.83 x v1
+  v2 lean, DW=32 (1 x 32-bit adder + carry flop)       area   -4.9 %   flops +4   latency 68 vs 12 clk   area x latency = 5.39 x v1
+  v2 LFSR16 fold, FV=0 (8-bit % 13)                    area  -25.3 % vs v1 LFSR (mod 13)   delay -54 % (no WL)
+  v2 LFSR16 fold, FV=1 (no divider)                    area  -21.8 % vs v1 LFSR (mod 13)   delay -48 % (no WL)
+
+generic cells = yosys synth + abc -g AND,NAND,OR,NOR,XOR,XNOR,ANDNOT,ORNOT,MUX; gate depth = yosys ltp (flops cut)
+sky130 = yosys synth + dfflibmap + abc -liberty (-D 10000 ps) on sky130_fd_sc_hd__tt_025C_1v80 (dont_use copy); GE = area / 3.7536 um2
+delay = abc stime -p after map/buffer/upsize/dnsize; NO placement/routing, ideal clock, no setup/clk-to-q: optimistic combinational estimate, NOT sign-off timing
+latency = simulated clocks from the req sample to the valid pulse (iverilog testbench, retry-free hops)

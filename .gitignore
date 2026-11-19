@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .venv/
 *.log
+*.bak*
+.cache/
+lab*/__pycache__/

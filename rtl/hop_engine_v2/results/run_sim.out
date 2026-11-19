@@ -1,0 +1,45 @@
+TB[m13] DW=64 M=13 RW=32 NCH=2: hops=60000 chan_errs=0 digest_checked=3000 digest_errs=0 hops_with_retry=0
+TB[m13] cycles req->valid (retry-free hops, req sampled->valid seen): min=36 max=36 avg=36.00
+RESULT m13 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 22500620000 (1ps)
+TB[m13_rw8] DW=64 M=13 RW=8 NCH=1: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=692
+TB[m13_rw8] cycles req->valid (retry-free hops, req sampled->valid seen): min=36 max=36 avg=36.00
+RESULT m13_rw8 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 7749670000 (1ps)
+TB[m13_rw8n4] DW=64 M=13 RW=8 NCH=4: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m13_rw8n4] cycles req->valid (retry-free hops, req sampled->valid seen): min=36 max=38 avg=36.03
+RESULT m13_rw8n4 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 7504900000 (1ps)
+TB[m37] DW=64 M=37 RW=32 NCH=2: hops=3000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m37] cycles req->valid (retry-free hops, req sampled->valid seen): min=36 max=36 avg=36.00
+RESULT m37 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 1124050000 (1ps)
+TB[m16] DW=64 M=16 RW=32 NCH=2: hops=3000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m16] cycles req->valid (retry-free hops, req sampled->valid seen): min=36 max=36 avg=36.00
+RESULT m16 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 1124050000 (1ps)
+TB[m13] DW=32 M=13 RW=32 NCH=2: hops=60000 chan_errs=0 digest_checked=3000 digest_errs=0 hops_with_retry=0
+TB[m13] cycles req->valid (retry-free hops, req sampled->valid seen): min=68 max=68 avg=68.00
+RESULT m13 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 41700620000 (1ps)
+TB[m13_rw8] DW=32 M=13 RW=8 NCH=1: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=692
+TB[m13_rw8] cycles req->valid (retry-free hops, req sampled->valid seen): min=68 max=68 avg=68.00
+RESULT m13_rw8 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 14380070000 (1ps)
+TB[m13_rw8n4] DW=32 M=13 RW=8 NCH=4: hops=20000 chan_errs=0 digest_checked=1000 digest_errs=0 hops_with_retry=0
+TB[m13_rw8n4] cycles req->valid (retry-free hops, req sampled->valid seen): min=68 max=70 avg=68.03
+RESULT m13_rw8n4 PASS
+tb/tb_hop_keyed_lean.v:70: $finish called at 13904900000 (1ps)
+TB[lfsr_fold FV=0] exhaustive states=65535 errs=0 ; python-vector hops=80000 errs=0 ; max cycles req->valid=1
+RESULT lfsr_fold_FV0 PASS
+tb/tb_hop_lfsr_fold.v:31: $finish called at 2766170000 (1ps)
+TB[lfsr_fold FV=1] exhaustive states=65535 errs=0 ; python-vector hops=80000 errs=0 ; max cycles req->valid=1
+RESULT lfsr_fold_FV1 PASS
+tb/tb_hop_lfsr_fold.v:31: $finish called at 2766170000 (1ps)
+TB[hop_sync_axil DW=64] ops=1976 checks=1929 axi_writes=204 axi_reads=783 hops_seen=894 proto_errs=0 errs=0
+RESULT hop_sync_axil_DW64 PASS
+tb/tb_hop_sync_axil.v:109: $finish called at 460680000 (1ps)
+TB[hop_sync_axil DW=32] ops=1976 checks=1929 axi_writes=204 axi_reads=783 hops_seen=894 proto_errs=0 errs=0
+RESULT hop_sync_axil_DW32 PASS
+tb/tb_hop_sync_axil.v:109: $finish called at 746760000 (1ps)
+PASS lines: 12  FAIL lines: 0

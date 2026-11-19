@@ -1,0 +1,16 @@
+E13 30 random instances; total jammer power 0 dBm split equally over N jammers (N=1 is E12's jammer)
+  N : mean path delivery (greedy placement) | random placement | after relay best-response, swarm re-placed | power for delivery<=0.90 (dBm total)
+   1: 0.901 +/- 0.015 | 0.986 +/- 0.005 | 0.966 +/- 0.007 | 0.67 +/- 1.68
+   2: 0.885 +/- 0.017 | 0.984 +/- 0.005 | 0.967 +/- 0.007 | -0.87 +/- 1.56
+   4: 0.879 +/- 0.020 | 0.984 +/- 0.005 | 0.969 +/- 0.006 | -1.22 +/- 1.52
+   8: 0.877 +/- 0.020 | 0.983 +/- 0.007 | 0.972 +/- 0.006 | -1.12 +/- 1.53
+  16: 0.879 +/- 0.021 | 0.984 +/- 0.006 | 0.974 +/- 0.006 | -0.93 +/- 1.52
+  paired delivery N=8 minus N=1 : -0.024 +/- 0.010
+  paired total-power needed N=8 minus N=1 (dB): -1.79 +/- 0.60
+  n=2: damage (clean - delivered) N=1 0.062 +/- 0.012  N=8 0.060 +/- 0.013  ratio of means 0.97
+  n=4: damage (clean - delivered) N=1 0.068 +/- 0.013  N=8 0.079 +/- 0.015  ratio of means 1.17
+  after relay response + re-placement: paired N=8 minus N=1 delivery 0.005 +/- 0.004 (positive = swarm weaker than the single jammer)
+  stand-off 25 m, total power 10 dBm: N=1 0.866 +/- 0.022  N=8 0.867 +/- 0.022  paired N=8 minus N=1 0.001 +/- 0.003
+KEY NUMBER: delivery at fixed total power N=1 / N=8 / N=16 = 0.901 +/- 0.015 / 0.877 +/- 0.020 / 0.879 +/- 0.021
+KEY NUMBER: total power needed for delivery<=0.90 (dB), N=8 minus N=1 = -1.79 +/- 0.60
+KEY NUMBER: delivery after relay response + swarm re-placement, N=1 / N=8 = 0.966 +/- 0.007 / 0.972 +/- 0.006

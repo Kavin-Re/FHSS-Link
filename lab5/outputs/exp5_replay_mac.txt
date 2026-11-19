@@ -1,0 +1,11 @@
+crc_only      legit accepted 1.000 | attacker accepted: replay_old 1.000  replay_inc 1.000  forge 1.000
+counter_only  legit accepted 0.937 | attacker accepted: replay_old 0.013  replay_inc 0.432  forge 0.456
+mac_only      legit accepted 1.000 | attacker accepted: replay_old 1.000  replay_inc 0.000  forge 0.000
+mac_counter   legit accepted 1.000 | attacker accepted: replay_old 0.017  replay_inc 0.000  forge 0.000
+forgery success vs tag bits (200k guesses): 4b 6.21e-02 (2^-b=6.25e-02), 6b 1.56e-02 (2^-b=1.56e-02), 8b 3.96e-03 (2^-b=3.91e-03), 10b 1.09e-03 (2^-b=9.77e-04), 12b 2.55e-04 (2^-b=2.44e-04), 16b 1.50e-05 (2^-b=1.53e-05)
+delayed replay of a jammed-and-recorded packet accepted? first delta rejected per W: W=8: 8, W=32: 32, W=64: 64
+legit false-reject (p_reorder=0.0) vs W=[1, 2, 4, 8, 16, 32, 64]: 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
+legit false-reject (p_reorder=0.1) vs W=[1, 2, 4, 8, 16, 32, 64]: 0.0521 0.0317 0.0121 0.0019 0.0000 0.0000 0.0000
+legit false-reject (p_reorder=0.3) vs W=[1, 2, 4, 8, 16, 32, 64]: 0.1513 0.0897 0.0315 0.0023 0.0000 0.0000 0.0000
+legit false-reject (p_reorder=0.5) vs W=[1, 2, 4, 8, 16, 32, 64]: 0.2081 0.1243 0.0452 0.0039 0.0000 0.0000 0.0000
+immediate relay: relayed copy accepted=True, original then accepted=False (counter+MAC give no distance bounding)
