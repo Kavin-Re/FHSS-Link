@@ -1,0 +1,19 @@
+[03:31:04] hop_engine_v2: vectors + iverilog sims (keyed lean DW=64/32, LFSR fold FV=0/1 incl. exhaustive 65535 states, AXI-lite wrapper DW=64/32)
+PASS lines: 12  FAIL lines: 0
+[03:33:12] hop_engine_v2: mutation check of the testbenches
+mutations not caught or errors: 0
+[03:33:53] approx_correlator: vectors + iverilog sims (7 configurations, N=16/32/64)
+PASS lines: 7  FAIL lines: 0
+[03:34:24] approx_correlator: verilator lint
+verilator messages: 0
+[03:34:25] formal: hop_engine_v2 (k-induction + cover)
+sby PASS: 10
+sby FAIL: 0
+[03:36:40] formal: approx_correlator (corr_mode_ctrl + dual_adder SAT equivalence)
+sby PASS: 3
+equiv_dual: pass=90 fail=0
+[03:36:45] collect
+== summary
+PASS lines: 12  FAIL lines: 0
+PASS lines: 7  FAIL lines: 0
+ALL_DONE

@@ -1,0 +1,49 @@
+== sby -f lfsr_fold.sby prove_fv0
+[lfsr_fold_prove_fv0] summary: engine_0 (smtbmc z3) returned pass for basecase
+[lfsr_fold_prove_fv0] summary: engine_0 (smtbmc z3) returned pass for induction
+[lfsr_fold_prove_fv0] summary: successful proof by k-induction.
+[lfsr_fold_prove_fv0] DONE (PASS, rc=0)
+== sby -f lfsr_fold.sby prove_fv1
+[lfsr_fold_prove_fv1] summary: engine_0 (smtbmc z3) returned pass for basecase
+[lfsr_fold_prove_fv1] summary: engine_0 (smtbmc z3) returned pass for induction
+[lfsr_fold_prove_fv1] summary: successful proof by k-induction.
+[lfsr_fold_prove_fv1] DONE (PASS, rc=0)
+== sby -f lfsr_fold.sby cover_fv1
+[lfsr_fold_cover_fv1] summary: engine_0 (smtbmc z3) returned pass
+[lfsr_fold_cover_fv1] DONE (PASS, rc=0)
+== sby -f keyed_lean.sby prove_dw64
+[keyed_lean_prove_dw64] summary: engine_0 (smtbmc z3) returned pass for basecase
+[keyed_lean_prove_dw64] summary: engine_0 (smtbmc z3) returned pass for induction
+[keyed_lean_prove_dw64] summary: successful proof by k-induction.
+[keyed_lean_prove_dw64] DONE (PASS, rc=0)
+== sby -f keyed_lean.sby prove_dw32
+[keyed_lean_prove_dw32] summary: engine_0 (smtbmc z3) returned pass for basecase
+[keyed_lean_prove_dw32] summary: engine_0 (smtbmc z3) returned pass for induction
+[keyed_lean_prove_dw32] summary: successful proof by k-induction.
+[keyed_lean_prove_dw32] DONE (PASS, rc=0)
+== sby -f keyed_lean.sby prove_rw8
+[keyed_lean_prove_rw8] summary: engine_0 (smtbmc z3) returned pass for basecase
+[keyed_lean_prove_rw8] summary: engine_0 (smtbmc z3) returned pass for induction
+[keyed_lean_prove_rw8] summary: successful proof by k-induction.
+[keyed_lean_prove_rw8] DONE (PASS, rc=0)
+== sby -f keyed_lean.sby cover_dw64
+[keyed_lean_cover_dw64] engine_0: ##   0:00:19  Reached cover statement at hop_keyed_lean.v:170.26-170.84 ($cover$hop_keyed_lean.v:170$136) in step 38.
+[keyed_lean_cover_dw64] summary: engine_0 (smtbmc z3) returned pass
+[keyed_lean_cover_dw64] DONE (PASS, rc=0)
+== sby -f sync_axil.sby prove_dw64
+[sync_axil_prove_dw64] summary: engine_0 (smtbmc z3) returned pass for basecase
+[sync_axil_prove_dw64] summary: engine_0 (smtbmc z3) returned pass for induction
+[sync_axil_prove_dw64] summary: successful proof by k-induction.
+[sync_axil_prove_dw64] DONE (PASS, rc=0)
+== sby -f sync_axil.sby prove_dw32
+[sync_axil_prove_dw32] summary: engine_0 (smtbmc z3) returned pass for basecase
+[sync_axil_prove_dw32] summary: engine_0 (smtbmc z3) returned pass for induction
+[sync_axil_prove_dw32] summary: successful proof by k-induction.
+[sync_axil_prove_dw32] DONE (PASS, rc=0)
+== sby -f sync_axil.sby cover_dw64
+[sync_axil_cover_dw64] engine_0: ##   0:00:00  Reached cover statement at hop_sync_axil.v:220.26-220.77 ($cover$hop_sync_axil.v:220$192) in step 4.
+[sync_axil_cover_dw64] engine_0: ##   0:00:00  Reached cover statement at hop_sync_axil.v:221.26-221.55 ($cover$hop_sync_axil.v:221$193) in step 6.
+[sync_axil_cover_dw64] engine_0: ##   0:00:54  Reached cover statement at hop_sync_axil.v:219.26-219.54 ($cover$hop_sync_axil.v:219$191) in step 41.
+[sync_axil_cover_dw64] engine_0: ##   0:00:54  Reached cover statement at hop_keyed_lean.v:170.26-170.84 ($cover$hop_keyed_lean.v:170$352) in step 41.
+[sync_axil_cover_dw64] summary: engine_0 (smtbmc z3) returned pass
+[sync_axil_cover_dw64] DONE (PASS, rc=0)

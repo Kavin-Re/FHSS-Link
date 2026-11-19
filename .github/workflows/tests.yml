@@ -2,9 +2,17 @@ name: tests
 on:
   push:
   pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
+    name: Python simulators + labs + firmware host tests
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -12,13 +20,42 @@ jobs:
           python-version: "3.11"
       - name: Install dependencies
         run: pip install numpy matplotlib
-      - name: Run run_tests.sh (sim, lab..lab7, lab4/silicon, hop_engine Python model; exit status is real)
+      - name: Run run_tests.sh (sim, lab..lab9, lab4/silicon, hop_engine Python model, firmware/ref host tests; exit status is real)
         env:
           MPLBACKEND: Agg
         run: ./run_tests.sh
-      # Not run in CI: hop_engine RTL simulation, formal and synthesis (need iverilog, Verilator, SymbiYosys, Yosys), and
-      # ApproxKit (separate sibling folder; run_tests.sh skips it when absent).
       - name: CLI bench
         env:
           MPLBACKEND: Agg
         run: python -m fhss_lab bench
+
+  firmware-sanitizers:
+    name: Firmware reference under ASan/UBSan (host)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install numpy
+      # unit tests + hop_engine vectors, 2 fuzz seeds (shortened from the default 2,000,000 iterations), full 3-node demo
+      - name: make san
+        run: make -C firmware/ref san ITERS=200000
+
+  rtl-sim:
+    name: RTL vs committed vectors (iverilog)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Advisory until its first green run: this job was added without access to iverilog, so the script itself is unproven.
+    # Once it passes on GitHub, delete the next line to make it a required check.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Icarus Verilog
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends iverilog
+      - name: Simulate all testbenches against the committed Python-model vectors
+        run: rtl/sim_committed_vectors.sh
+      # Not run in CI: Verilator re-runs, SymbiYosys formal proofs and Yosys/sky130 synthesis (they need a liberty file and
+      # SymbiYosys sources that are not in this repository; see rtl/hop_engine/README.md and rtl/wave2/RESULTS.md), and
+      # ApproxKit (separate repository; run_tests.sh skips it when the sibling folder is absent).

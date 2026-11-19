@@ -1,0 +1,21 @@
+TB[n16_loa3] N=16 ATYPE=1 K=3 COMP=-7: frames_checked=4000 (expected 4000) errs=0 exact_frames=2634 approx_frames=1366 mode_changes=82 ex_change_without_frame_tick=0 ex_comb_glitches=0
+RESULT n16_loa3 PASS
+tb/tb_approx_correlator.v:48: $finish called at 80040000 (1ps)
+TB[n32_loa3] N=32 ATYPE=1 K=3 COMP=-15: frames_checked=4000 (expected 4000) errs=0 exact_frames=2398 approx_frames=1602 mode_changes=92 ex_change_without_frame_tick=0 ex_comb_glitches=0
+RESULT n32_loa3 PASS
+tb/tb_approx_correlator.v:48: $finish called at 80810000 (1ps)
+TB[n64_loa3] N=64 ATYPE=1 K=3 COMP=-31: frames_checked=4000 (expected 4000) errs=0 exact_frames=2288 approx_frames=1712 mode_changes=88 ex_change_without_frame_tick=0 ex_comb_glitches=0
+RESULT n64_loa3 PASS
+tb/tb_approx_correlator.v:48: $finish called at 80220000 (1ps)
+TB[n32_trunc2] N=32 ATYPE=2 K=2 COMP=48: frames_checked=4000 (expected 4000) errs=0 exact_frames=2534 approx_frames=1466 mode_changes=90 ex_change_without_frame_tick=0 ex_comb_glitches=0
+RESULT n32_trunc2 PASS
+tb/tb_approx_correlator.v:48: $finish called at 80100000 (1ps)
+TB[n32_eta3] N=32 ATYPE=3 K=3 COMP=0: frames_checked=4000 (expected 4000) errs=0 exact_frames=2613 approx_frames=1387 mode_changes=92 ex_change_without_frame_tick=0 ex_comb_glitches=0
+RESULT n32_eta3 PASS
+tb/tb_approx_correlator.v:48: $finish called at 79180000 (1ps)
+TB[n64_loa4] N=64 ATYPE=1 K=4 COMP=0: frames_checked=4000 (expected 4000) errs=0 exact_frames=2274 approx_frames=1726 mode_changes=83 ex_change_without_frame_tick=0 ex_comb_glitches=0
+RESULT n64_loa4 PASS
+tb/tb_approx_correlator.v:48: $finish called at 79430000 (1ps)
+TB[n32_exact] N=32 ATYPE=0 K=0 COMP=0: frames_checked=4000 (expected 4000) errs=0 exact_frames=2292 approx_frames=1708 mode_changes=76 ex_change_without_frame_tick=0 ex_comb_glitches=0
+RESULT n32_exact PASS
+tb/tb_approx_correlator.v:48: $finish called at 81140000 (1ps)

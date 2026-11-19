@@ -1,7 +1,38 @@
+# Python
 __pycache__/
 *.pyc
 .venv/
-*.log
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
 *.bak*
 .cache/
-lab*/__pycache__/
+
+# Build outputs (host C build, iverilog/Verilator/Yosys scratch)
+build/
+obj_dir/
+*.o
+*.vvp
+*.vcd
+*.fst
+
+# Transfer / staging archives: the tree itself is the source of truth
+*.tgz
+*.tar.gz
+*.zip
+
+# Logs are ignored by default (emulator and firmware demo logs are large and regenerable:
+# `python3 sim/emu_device.py --out logs/demo.log`, `make -C firmware/ref logs`) ...
+*.log
+# ... except the ones that are evidence or test inputs:
+!rtl/**/results/*.log
+!rtl/wave2/run_all.log
+!lab3/dataset/raw/*.log

@@ -1,0 +1,19 @@
+== sby -f corr_mode.sby prove
+[corr_mode_prove] summary: engine_0 (smtbmc z3) returned pass for basecase
+[corr_mode_prove] summary: engine_0 (smtbmc z3) returned pass for induction
+[corr_mode_prove] summary: successful proof by k-induction.
+[corr_mode_prove] DONE (PASS, rc=0)
+== sby -f corr_mode.sby prove_dwell3
+[corr_mode_prove_dwell3] summary: engine_0 (smtbmc z3) returned pass for basecase
+[corr_mode_prove_dwell3] summary: engine_0 (smtbmc z3) returned pass for induction
+[corr_mode_prove_dwell3] summary: successful proof by k-induction.
+[corr_mode_prove_dwell3] DONE (PASS, rc=0)
+== sby -f corr_mode.sby cover
+[corr_mode_cover] engine_0: ##   0:00:00  Reached cover statement at corr_mode_ctrl.v:46.26-46.59 ($cover$corr_mode_ctrl.v:46$83) in step 2.
+[corr_mode_cover] engine_0: ##   0:00:00  Reached cover statement at corr_mode_ctrl.v:44.26-44.66 ($cover$corr_mode_ctrl.v:44$81) in step 3.
+[corr_mode_cover] engine_0: ##   0:00:00  Reached cover statement at corr_mode_ctrl.v:45.26-45.59 ($cover$corr_mode_ctrl.v:45$82) in step 10.
+[corr_mode_cover] engine_0: ##   0:00:00  Reached cover statement at corr_mode_ctrl.v:43.26-43.60 ($cover$corr_mode_ctrl.v:43$80) in step 10.
+[corr_mode_cover] summary: engine_0 (smtbmc z3) returned pass
+[corr_mode_cover] DONE (PASS, rc=0)
+== equiv_dual.sh (yosys sat)
+equiv_dual: pass=90 fail=0

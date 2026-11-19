@@ -18,7 +18,7 @@ Small synthesizable hop-schedule engine that replaces the 16-bit LFSR schedule (
 | `model/unbias_check.py` | exact integer proof that the Lemire reduction is unbiased (every RW/M combination tested) |
 | `scripts/*.sh` | `run_all.sh` (everything), `run_sim.sh`, `run_verilator.sh`, `synth.sh` (+`abc_time.script`), `run_formal.sh`, `collect.py` |
 | `formal/` | SymbiYosys job files (`keyed.sby`, `lfsr.sby`); the properties live in the RTL under `` `ifdef FORMAL `` |
-| `results/` | (the `.log` files written by the scripts are git-ignored by the repo-wide `*.log` rule, so tracked snapshots are kept as `*.log.txt`; re-copy them after re-running) all logs and extracted tables: `SUMMARY.txt` (synthesis), `sim_iverilog.log.txt`, `sim_verilator.log.txt`, `randcheck.txt`, `lfsr_hops_exhaustive.txt`, `formal.log.txt`, `unbias_check.txt`, `lint.txt`, `synth/` (raw yosys stat/ltp/abc output) |
+| `results/` | (tracked snapshots of the script logs are kept as `*.log.txt`; re-copy them after re-running. Since Nov 2026 `.gitignore` also allows `rtl/**/results/*.log`, which is how the hop_engine_v2 and approx_correlator logs are tracked) all logs and extracted tables: `SUMMARY.txt` (synthesis), `sim_iverilog.log.txt`, `sim_verilator.log.txt`, `randcheck.txt`, `lfsr_hops_exhaustive.txt`, `formal.log.txt`, `unbias_check.txt`, `lint.txt`, `synth/` (raw yosys stat/ltp/abc output) |
 | `vectors/` | generated test vectors (deterministic, regenerable with `model/gen_vectors.py`) |
 
 No existing FHSS-Link file was modified; everything is new under `rtl/hop_engine/`.
