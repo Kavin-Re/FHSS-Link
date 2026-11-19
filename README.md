@@ -161,7 +161,7 @@ What is and is not validated: [`firmware/ref/docs/VALIDATION.md`](firmware/ref/d
 
 ```bash
 sudo apt-get install iverilog
-rtl/sim_committed_vectors.sh       # all 27 testbench runs against the committed Python-model vectors
+rtl/sim_committed_vectors.sh       # all 26 testbench runs against the committed Python-model vectors
 ```
 
 The original per-block flows (`rtl/hop_engine/scripts/run_all.sh`, `rtl/wave2/run_all.sh`) also regenerate vectors, run Verilator, the SymbiYosys proofs and Yosys/sky130 synthesis. They expect a sky130 liberty file and SymbiYosys sources that are not in this repository; paths and versions are in [`rtl/hop_engine/README.md`](rtl/hop_engine/README.md) and [`rtl/hop_engine/TOOLS_READY.txt`](rtl/hop_engine/TOOLS_READY.txt). The correlator model additionally needs the separate ApproxKit repository (`APPROXKIT=/path/to/ApproxKit`).

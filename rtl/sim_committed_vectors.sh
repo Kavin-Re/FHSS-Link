@@ -2,8 +2,8 @@
 # RTL-vs-Python-model simulation of every testbench with iverilog, using the COMMITTED vectors (rtl/*/vectors/*.mem).
 # Unlike rtl/*/scripts/run_sim.sh it regenerates nothing and writes nothing into results/: build products and logs go to a
 # scratch directory, so it needs only iverilog + vvp (no numpy, no ApproxKit checkout) and leaves the tree clean.
-# Same compile commands and parameter sets as the three run_sim.sh scripts (27 testbench runs in total).
-# Usage: rtl/sim_committed_vectors.sh [scratch-dir]      exit status 0 only if all 27 runs print "RESULT <tag> PASS".
+# Same compile commands and parameter sets as the three run_sim.sh scripts (26 testbench runs in total: 7 + 12 + 7).
+# Usage: rtl/sim_committed_vectors.sh [scratch-dir]      exit status 0 only if all 26 runs print "RESULT <tag> PASS".
 # NOTE: written for CI (apt-get install iverilog). It was NOT executed in the environment where it was written
 #       (no iverilog there); the reference results of the original scripts are in rtl/*/results/sim_iverilog.log*.
 set -u
@@ -50,7 +50,7 @@ while read -r tag N AT K C; do
     "$A/rtl/ak_cells/exact_adder.v" "$A/rtl/ak_cells/loa_adder.v" "$A/rtl/ak_cells/trunc_adder.v" "$A/rtl/ak_cells/eta_adder.v"
 done < "$B/corr_cfg.txt"
 
-EXPECT=27
+EXPECT=26
 pass=$(grep -c 'RESULT .* PASS' "$LOG"); nfail=$(grep -c 'RESULT .* FAIL' "$LOG")
 echo "PASS lines: $pass (expected $EXPECT)  FAIL lines: $nfail  log: $LOG"
 [ "$pass" -eq "$EXPECT" ] && [ "$nfail" -eq 0 ]
