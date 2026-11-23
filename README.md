@@ -269,7 +269,7 @@ The interference source in this project is a model, and in the hardware demo des
 
 ## Credits and license
 
-Author: Kavin K K ([@Kavin-Re](https://github.com/Kavin-Re)). The session notes in `docs/` are kept as a record of how the work was done.
+Author: Kavin K K ([@Kavin-Re](https://github.com/Kavin-Re)). The dated working notes in `docs/` are kept as the project's record.
 
 The adder cells in `rtl/approx_correlator/rtl/ak_cells/` are copied unmodified from the author's ApproxKit project. SipHash is by Jean-Philippe Aumasson and Daniel J. Bernstein; the unbiased range reduction follows Daniel Lemire.
 
