@@ -29,6 +29,24 @@ jobs:
           MPLBACKEND: Agg
         run: python -m fhss_lab bench
 
+  hopbench:
+    name: HopBench (merged from its own repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: hopbench
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Unit tests (the browser test skips itself without Playwright)
+        run: python -m pytest -q
+      - name: Smoke-run the CLI on the example schedules
+        run: python -m hopbench score examples.custom_schedule:HashOfCounter examples.custom_schedule:WeakCounter --quick --out "$RUNNER_TEMP/hb"
+
   firmware-sanitizers:
     name: Firmware reference under ASan/UBSan (host)
     runs-on: ubuntu-latest
