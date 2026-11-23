@@ -3,7 +3,7 @@
 # The v1 RTL (../hop_engine/rtl) is re-synthesised here with this very script so v1 and v2 numbers come from one tool run on one machine.
 # LIB = sky130 liberty with dont_use marks (see README), V1 = directory with v1 rtl (default: ../hop_engine/rtl).
 cd "$(dirname "$0")/.."; mkdir -p results/synth build
-LIB=${LIB:-/home/claude/work/lib/sky130hd_tt_du.lib}
+LIB=${LIB:?set LIB to a sky130_fd_sc_hd tt_025C_1v80 liberty file with dont_use marks (see rtl/hop_engine/README.md)}
 V1=${V1:-../hop_engine/rtl}
 synth_one() {  # name top "files" params...
   name=$1; top=$2; file=$3; shift 3; chp=""

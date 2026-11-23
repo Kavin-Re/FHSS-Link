@@ -1,12 +1,12 @@
 """Bit-exact Python model of rtl/corr_core.v / approx_correlator.v built on the ApproxKit Python adders (approxkit.LOA / TruncatedAdder / ETA).
 
-Where ApproxKit is found: $APPROXKIT (directory that contains the 'approxkit' package), else ../../../../ApproxKit (laptop layout
-FHSS-Link/rtl/approx_correlator/model -> Projects/ApproxKit), else /home/claude/work/approxkit (cloud mirror).
+Where ApproxKit is found: $APPROXKIT (directory that contains the 'approxkit' package), else ../../../../ApproxKit (a sibling
+checkout: FHSS-Link and ApproxKit cloned side by side), else an installed `approxkit` package.
 """
 import os, sys
 import numpy as np
 _here = os.path.dirname(os.path.abspath(__file__))
-for cand in (os.environ.get("APPROXKIT"), os.path.join(_here, "..", "..", "..", "..", "ApproxKit"), "/home/claude/work/approxkit"):
+for cand in (os.environ.get("APPROXKIT"), os.path.join(_here, "..", "..", "..", "..", "ApproxKit")):
     if cand and os.path.isdir(os.path.join(cand, "approxkit")):
         sys.path.insert(0, os.path.abspath(cand)); break
 import approxkit as ak

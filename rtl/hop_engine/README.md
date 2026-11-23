@@ -109,7 +109,7 @@ The naive "bits per gate" ratio actually favours the LFSR, so it is the wrong fi
 * The engine only generates the schedule. Key distribution/pairing, time synchronisation of the slot counter, and re-keying are out of scope (the ExpressLRS advisory in `docs/LANDSCAPE.md` is a reminder that these are where real links get broken). The attacker is assumed to see channel indices only.
 * Formal properties are range/protocol/FSM safety checks, run with a protocol assumption (key and slot loaded and `req` issued only while idle). They do not prove functional equivalence with SipHash.
 * The RTL testbenches reach the 60,000+ hop level but are directed vectors from one model; the model and RTL were written together, so shared misreadings of the SipHash spec are possible. The independent anchors are the published SipHash vectors (model only) and the digest-level comparison of the RTL against the model.
-* The `dont_use` liberty copy, the SymbiYosys sources and the sky130 liberty were fetched from public GitHub raw URLs at build time and are not included here (the liberty is 12.8 MB). `scripts/synth.sh` and `formal/sby` expect them at `../lib/` and `/home/claude/work/sby/` (cloud paths); adjust `LIB`/`SBY` to reproduce.
+* The `dont_use` liberty copy, the SymbiYosys sources and the sky130 liberty were fetched from public GitHub raw URLs at build time and are not included here (the liberty is 12.8 MB). `scripts/synth.sh` expects the liberty at `../lib/` (set `LIB` to override); `formal/sby` runs `sby` from PATH, or the upstream `sby.py` named by `SBY_PY`.
 * Approach is a replication of a known pattern (a keyed hop engine in RTL, compare cirradio in `docs/LANDSCAPE.md`), not a novel result.
 
 ## Reproduce

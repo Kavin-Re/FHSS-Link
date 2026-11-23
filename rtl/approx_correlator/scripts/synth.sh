@@ -2,7 +2,7 @@
 # Yosys area/delay estimate, SAME METHOD as hop_engine_v2/scripts/synth.sh (and v1): generic gates, sky130_fd_sc_hd tt_025C_1v80 mapping (abc -D 10000), abc stime.
 # Estimates only: no placement, no routing, ideal clock.  Usage: scripts/synth.sh [all]
 cd "$(dirname "$0")/.."; mkdir -p results/synth
-LIB=${LIB:-/home/claude/work/lib/sky130hd_tt_du.lib}
+LIB=${LIB:?set LIB to a sky130_fd_sc_hd tt_025C_1v80 liberty file with dont_use marks (see rtl/hop_engine/README.md)}
 RTL="rtl/approx_correlator.v rtl/corr_core.v rtl/corr_tree.v rtl/corr_mode_ctrl.v rtl/dual_adder.v rtl/ak_cells/exact_adder.v rtl/ak_cells/loa_adder.v rtl/ak_cells/trunc_adder.v rtl/ak_cells/eta_adder.v"
 synth_one() {  # name top params...
   name=$1; top=$2; shift 2; chp=""

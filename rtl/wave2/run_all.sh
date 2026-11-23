@@ -2,8 +2,8 @@
 # RTL wave 2 (FHSS-Link): hop_engine_v2 + approx_correlator.  Simulation + synthesis estimates + formal only; no hardware.
 # Usage: ./run_all.sh            full flow (~15-20 min: sims, yosys/sky130 synth, formal, BER Monte Carlo 200000 bits/point)
 #        QUICK=1 ./run_all.sh    lint + sims + formal + collect from EXISTING synth/BER results (skips synthesis and the BER Monte Carlo)
-# Tools used (cloud container): iverilog 12, verilator 5.020, yosys 0.33, z3, SymbiYosys (upstream python via formal/sby wrapper, SBY=... to override),
-#   python3 + numpy, sky130hd liberty (LIB=..., default /home/claude/work/lib/sky130hd_tt_du.lib), ApproxKit python package (APPROXKIT=... or /home/claude/work/approxkit).
+# Tools used: iverilog 12, verilator 5.020, yosys 0.33, z3, SymbiYosys (formal/sby wrapper: sby on PATH or SBY_PY=...; SBY=... to override),
+#   python3 + numpy, sky130hd liberty (LIB=..., required for synthesis), ApproxKit python package (APPROXKIT=... or a sibling ../ApproxKit checkout).
 cd "$(dirname "$0")/.."; ROOT=$PWD; H=$ROOT/hop_engine_v2; A=$ROOT/approx_correlator; LOG=$ROOT/wave2/run_all.log; : > $LOG
 step() { echo "[$(date +%H:%M:%S)] $*" | tee -a $LOG; }
 step "hop_engine_v2: vectors + iverilog sims (keyed lean DW=64/32, LFSR fold FV=0/1 incl. exhaustive 65535 states, AXI-lite wrapper DW=64/32)"

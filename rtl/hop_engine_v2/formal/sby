@@ -1,2 +1,5 @@
 #!/bin/bash
-exec python3 /home/claude/work/sby/sby.py "$@"
+# Runs SymbiYosys for the scripts in ../scripts. Uses the `sby` command on PATH; to use upstream sources
+# instead, set SBY_PY to the path of their sby.py. (Setting SBY bypasses this wrapper altogether.)
+if [ -n "$SBY_PY" ]; then exec python3 "$SBY_PY" "$@"; fi
+exec sby "$@"
