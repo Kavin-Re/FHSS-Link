@@ -1,5 +1,11 @@
 # FHSS-Link
 
+> **Status: frozen, 2026-11-23.** No new work is planned in this repository. **Not done:** the one
+> measurement the whole study rests on, the ESP-NOW channel-switch time on a real board, was never taken, so
+> every timing constant here is an assumption. The part worth reading is the keyed hop engine in Verilog
+> (`rtl/`) and the simulation study that motivated it. HopBench, the hop-schedule benchmark that grew out of
+> this project, was merged into [`hopbench/`](hopbench/) on the same date.
+
 **A frequency-hopping link that survives interference: studied in simulation, specified as host-tested portable C, and backed by a keyed hop-sequence engine in Verilog.**
 
 [![tests](https://github.com/Kavin-Re/FHSS-Link/actions/workflows/tests.yml/badge.svg)](https://github.com/Kavin-Re/FHSS-Link/actions/workflows/tests.yml)
@@ -27,6 +33,11 @@ All numbers below are printed by scripts in this repository (source given in eac
 | 7 | RTL, C and Python implementations of the keyed hop agree bit for bit | 0 mismatches over 106,000 vector hops in C (re-run here) and over the same vector sets in RTL simulation (stored iverilog logs; 60,000 hops on the default configuration) | `make -C firmware/ref test`, `rtl/*/results/sim_iverilog.log*` |
 | 8 | Learning which channels are bad helps against fixed or slow interference and is neutral against a learning jammer | +11 to 14 points over blind hopping (static / moving set); every policy ends at 0.92 against an EXP3 jammer | `sim/adaptive.py`, `sim/game.py` |
 | 9 | Approximate adders in a DS-SS despreading correlator are a modest trade, not a free lunch | LOA K=3 saves about 21 % static area but costs 1.3x to 2.4x BER at 4 dB even with bias compensation; a run-time exact/approximate switch makes the block 13 to 16 % *larger* | [`rtl/wave2/RESULTS.md`](rtl/wave2/RESULTS.md) |
+
+Rows 5 and 7 need one caveat each. Row 5 holds against *this* attacker; the keyed schedule's real strength
+rests on SipHash being a PRF, not on a simulation. Row 7 is agreement between three implementations written by
+the same author from one specification: it shows that they match each other, not that the specification is
+right. The outside anchor is the published SipHash test vectors, which the Python model reproduces.
 
 Result 4 is the hinge of the project. The LFSR is maximal-length (period 65,535) and passes a uniformity test, and it is still useless as a hop *secret*; the rest of the repository is built around replacing it with a keyed PRF and checking that replacement at every layer.
 
@@ -69,7 +80,7 @@ flowchart TB
     end
 
     DASH["dashboard/index.html<br/>waterfall, delivery, replay"]
-    HW["3x ESP32 over ESP-NOW<br/>(planned, not built)"]
+    HW["3x ESP32 over ESP-NOW<br/>(designed Oct 2026, not built)"]
     MODEL["rtl/hop_engine/model/hop_model.py<br/>bit-exact reference + vectors/*.mem"]
 
     SCHED --> MODEL
@@ -204,7 +215,12 @@ CI (`.github/workflows/tests.yml`) runs the first two rows on every push, and an
 
 ## Roadmap
 
-1. **ESP32 bring-up**: write the `hal/fh_radio.h` port for ESP-NOW, measure channel-switch time, then run the two-board link and the guarded interference node per the bring-up checklist. This turns every "assumed" timing constant into a measured one.
+Frozen on 2026-11-23: **nothing below is scheduled.** The list is kept as the record of what the project
+would need next, in order.
+
+1. **ESP32 bring-up** (planned in October 2026, never started): write the `hal/fh_radio.h` port for ESP-NOW,
+   measure channel-switch time, then run the two-board link and the guarded interference node per the bring-up
+   checklist. This is the step that would turn every "assumed" timing constant into a measured one.
 2. **Measured results**: packet delivery with and without hopping under one controlled interferer on the owner's own test link; replay the real `$FH` logs through the dashboard and the classifier.
 3. **FPGA**: place-and-route the keyed hop engine and the register wrapper for a real device and replace the abc delay estimates with post-route timing.
 4. **Sync correlator**: a preamble/PN acquisition correlator in RTL (the present correlator only despreads).
@@ -212,6 +228,23 @@ CI (`.github/workflows/tests.yml`) runs the first two rows on every push, and an
 6. **Key handling**: pairing, re-keying and persistent rolling-counter storage, which are where fielded hopping links are usually broken.
 
 The original dated plan is kept in [`docs/ROADMAP.md`](docs/ROADMAP.md).
+
+## HopBench (merged from its own repository)
+
+[`hopbench/`](hopbench/) is a benchmark that scores nine hop schedules (seven built in, two controls) against
+eleven simulated attackers and ten randomness tests, and a browser game, "Break the Hop". It was a separate
+repository until 2026-11-23 and is copied here unchanged except for the small notes listed in
+[`hopbench/ORIGIN.md`](hopbench/ORIGIN.md), which also records the origin commit. Its headline repeats result 4 above
+from a different angle: keyed schedules score about 99.9 out of 100 against this suite, the LFSR about 20.
+
+```bash
+cd hopbench
+python3 -m pip install -r requirements-dev.txt
+python3 -m pytest -q                          # 93 tests; the browser test skips itself without Playwright
+python3 -m hopbench run --out /tmp/hb --jobs 4   # the reference run behind hopbench/results/ (under a minute)
+```
+
+A HopBench score is relative to its attacker suite. It is not a security proof.
 
 ## Repository map
 
@@ -222,6 +255,7 @@ lab/ lab2/ ... lab9/   experiment batches (see the table above)
 firmware/ref/   portable C99 link logic, mock radio, host demo, tests, fuzz harness
 rtl/            hop_engine, hop_engine_v2, approx_correlator, wave2 results
 dashboard/      single-file live dashboard
+hopbench/       schedule benchmark and browser game (merged from the HopBench repository)
 docs/           SPEC, results notes, serial format, landscape survey, defence/ (viva material)
 logs/           decision log written by sim/ladder.py
 run_tests.sh    one command for every Python and host-C test
@@ -231,12 +265,12 @@ run_tests.sh    one command for every Python and host-C test
 
 ## Responsible use
 
-The interference source in this project is a model, and in the planned hardware demo it is a minimum-power node on the owner's own test link in a closed room, behind a software guard with duty-cycle limits, an authorisation token and a kill switch (`sim/safety.py`, `firmware/ref/src/guard.c`). Jamming other people's communications is illegal in most jurisdictions and is not what this repository is for.
+The interference source in this project is a model, and in the hardware demo designed in October 2026 (never built) it is a minimum-power node on the owner's own test link in a closed room, behind a software guard with duty-cycle limits, an authorisation token and a kill switch (`sim/safety.py`, `firmware/ref/src/guard.c`). Jamming other people's communications is illegal in most jurisdictions and is not what this repository is for.
 
 ## Credits and license
 
-Author: Kavin K K ([@Kavin-Re](https://github.com/Kavin-Re)), B.Tech Electronics Engineering (VLSI). The session notes in `docs/` are kept as a record of how the work was done.
+Author: Kavin K K ([@Kavin-Re](https://github.com/Kavin-Re)). The session notes in `docs/` are kept as a record of how the work was done.
 
 The adder cells in `rtl/approx_correlator/rtl/ak_cells/` are copied unmodified from the author's ApproxKit project. SipHash is by Jean-Philippe Aumasson and Daniel J. Bernstein; the unbiased range reduction follows Daniel Lemire.
 
-No license file has been added yet, so default copyright applies to everything except `lab3/dataset/`, whose README carries its own MIT notice.
+Copyright 2026 Kavin K K. Licensed under the [Apache License, Version 2.0](LICENSE); see also [NOTICE](NOTICE). Two exceptions keep their own terms: `lab3/dataset/`, whose README carries its own MIT notice, and the adder cells in `rtl/approx_correlator/rtl/ak_cells/`, which are MIT-licensed as part of ApproxKit.
