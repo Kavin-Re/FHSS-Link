@@ -1,4 +1,4 @@
 # Runtime: NumPy is the only hard dependency.
-numpy>=1.26
+numpy>=2.2.6
 # Optional: results/radar.png is written only when matplotlib is importable (radar.svg needs nothing).
 matplotlib>=3.8
